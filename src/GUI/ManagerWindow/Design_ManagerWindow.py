@@ -20,15 +20,8 @@ class Design_ManagerWindow(Design_UserWindow):
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
-    # 添加启动面
-    start = QPixmap("start.png")
-    splash = QtWidgets.QSplashScreen(start)
-    splash.show()   #
 
     MainWindow = Design_ManagerWindow()
-
-    # 关闭启动面
-    splash.finish(MainWindow)
 
     MainWindow.show()
     MainWindow.move(int((QApplication.desktop().width() - MainWindow.width()) / 2),

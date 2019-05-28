@@ -17,4 +17,7 @@ from GUI.UserWindow.Design_UserWindow import Design_UserWindow
 class Design_CFOWindow(Design_UserWindow):
     def __init__(self, parent=None):
         super().__init__(parent)
+        self.Button.clicked.connect(self.function)
 
+    def function(self):
+        pass
