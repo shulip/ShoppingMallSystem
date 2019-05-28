@@ -17,3 +17,20 @@ class Design_LoginWindow(QMainWindow, Ui_LoginWindow):
     def __init__(self, parent=None):
         super(Design_LoginWindow, self).__init__(parent)
         self.setupUi(self)
+
+if __name__ == '__main__':
+    app = QtWidgets.QApplication(sys.argv)
+    # 添加启动面
+    start = QPixmap("start.png")
+    splash = QtWidgets.QSplashScreen(start)
+    splash.show()   #
+
+    MainWindow = Design_LoginWindow()
+
+    # 关闭启动面
+    splash.finish(MainWindow)
+
+    MainWindow.show()
+    MainWindow.move(int((QApplication.desktop().width() - MainWindow.width()) / 2),
+                        int((QApplication.desktop().height() - MainWindow.height()) / 2 - 50))
+    sys.exit(app.exec_())
