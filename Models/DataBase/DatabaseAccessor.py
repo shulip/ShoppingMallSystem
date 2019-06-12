@@ -130,6 +130,7 @@ class DatabaseAccessor(object):
             "password": data[0][2],
             "name": data[0][3]
         }
+
         #data[row]代表第几个取回的数据组
         #data[row][column]代表这个数据组的第几个数据
         print(data[0][0])

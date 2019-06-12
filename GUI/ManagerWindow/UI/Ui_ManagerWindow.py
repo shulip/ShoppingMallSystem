@@ -55,6 +55,7 @@ class Ui_ManagerWindow(object):
 "\n"
 "")
         self.widgetBtn.setObjectName("widgetBtn")
+
         self.btnMyShop = QtWidgets.QToolButton(self.widgetBtn)
         self.btnMyShop.setGeometry(QtCore.QRect(0, 50, 150, 50))
         self.btnMyShop.setObjectName("btnMyShop")
@@ -215,7 +216,7 @@ class Ui_ManagerWindow(object):
         self.waterCharge.setText(_translate("ManagerWindow", "TextLabel"))
         self.PayImmediately.setText(_translate("ManagerWindow", "立即缴费"))
         self.ReceiptCharge.setText(_translate("ManagerWindow", "我的账单"))
-        self.ReceivableCharge.setText(_translate("ManagerWindow", "我的余额"))
+        self.ReceivableCharge.setText(_translate("ManagerWindow", "已缴费用"))
         self.guaranteeReceivable.setText(_translate("ManagerWindow", "TextLabel"))
         self.guaranteeChargeLabel_3.setText(_translate("ManagerWindow", "已缴保证金："))
         self.electricChargeLabel_3.setText(_translate("ManagerWindow", "电费余额："))
