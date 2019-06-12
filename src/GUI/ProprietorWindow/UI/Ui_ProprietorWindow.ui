@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>UserWindow</class>
- <widget class="QWidget" name="UserWindow">
+ <class>ProprietorWindow</class>
+ <widget class="QWidget" name="ProprietorWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -16,10 +16,10 @@
   <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>841</width>
-     <height>581</height>
+     <x>10</x>
+     <y>20</y>
+     <width>801</width>
+     <height>481</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -31,8 +31,8 @@
    <widget class="QWidget" name="widgetMenu" native="true">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>10</y>
+      <x>149</x>
+      <y>0</y>
       <width>650</width>
       <height>30</height>
      </rect>
@@ -80,8 +80,8 @@
    <widget class="QWidget" name="widgetLeft" native="true">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
+      <x>-1</x>
+      <y>0</y>
       <width>150</width>
       <height>481</height>
      </rect>
@@ -190,8 +190,8 @@ QToolButton:hover
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>161</x>
-      <y>40</y>
+      <x>150</x>
+      <y>30</y>
       <width>650</width>
       <height>450</height>
      </rect>
@@ -240,9 +240,9 @@ background:rgb(167, 167, 167);
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>70</y>
-        <width>650</width>
-        <height>380</height>
+        <y>100</y>
+        <width>521</width>
+        <height>350</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -352,7 +352,183 @@ background:rgb(167, 167, 167);
         <string>TextLabel</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="PayImmediately">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>220</y>
+         <width>80</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">font-size:15px;
+background:transparent;
+</string>
+       </property>
+       <property name="text">
+        <string>立即缴费</string>
+       </property>
+      </widget>
      </widget>
+     <widget class="QPushButton" name="ReceiptCharge">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>70</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+background:transparent;
+</string>
+      </property>
+      <property name="text">
+       <string>我的账单</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ReceivableCharge">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>70</y>
+        <width>80</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+background:transparent;
+</string>
+      </property>
+      <property name="text">
+       <string>已缴费用</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="Receivable" native="true">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>100</y>
+        <width>561</width>
+        <height>351</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size:20px</string>
+      </property>
+      <widget class="QLabel" name="guaranteeReceivable">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>190</y>
+         <width>80</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="guaranteeChargeLabel_3">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>190</y>
+         <width>80</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>已缴保证金：</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="electricChargeLabel_3">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>70</y>
+         <width>90</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>电费余额：</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="waterReceivable">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>110</y>
+         <width>81</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="propertyFeeReceivable">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>150</y>
+         <width>80</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="waterChargeLabel_3">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>110</y>
+         <width>100</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>水费余额：</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="propertyFeeChargeLabel_3">
+       <property name="geometry">
+        <rect>
+         <x>100</x>
+         <y>150</y>
+         <width>110</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>已缴物业费：</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="electricReceivable">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>70</y>
+         <width>80</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </widget>
+     <zorder>myShop</zorder>
+     <zorder>ReceiptCharge</zorder>
+     <zorder>ReceivableCharge</zorder>
+     <zorder>Receivable</zorder>
+     <zorder>Receipt</zorder>
     </widget>
     <widget class="QWidget" name="MyInformation">
      <widget class="QLabel" name="myInformation">

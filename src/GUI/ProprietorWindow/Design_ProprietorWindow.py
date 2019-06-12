@@ -12,11 +12,13 @@ from PyQt5.Qt import QButtonGroup
 from PyQt5.Qt import QListView
 from PyQt5.Qt import QSplashScreen, QDateTime
 
-from GUI.UserWindow.Design_UserWindow import Design_UserWindow
+from GUI.ProprietorWindow.UI.Ui_ProprietorWindow import Ui_ProprietorWindow
 
-class Design_ProprietorWindow(Design_UserWindow):
+class Design_ProprietorWindow(QWidget,Ui_ProprietorWindow):
     def __init__(self, parent=None):
-        super().__init__(parent)
+        super(Design_ProprietorWindow, self).__init__(parent)
+        self.setupUi(self)
+        self.setWindowFlags(Qt.FramelessWindowHint | Qt.Tool)
 
 
 if __name__ == '__main__':
