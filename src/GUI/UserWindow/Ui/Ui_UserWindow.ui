@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UserWindow</class>
+ <widget class="QWidget" name="UserWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>865</width>
+    <height>599</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>841</width>
+     <height>581</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QWidget" name="widgetMenu" native="true">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>10</y>
+      <width>650</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <widget class="QPushButton" name="btnMenu_Close">
+     <property name="geometry">
+      <rect>
+       <x>620</x>
+       <y>0</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>×</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnMenu_Max">
+     <property name="geometry">
+      <rect>
+       <x>590</x>
+       <y>0</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>×</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnMenu_Min">
+     <property name="geometry">
+      <rect>
+       <x>560</x>
+       <y>0</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>×</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="widgetLeft" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>150</width>
+      <height>481</height>
+     </rect>
+    </property>
+    <widget class="QWidget" name="widgetBtn" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>30</y>
+       <width>150</width>
+       <height>450</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QToolButton
+{	
+color:rgb(255, 255, 255);
+background:#66A5ad;
+border-radius:10px;
+
+}
+QWidget
+{
+background:rgb(67, 66, 58)
+}
+
+QToolButton:hover
+{
+	color:rgb(255, 234, 246);
+	borderr-radius:10px;
+	background:#07575B;
+}
+
+</string>
+     </property>
+     <widget class="QToolButton" name="btnMyShop">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>50</y>
+        <width>150</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>我的店铺</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="btnAllShop">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>150</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>全部店铺</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="btnInf">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>100</y>
+        <width>150</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>我的信息</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="btnContract">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>150</y>
+        <width>150</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>我的合同</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="btnSublease">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>200</y>
+        <width>150</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>申请转租</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>161</x>
+      <y>40</y>
+      <width>650</width>
+      <height>450</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget{
+background:rgb(167, 167, 167);
+}</string>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="AllShop">
+     <widget class="QLabel" name="allShop">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>54</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>全部店铺</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="MyShop">
+     <widget class="QLabel" name="myShop">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>101</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size:22px</string>
+      </property>
+      <property name="text">
+       <string>我的店铺</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="Receipt" native="true">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>70</y>
+        <width>650</width>
+        <height>380</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size:20px</string>
+      </property>
+      <widget class="QLabel" name="electricChargeLabel">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>40</y>
+         <width>90</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>应缴电费：</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="guaranteeChargeLabel">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>80</y>
+         <width>80</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>保证金：</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="propertyFeeChargeLabel">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>120</y>
+         <width>110</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>应缴物业费：</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="waterChargeLabel">
+       <property name="geometry">
+        <rect>
+         <x>60</x>
+         <y>160</y>
+         <width>100</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>应缴水费：</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="guaranteeCharge">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>80</y>
+         <width>80</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="electricCharge">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>40</y>
+         <width>80</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="propertyFeeCharge">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>120</y>
+         <width>80</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="waterCharge">
+       <property name="geometry">
+        <rect>
+         <x>180</x>
+         <y>160</y>
+         <width>81</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="MyInformation">
+     <widget class="QLabel" name="myInformation">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>54</width>
+        <height>12</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>我的信息</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="MyContract">
+     <widget class="QLabel" name="myContract">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>54</width>
+        <height>12</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>我的合同</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="ApplyForSublease">
+     <widget class="QLabel" name="applyForSublease">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>20</y>
+        <width>54</width>
+        <height>12</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>申请转租</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
