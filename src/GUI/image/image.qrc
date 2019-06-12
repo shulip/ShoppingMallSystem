@@ -1,0 +1,22 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>close.png</file>
+    <file>close_hover.png</file>
+    <file>close_press.png</file>
+    <file>min_.png</file>
+    <file>min_hover.bmp</file>
+    <file>min_press.bmp</file>
+    <file>1.png</file>
+    <file>2.png</file>
+    <file>3.png</file>
+    <file>4.png</file>
+    <file>5.png</file>
+    <file>6.png</file>
+    <file>7.png</file>
+    <file>8.png</file>
+    <file>9.png</file>
+    <file>10.png</file>
+    <file>11.png</file>
+    <file>背景图片.png</file>
+  </qresource>
+</RCC>

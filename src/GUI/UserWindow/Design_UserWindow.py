@@ -11,8 +11,22 @@ from PyQt5.QtGui import *
 from PyQt5.Qt import QButtonGroup
 from PyQt5.Qt import QListView
 from PyQt5.Qt import QSplashScreen, QDateTime
+from GUI.UserWindow.Ui.Ui_UserWindow import Ui_UserWindow
+from GUI.image.image import *
 
-class Design_UserWindow(QMainWindow, Ui_UserWindow):
+class Design_UserWindow(QWidget, Ui_UserWindow):
     def __init__(self, parent=None):
         super(Design_UserWindow, self).__init__(parent)
         self.setupUi(self)
+        self.setWindowFlags(Qt.FramelessWindowHint | Qt.Tool)
+
+
+if __name__ == '__main__':
+    app = QtWidgets.QApplication(sys.argv)
+
+    MainWindow = Design_UserWindow()
+
+    MainWindow.show()
+    MainWindow.move(int((QApplication.desktop().width() - MainWindow.width()) / 2),
+                        int((QApplication.desktop().height() - MainWindow.height()) / 2 - 50))
+    sys.exit(app.exec_())
