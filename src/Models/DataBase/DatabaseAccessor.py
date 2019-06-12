@@ -18,12 +18,17 @@
          year
          
 获取用户信息获取以上全部
-
 """
 import sqlite3
 import os
 
+
 class DatabaseAccessor(object):
+
+    electricCharge = "ElectricCharge"
+    guaranteeCharge = "GuaranteeCharge"
+    propertyFeeCharge = "PropertyFeeCharge"
+    waterCharge = "WaterCharge"
 
     def __init__(self):
         # self.connect = sqlite3.connect('shoppingMall.db')
@@ -32,10 +37,6 @@ class DatabaseAccessor(object):
         self.name = "DatabaseAccessor"
         self.create_user_table()
         self.create_revenue_table()
-        print("初始化类!")
-
-    def test(self):
-        print("我的成员变量为：" + self.name)
 
     #   如果发现数据库中没有用户table，则创建
     def create_user_table(self):
@@ -44,34 +45,84 @@ class DatabaseAccessor(object):
                        'users(user_id integer, account TEXT,'
                        'password TEXT, user_name TEXT)')
 
-    #   如果发现数据库中没有资金信息table，则创建
-    def create_revenue_table(self):
-        print("创建资金信息表")
+    #   创建contractInfosTable
+    def create_contract_table(self):
+        print("创建合同信息表")
         self.cursor.execute('CREATE TABLE IF NOT EXISTS '
-                       'revenueInfos(revenue_info_id integer, revenue_info TEXT,'
-                       'relevant_user_id integer)')
+                            'contractInfos(relevant_user_id INTEGER,information TEXT, status TEXT, _year TEXT, '
+                            'proprietorSign INTEGER, ceoAffirm INTEGER, ceoSign INTEGER)')
 
-    #   添加用户，分别对应id account password userName
-    #   注意，添加操作无法撤回，小心调用这个函数
+    #   创建receivableAmountTable
+    def create_receivable_amount_table(self):
+        print("创建应收额信息表")
+        self.cursor.execute('CREATE TABLE IF NOT EXISTS '
+                            'receivableAmounts(PayerId integer, electricCharge INTEGER,'
+                            ' guaranteeCharge INTEGER, propertyFeeCharge INTEGER, waterCharge INTEGER)')
+
+    #   创建receiptTable
+    def create_receipt_table(self):
+        print("创建收据信息表")
+        self.cursor.execute('CREATE TABLE IF NOT EXISTS '
+                            'receipts(PayerId INTEGER, electricCharge INTEGER, '
+                            'guaranteeCharge INTEGER, propertyFeeCharge INTEGER, waterCharge INTEGER)')
+
+    #   创建shopTable
+    def create_shop_table(self):
+        print("创建商铺表")
+        self.cursor.execute('CREATE TABLE IF NOT EXISTS '
+                            'shops(shopNumber INTEGER, ownerId INTEGER)')
+
+    #   添加用户，添加操作无法撤回，小心调用这个函数
     def add_new_user(self, user_id, account, password, username):
         print("添加用户：")
         self.cursor.execute('INSERT INTO users VALUES (?, ?, ?, ?)',
                   (user_id, account, password, username))
         self.connect.commit()
 
-    #   添加资金信息，现在有资金信息id，相关信息和有关user的id三个数据
-    def add_new_revenue_info(self, revenue_id, revenue_info, relevant_user_id):
+    #   添加收据信息，分别对应
+    def add_new_receipt_info(self, payer_id, electric_charge,
+                             guarantee_charge, property_fee_charge, water_charge):
         print("添加资金信息：")
-        self.cursor.execute('INSERT INTO revenueInfos VALUES (?, ?, ?)',
-                  (revenue_id, revenue_info, relevant_user_id))
+        self.cursor.execute('INSERT INTO receipts VALUES (?, ?, ?, ?, ?)',
+                  (payer_id, electric_charge, guarantee_charge, property_fee_charge, water_charge))
         self.connect.commit()
 
-    #   根据id获取用户所有信息
+    #   添加应收额信息
+    def add_new_receivable_amount_info(self, payer_id, electric_charge,
+                             guarantee_charge, property_fee_charge, water_charge):
+        print("添加应收额信息")
+        self.cursor.execute('INSERT INTO receivableAmounts VALUES (?, ?, ?, ?, ?)',
+                  (payer_id, electric_charge, guarantee_charge, property_fee_charge, water_charge))
+        self.connect.commit()
+        #   字典的列表
+        #   list_.append({})
+
+    #   添加合同信息，默认三个bool值皆为false
+    def add_new_contract_info(self, info, status, year):
+        print("添加合同信息")
+        self.cursor.execute('INSERT INTO contractInfos VALUES (?, ?, ?, ?, ?, ?)',
+                            (info, status, year, 0, 0, 0))
+
+    #   添加商铺信息
+    def add_new_shop_info(self, shop_number, owner_id):
+        print("添加商铺信息")
+        self.cursor.execute('INSERT INTO shops VALUES (?, ?)',
+                            (shop_number, owner_id))
+
+    #   根据id获取用户所有信息（合同、已收额、应收额）
     def get_user_info_by_id(self, user_id):
-        print("获取对应id的用户信息")
-        self.cursor.execute('SELECT * FROM users WHERE user_id= ?',
+        print("获取对应id的合同、已收额、应收额")
+        self.cursor.execute('SELECT * FROM receivableAmounts WHERE PayerId= ?',
                             user_id)
-        data = self.cursor.fetchall()
+        receivable_data = self.cursor.fetchall()
+        self.cursor.execute('SELECT * FROM receipts WHERE PayerId= ?',
+                            user_id)
+        receipt_data = self.cursor.fetchall()
+        self.cursor.execute('SELECT * FROM contractInfos WHERE relevant_user_id = ?',
+                            user_id)
+        contract_data = self.cursor.fetchall()
+
+
         #由于我们默认一个id对应一个用户，所以取回的数据只有一行
         searchedUser = {
             "id": data[0][0],
@@ -86,6 +137,9 @@ class DatabaseAccessor(object):
                #print(row)
         return searchedUser
 
+    def get_shop_number_by_user_id(self, user_id):
+        pass
+
     #   根据资金信息id获取用户所有信息
     def get_revenue_info_by_id(self, revenue_id):
         print("获取对应id的资金信息：")
@@ -98,6 +152,10 @@ class DatabaseAccessor(object):
             "relevantUserId": data[0][2]
         }
         return searchedRevenue_info
+
+    #
+    def get_all_shop_infos(self):
+        print("获得所有商铺的相关信息")
 
     #   删除对应id的用户
     def delete_user_info_by_id(self, user_id):
