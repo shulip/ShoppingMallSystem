@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'log.ui'
+# Form implementation generated from reading ui file 'Ui_LoginInterface.ui'
 #
 # Created by: PyQt5 UI code generator 5.11.3
 #
@@ -12,19 +12,24 @@ class Ui_LoginInterface(object):
     def setupUi(self, LoginInterface):
         LoginInterface.setObjectName("LoginInterface")
         LoginInterface.setEnabled(True)
-        LoginInterface.resize(717, 526)
+        LoginInterface.resize(457, 356)
         LoginInterface.setStyleSheet("")
         self.frame = QtWidgets.QFrame(LoginInterface)
-        self.frame.setGeometry(QtCore.QRect(100, 60, 430, 330))
+        self.frame.setGeometry(QtCore.QRect(10, 10, 430, 330))
         self.frame.setStyleSheet("*{\n"
 "    font-family:century gothic;\n"
 "    font-size:16px\n"
 "}\n"
 "\n"
+"#frame\n"
+"{\n"
+"background-image: url(:/icon/背景图片.png);\n"
+"}\n"
 "QFrame\n"
 "{\n"
-"    background:rgb(132, 132, 132);\n"
-"    border-radius:15px\n"
+"    border-top-left-radius:15px;\n"
+"    border-bottom-right-radius:15px;\n"
+"    \n"
 "}\n"
 "\n"
 "QLabel\n"
@@ -130,7 +135,7 @@ class Ui_LoginInterface(object):
         self.autLog.setGeometry(QtCore.QRect(210, 230, 121, 31))
         self.autLog.setObjectName("autLog")
         self.mallName = QtWidgets.QLabel(self.frame)
-        self.mallName.setGeometry(QtCore.QRect(130, 30, 161, 61))
+        self.mallName.setGeometry(QtCore.QRect(110, 30, 221, 61))
         self.mallName.setStyleSheet("QLabel\n"
 "{\n"
 "    color:white;\n"
@@ -171,12 +176,39 @@ class Ui_LoginInterface(object):
 "")
         self.forgetPassword.setObjectName("forgetPassword")
         self.closeLogInWindow = QtWidgets.QPushButton(self.frame)
-        self.closeLogInWindow.setGeometry(QtCore.QRect(390, 0, 30, 30))
+        self.closeLogInWindow.setGeometry(QtCore.QRect(400, 0, 30, 30))
+        self.closeLogInWindow.setStyleSheet("QPushButton\n"
+"{\n"
+"background:transparent;\n"
+"image: url(:/icon/close.png);\n"
+"}\n"
+"QPushButton:hover\n"
+"{\n"
+"image: url(:/icon/close_hover.png);\n"
+"}\n"
+"QPushButton:pressed\n"
+"{\n"
+"image: url(:/icon/close_press.png);\n"
+"}")
         self.closeLogInWindow.setText("")
         self.closeLogInWindow.setObjectName("closeLogInWindow")
         self.arrowcloseLogInWindow = QtWidgets.QPushButton(self.frame)
-        self.arrowcloseLogInWindow.setGeometry(QtCore.QRect(360, 0, 30, 30))
+        self.arrowcloseLogInWindow.setGeometry(QtCore.QRect(370, 0, 30, 30))
+        self.arrowcloseLogInWindow.setStyleSheet("QPushButton:hover\n"
+"{\n"
+"image: url(:/icon/min_hover.bmp);\n"
+"}\n"
+"QPushButton:pressed\n"
+"{\n"
+"image: url(:/icon/min_press.bmp);\n"
+"}\n"
+"QPushButton\n"
+"{\n"
+"background:transparent;\n"
+"image: url(:/icon/min_.png);\n"
+"}")
         self.arrowcloseLogInWindow.setText("")
+        self.arrowcloseLogInWindow.setIconSize(QtCore.QSize(30, 30))
         self.arrowcloseLogInWindow.setObjectName("arrowcloseLogInWindow")
         self.userKey_2 = QtWidgets.QLabel(self.frame)
         self.userKey_2.setGeometry(QtCore.QRect(60, 190, 61, 31))
@@ -189,7 +221,6 @@ class Ui_LoginInterface(object):
 "    padding-left:5px ;\n"
 "    border-top-left-radius:3px;\n"
 "    border-top-right-radius:3px;\n"
-"    border: 1px solid rgb(209 , 209 , 209);\n"
 "}\n"
 "QComboBox:hover\n"
 "{\n"
@@ -197,10 +228,25 @@ class Ui_LoginInterface(object):
 "}\n"
 "QComboBox QAbstractItemView::item\n"
 "{\n"
+"    background:white;\n"
 "    height:40px;\n"
 "}\n"
 "")
         self.jobPosition.setObjectName("jobPosition")
+        self.ID.raise_()
+        self.logIn.raise_()
+        self.rememberKey.raise_()
+        self.Key.raise_()
+        self.userID.raise_()
+        self.userKey.raise_()
+        self.autLog.raise_()
+        self.mallName.raise_()
+        self.registAccount.raise_()
+        self.forgetPassword.raise_()
+        self.userKey_2.raise_()
+        self.jobPosition.raise_()
+        self.arrowcloseLogInWindow.raise_()
+        self.closeLogInWindow.raise_()
 
         self.retranslateUi(LoginInterface)
         QtCore.QMetaObject.connectSlotsByName(LoginInterface)
@@ -215,8 +261,9 @@ class Ui_LoginInterface(object):
         self.userID.setText(_translate("LoginInterface", "用户名："))
         self.userKey.setText(_translate("LoginInterface", "密码："))
         self.autLog.setText(_translate("LoginInterface", "自动登录"))
-        self.mallName.setText(_translate("LoginInterface", "购物中心"))
+        self.mallName.setText(_translate("LoginInterface", "Cool购物中心"))
         self.registAccount.setText(_translate("LoginInterface", "注册账号"))
         self.forgetPassword.setText(_translate("LoginInterface", "忘记密码"))
         self.userKey_2.setText(_translate("LoginInterface", "职位："))
 
+from GUI.image import *
