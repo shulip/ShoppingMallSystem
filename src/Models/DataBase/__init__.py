@@ -16,7 +16,7 @@ class DatabaseAccessor(object):
         print("初始化类!")
 
     def test(self):
-        print("我的成员变量为："+ self.name)
+        print("我的成员变量为：" + self.name)
 
     #   如果发现数据库中没有用户table，则创建
     def create_user_table(self):
@@ -97,4 +97,4 @@ class DatabaseAccessor(object):
     def __del__(self):
         self.cursor.close()
         self.connect.close()
-        print("我被销毁了")
+        print("我被销毁了QWQ")
