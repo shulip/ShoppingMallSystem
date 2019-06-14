@@ -19,6 +19,8 @@ class Design_ProprietorWindow(QWidget,Ui_ProprietorWindow):
         super(Design_ProprietorWindow, self).__init__(parent)
         self.setupUi(self)
         self.setWindowFlags(Qt.FramelessWindowHint | Qt.Tool)
+        self.setAttribute(Qt.WA_TranslucentBackground)
+
 
 
 if __name__ == '__main__':

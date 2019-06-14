@@ -1,6 +1,12 @@
 <RCC>
   <qresource prefix="icon">
+    <file>20170323073552182.png</file>
     <file>close.png</file>
+    <file>1f.png</file>
+    <file>arrow.png</file>
+    <file>arrow_hover.png</file>
+    <file>arrow_press.png</file>
+    <file>blue.jpg</file>
     <file>close_hover.png</file>
     <file>close_press.png</file>
     <file>min_.png</file>
