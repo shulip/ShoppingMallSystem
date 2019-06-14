@@ -11,7 +11,7 @@ from PyQt5.QtGui import *
 from PyQt5.Qt import QButtonGroup
 from PyQt5.Qt import QListView
 from PyQt5.Qt import QSplashScreen, QDateTime
-from GUI.LoginWindow.Ui import *
+from GUI.LoginWindow.Ui import Ui_LoginInterface
 from GUI.image.image import *
 
 

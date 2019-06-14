@@ -23,3 +23,8 @@ class ProprietorWindow(Design_ProprietorWindow):
         self.propertyFeeCharge.setText(self.__control.receivable_propertyfee())
         self.waterCharge.setText(self.__control.receivable_water())
 
+        self.electricReceivable.setText(self.__control.receipt_electric())
+        self.waterReceivable.setText(self.__control.receipt_water())
+        self.propertyFeeReceivable.setText(self.__control.receipt_propertyfee())
+        self.guaranteeReceivable.setText(self.__control.receipt_guarantee())
+

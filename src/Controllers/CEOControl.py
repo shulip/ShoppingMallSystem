@@ -21,6 +21,15 @@ class CEOControl(User):
     def check_all_information(self):
         pass
 
+    def get_all_contracts(self):
+        return self.m_Statement.contracts
+
+    def get_all_receipts(self):
+        return self.m_Statement.receipts
+
+    def get_all_receivable(self):
+        return self.m_Statement.receivable
+
     def confirm_contract(self):
         pass
 

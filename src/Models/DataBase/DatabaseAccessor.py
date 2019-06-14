@@ -265,13 +265,13 @@ class DatabaseAccessor(object):
 
 
 """TEST
-    testAccessor = DatabaseAccessor()
-    shopNumbers = testAccessor.get_shop_number_by_user_id(1)
-    user_info = testAccessor.get_user_info_by_id(1)
-    all_shop_info = testAccessor.get_all_shop_infos()
-    print(all_shop_info)
-"""
 
+"""
+testAccessor = DatabaseAccessor()
+shopNumbers = testAccessor.get_shop_number_by_user_id(1)
+user_info = testAccessor.get_user_info_by_id(1)
+all_shop_info = testAccessor.get_all_shop_infos()
+print(all_shop_info)
 
 
 

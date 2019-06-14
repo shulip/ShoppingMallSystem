@@ -44,10 +44,6 @@ class Design_ProprietorWindow(QWidget,Ui_ProprietorWindow):
         super(Design_ProprietorWindow, self).__init__(parent)
         self.setupUi(self)
         self.setWindowFlags(Qt.FramelessWindowHint | Qt.Tool)
-<<<<<<< HEAD
-        self.setAttribute(Qt.WA_TranslucentBackground)
-
-=======
         self.btnAllShop.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(0))
         self.btnMyShop.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))
         self.btnContract.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(3))
@@ -56,7 +52,6 @@ class Design_ProprietorWindow(QWidget,Ui_ProprietorWindow):
         self.ReceiptCharge.clicked.connect(self.click_receipt)
         self.ReceivableCharge.clicked.connect(self.click_receivable)
         self.btnMenu_Close.clicked.connect(self.close)
->>>>>>> adb0948d7b0eb0b64d722cc2f1e2bda188a9448e
 
 
 if __name__ == '__main__':

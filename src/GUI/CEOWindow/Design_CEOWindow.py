@@ -19,10 +19,6 @@ class Design_CEOWindow(QWidget,Ui_CEOWindow):
         super(Design_CEOWindow, self).__init__(parent)
         self.setupUi(self)
         self.setWindowFlags(Qt.FramelessWindowHint | Qt.Tool)
-        self.setAttribute(Qt.WA_TranslucentBackground)
-
-
-
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
 
