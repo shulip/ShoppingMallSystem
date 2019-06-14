@@ -10,5 +10,5 @@ from PyQt5.QtWidgets import *
 from .ManagerWindow import Design_ManagerWindow
 
 class ManagerWindow(Design_ManagerWindow):
-    def __init__(self, parent=None):
+    def __init__(self,ID, parent=None):
         super().__init__(parent)

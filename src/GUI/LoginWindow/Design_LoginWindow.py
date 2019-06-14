@@ -19,7 +19,7 @@ class Design_LoginWindow(QWidget, Ui_LoginInterface):
     def __init__(self, parent=None):
         super(Design_LoginWindow, self).__init__(parent)
         self.setupUi(self)
-        infomation = ["业主", "ceo", "cfo", "manager"]
+        infomation = ["业主", "ceo", "cfo",'管理员']
         #self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowSystemMenuHint)
         self.setWindowFlags(Qt.FramelessWindowHint | Qt.Tool)
         self.setAttribute(Qt.WA_TranslucentBackground)

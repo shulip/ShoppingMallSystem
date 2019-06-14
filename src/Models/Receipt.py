@@ -1,12 +1,22 @@
 #!/usr/bin/env python 
 # -*- coding:utf-8 -*-
+from Models.DataBase import DatabaseAccessor
 
 class Receipt(object):
-    def __init__(self):
-        self.__electricCharge = 0.0
-        self.__guaranteeCharge = 0.0
-        self.__propertyFeeCharge = 0.0
-        self.__waterCharge = 0.0
+    DB = DatabaseAccessor()
+    def __init__(self, ID):
+        self.__ID = ID
+        self.__receipt = self.DB.get_receipt_info_by_id(self.__ID)
+
+        self.__electricCharge = self.__receipt["electricCharge"]
+        self.__guaranteeCharge = self.__receipt["guaranteeCharge"]
+        self.__propertyFeeCharge = self.__receipt["propertyFeeCharge"]
+        self.__waterCharge = self.__receipt["waterCharge"]
+
+        # self.__electricCharge = 0.0
+        # self.__guaranteeCharge = 0.0
+        # self.__propertyFeeCharge = 0.0
+        # self.__waterCharge = 0.0
 
     def entry(self):
         """
