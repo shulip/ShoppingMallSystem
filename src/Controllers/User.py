@@ -4,7 +4,7 @@ class User(object):
     m_Login= Login()
 
     def __init__(self):
-        pass
+        self.__identity = 'u'
 
     def login(self,name,password,identity):
         self.m_Login.run(name,password,identity)

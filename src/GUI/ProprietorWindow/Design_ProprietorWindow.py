@@ -12,34 +12,9 @@ from PyQt5.Qt import QButtonGroup
 from PyQt5.Qt import QListView
 from PyQt5.Qt import QSplashScreen, QDateTime
 
-from GUI.ProprietorWindow.UI import *
+from GUI.ProprietorWindow.UI.Ui_ProprietorWindow import Ui_ProprietorWindow
 
 class Design_ProprietorWindow(QWidget,Ui_ProprietorWindow):
-
-    def mousePressEvent(self, event):
-        if event.button() == Qt.LeftButton:
-            self.m_flag = True
-            self.m_Position = event.globalPos() - self.pos()  # 获取鼠标相对窗口的位置
-            event.accept()
-            self.setCursor(QCursor(Qt.OpenHandCursor))  # 更改鼠标图标
-
-    def mouseMoveEvent(self, QMouseEvent):
-        if Qt.LeftButton and self.m_flag:
-            self.move(QMouseEvent.globalPos() - self.m_Position)  # 更改窗口位置
-            QMouseEvent.accept()
-
-    def mouseReleaseEvent(self, QMouseEvent):
-        self.m_flag = False
-        self.setCursor(QCursor(Qt.ArrowCursor))
-
-    def click_receipt(self):
-        self.Receipt.setVisible(True)
-        self.Receivable.setVisible(False)
-
-    def click_receivable(self):
-        self.Receipt.setVisible(False)
-        self.Receivable.setVisible(True)
-
     def __init__(self, parent=None):
         super(Design_ProprietorWindow, self).__init__(parent)
         self.setupUi(self)
