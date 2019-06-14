@@ -148,6 +148,7 @@ class DatabaseAccessor(object):
         print("添加合同信息")
         self.cursor.execute('INSERT INTO contractInfos VALUES (?, ?, ?, ?, ?, ?)',
                             (info, status, year, 0, 0, 0))
+        self.connect.commit()
 
     def add_new_shop_info(self, shop_number, owner_id):
         """
@@ -159,6 +160,7 @@ class DatabaseAccessor(object):
         print("添加商铺信息")
         self.cursor.execute('INSERT INTO shops VALUES (?, ?)',
                             (shop_number, owner_id))
+        self.connect.commit()
 
     def get_contract_info_by_id(self, user_id):
         """
@@ -184,9 +186,9 @@ class DatabaseAccessor(object):
         :param user_id:
         :return:
         """
-        receipt_data = self.cursor.fetchall()
-        self.cursor.execute('SELECT * FROM contractInfos WHERE relevant_user_id = ?',
+        self.cursor.execute('SELECT * FROM receipts WHERE PayerId = ?',
                             str(user_id))
+        receipt_data = self.cursor.fetchall()
         user_info = {}
         user_info["electricCharge"] = receipt_data[0][1]
         user_info["guaranteeCharge"] = receipt_data[0][2]
@@ -200,9 +202,9 @@ class DatabaseAccessor(object):
         :param user_id:
         :return:
         """
-        receivable_data = self.cursor.fetchall()
-        self.cursor.execute('SELECT * FROM receipts WHERE PayerId= ?',
+        self.cursor.execute('SELECT * FROM receivableAmounts WHERE PayerId= ?',
                             str(user_id))
+        receivable_data = self.cursor.fetchall()
         user_info = {}
         user_info["electricCharge"] = receivable_data[0][1]
         user_info["guaranteeCharge"] = receivable_data[0][2]
@@ -340,7 +342,9 @@ testAccessor = DatabaseAccessor()
 shopNumbers = testAccessor.get_shop_number_by_user_id(1)
 user_info = testAccessor.get_user_info_by_id(1)
 all_shop_info = testAccessor.get_all_shop_infos()
-print(all_shop_info)
+test = testAccessor.get_receivable_info_by_id(1)
+print(test)
+
 
 
 
