@@ -266,4 +266,3 @@ class Ui_LoginInterface(object):
         self.forgetPassword.setText(_translate("LoginInterface", "忘记密码"))
         self.userKey_2.setText(_translate("LoginInterface", "职位："))
 
-from GUI.image import *

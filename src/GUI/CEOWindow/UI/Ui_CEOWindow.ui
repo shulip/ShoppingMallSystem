@@ -362,7 +362,7 @@ background:rgb(234, 234, 234)
 </string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="_1f">
        <widget class="QWidget" name="firstFloorShop" native="true">
@@ -383,7 +383,7 @@ background:rgb(234, 234, 234)
 }
 </string>
         </property>
-        <widget class="QWidget" name="widget" native="true">
+        <widget class="QWidget" name="firstFloorInf" native="true">
          <property name="geometry">
           <rect>
            <x>0</x>
@@ -393,7 +393,7 @@ background:rgb(234, 234, 234)
           </rect>
          </property>
          <property name="styleSheet">
-          <string notr="true">QWidget
+          <string notr="true">#firstFloorInf
 {
 	background:rgb(127, 127, 127);
  border-top-left-radius:15px;
@@ -401,22 +401,6 @@ background:rgb(234, 234, 234)
 }
 </string>
          </property>
-         <widget class="QLabel" name="label_7">
-          <property name="geometry">
-           <rect>
-            <x>150</x>
-            <y>10</y>
-            <width>141</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">font-size:22px</string>
-          </property>
-          <property name="text">
-           <string>楼层信息</string>
-          </property>
-         </widget>
         </widget>
         <widget class="QWidget" name="widget_2" native="true">
          <property name="geometry">
@@ -424,7 +408,7 @@ background:rgb(234, 234, 234)
            <x>10</x>
            <y>60</y>
            <width>151</width>
-           <height>361</height>
+           <height>401</height>
           </rect>
          </property>
          <property name="styleSheet">
@@ -517,7 +501,7 @@ background:rgb(234, 234, 234)
            <x>160</x>
            <y>300</y>
            <width>231</width>
-           <height>121</height>
+           <height>161</height>
           </rect>
          </property>
          <property name="styleSheet">
@@ -562,7 +546,7 @@ background:rgb(234, 234, 234)
            <x>160</x>
            <y>60</y>
            <width>231</width>
-           <height>131</height>
+           <height>141</height>
           </rect>
          </property>
          <property name="styleSheet">
@@ -653,84 +637,20 @@ background:rgb(0, 255, 127)
           </property>
          </widget>
         </widget>
-        <widget class="QPushButton" name="pushButton_13">
-         <property name="geometry">
-          <rect>
-           <x>40</x>
-           <y>430</y>
-           <width>30</width>
-           <height>30</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background:rgb(255, 0, 4);</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label_2">
-         <property name="geometry">
-          <rect>
-           <x>90</x>
-           <y>430</y>
-           <width>51</width>
-           <height>30</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background:transparent;</string>
-         </property>
-         <property name="text">
-          <string>已租店铺</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="pushButton_15">
-         <property name="geometry">
-          <rect>
-           <x>240</x>
-           <y>430</y>
-           <width>30</width>
-           <height>30</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background:rgb(0, 255, 127)</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label_4">
-         <property name="geometry">
-          <rect>
-           <x>280</x>
-           <y>430</y>
-           <width>50</width>
-           <height>30</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background:transparent;</string>
-         </property>
-         <property name="text">
-          <string>可租店铺</string>
-         </property>
-        </widget>
        </widget>
       </widget>
       <widget class="QWidget" name="_2f">
-       <widget class="QWidget" name="firstFloorShop_2" native="true">
+       <widget class="QWidget" name="secondFloorShop" native="true">
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>30</y>
+          <y>50</y>
           <width>401</width>
           <height>471</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">#firstFloorShop
+         <string notr="true">#secondFloorShop
 {
 	background:white;
  border-top-left-radius:15px;
@@ -756,22 +676,6 @@ background:rgb(0, 255, 127)
 }
 </string>
          </property>
-         <widget class="QLabel" name="label_26">
-          <property name="geometry">
-           <rect>
-            <x>150</x>
-            <y>10</y>
-            <width>141</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">font-size:22px</string>
-          </property>
-          <property name="text">
-           <string>楼层信息</string>
-          </property>
-         </widget>
         </widget>
         <widget class="QWidget" name="widget_6" native="true">
          <property name="geometry">
@@ -779,7 +683,7 @@ background:rgb(0, 255, 127)
            <x>10</x>
            <y>60</y>
            <width>151</width>
-           <height>361</height>
+           <height>401</height>
           </rect>
          </property>
          <property name="styleSheet">
@@ -789,9 +693,9 @@ background:rgb(0, 255, 127)
           <property name="geometry">
            <rect>
             <x>95</x>
-            <y>9</y>
+            <y>10</y>
             <width>45</width>
-            <height>351</height>
+            <height>350</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -872,7 +776,7 @@ background:rgb(0, 255, 127)
            <x>160</x>
            <y>300</y>
            <width>231</width>
-           <height>121</height>
+           <height>161</height>
           </rect>
          </property>
          <property name="styleSheet">
@@ -898,7 +802,7 @@ background:rgb(0, 255, 127)
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>70</y>
+            <y>80</y>
             <width>210</width>
             <height>40</height>
            </rect>
@@ -917,7 +821,7 @@ background:rgb(0, 255, 127)
            <x>160</x>
            <y>60</y>
            <width>231</width>
-           <height>131</height>
+           <height>141</height>
           </rect>
          </property>
          <property name="styleSheet">
@@ -1007,70 +911,6 @@ background:rgb(0, 255, 127)
            <string>07</string>
           </property>
          </widget>
-        </widget>
-        <widget class="QPushButton" name="pushButton_14">
-         <property name="geometry">
-          <rect>
-           <x>40</x>
-           <y>430</y>
-           <width>30</width>
-           <height>30</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background:rgb(255, 0, 4);</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label_27">
-         <property name="geometry">
-          <rect>
-           <x>90</x>
-           <y>430</y>
-           <width>51</width>
-           <height>30</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background:transparent;</string>
-         </property>
-         <property name="text">
-          <string>已租店铺</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="pushButton_16">
-         <property name="geometry">
-          <rect>
-           <x>240</x>
-           <y>430</y>
-           <width>30</width>
-           <height>30</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background:rgb(0, 255, 127)</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-        <widget class="QLabel" name="label_28">
-         <property name="geometry">
-          <rect>
-           <x>280</x>
-           <y>430</y>
-           <width>50</width>
-           <height>30</height>
-          </rect>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background:transparent;</string>
-         </property>
-         <property name="text">
-          <string>可租店铺</string>
-         </property>
         </widget>
        </widget>
       </widget>
@@ -1614,56 +1454,154 @@ font-size:14px</string>
        </property>
       </widget>
      </widget>
-     <widget class="QPushButton" name="fourthFloor">
+     <widget class="QLabel" name="curFloor">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>50</y>
-        <width>35</width>
-        <height>35</height>
+        <x>320</x>
+        <y>340</y>
+        <width>54</width>
+        <height>12</height>
        </rect>
       </property>
-      <property name="text">
-       <string>4f</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="firstFloor">
-      <property name="geometry">
-       <rect>
-        <x>100</x>
-        <y>50</y>
-        <width>35</width>
-        <height>35</height>
-       </rect>
+      <property name="styleSheet">
+       <string notr="true">font-size:18px;
+background:transparent;</string>
       </property>
       <property name="text">
        <string>1f</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="thirdFloor">
+     <widget class="QLabel" name="label_7">
       <property name="geometry">
        <rect>
-        <x>180</x>
-        <y>50</y>
-        <width>35</width>
-        <height>35</height>
+        <x>40</x>
+        <y>100</y>
+        <width>91</width>
+        <height>30</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">font-size:22px;
+background:transparent;</string>
+      </property>
       <property name="text">
-       <string>3f</string>
+       <string>楼层信息</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="secondFloor">
+     <widget class="QPushButton" name="pushButton_15">
       <property name="geometry">
        <rect>
-        <x>140</x>
-        <y>50</y>
-        <width>35</width>
-        <height>35</height>
+        <x>220</x>
+        <y>105</y>
+        <width>20</width>
+        <height>20</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+background:rgb(0, 255, 7);
+border-radius:10px;
+}</string>
+      </property>
       <property name="text">
-       <string>2f</string>
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>105</y>
+        <width>50</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size:15px;
+background:transparent;</string>
+      </property>
+      <property name="text">
+       <string>楼层：</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>105</y>
+        <width>51</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent;</string>
+      </property>
+      <property name="text">
+       <string>已租店铺</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="currentFloorCombobox">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>105</y>
+        <width>40</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>105</y>
+        <width>50</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent;</string>
+      </property>
+      <property name="text">
+       <string>可租店铺</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_13">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>105</y>
+        <width>20</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+background:rgb(255, 0, 7);
+border-radius:10px;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>330</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-size:18px;
+background:transparent;</string>
+      </property>
+      <property name="text">
+       <string>当前楼层：</string>
       </property>
      </widget>
     </widget>
