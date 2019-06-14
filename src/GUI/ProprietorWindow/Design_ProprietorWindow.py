@@ -44,6 +44,7 @@ class Design_ProprietorWindow(QWidget,Ui_ProprietorWindow):
         super(Design_ProprietorWindow, self).__init__(parent)
         self.setupUi(self)
         self.setWindowFlags(Qt.FramelessWindowHint | Qt.Tool)
+        self.setAttribute(Qt.WA_TranslucentBackground)
         self.btnAllShop.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(0))
         self.btnMyShop.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))
         self.btnContract.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(3))

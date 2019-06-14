@@ -8,7 +8,7 @@ from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtWidgets import *
 
 from .ManagerWindow import Design_ManagerWindow
-from Controllers import ManagerWindow
+from Controllers import ManagerControl
 
 class ManagerWindow(Design_ManagerWindow):
     def __init__(self,ID, parent=None):
