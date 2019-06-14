@@ -211,19 +211,20 @@ class DatabaseAccessor(object):
             numbers_dict["number{}".format(i)] = shopNum[0]
         return numbers_dict
 
-    def get_user_id_by_shop_number(self, user_id):
+    def get_user_id_by_shop_number(self, shopNumber):
         """
         根据用户id获取他拥有的商店number的字典，用dict["number%d"]来获取
         :param user_id:
         :return:用户id对应的商店number的字典，用dict["number%d"]来获取
         """
-        print("获得对应用户id的商铺number")
-        self.cursor.execute('SELECT shopNumber FROM shops WHERE ownerId = ?', str(user_id))
-        shop_numbers = self.cursor.fetchall()
-        numbers_dict = {}
-        for shopNum, i in zip(shop_numbers, range(len(shop_numbers))):
-            numbers_dict["number{}".format(i)] = shopNum[0]
-        return numbers_dict
+        print("获得店铺对应的id")
+        self.cursor.execute('SELECT ownerId FROM shops WHERE shopNumber = ?', str(shopNumber))
+        user = self.cursor.fetchall()
+
+        assert len(user) <= 1
+
+        return user[0]
+
 
     def get_all_shop_infos(self):
         """
