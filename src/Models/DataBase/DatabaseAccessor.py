@@ -182,6 +182,7 @@ class DatabaseAccessor(object):
             user_info["contractInfo{}".format(i)] = user[1]
             user_info["contractStatus{}".format(i)] = user[2]
             user_info["contractYear{}".format(i)] = user[3]
+
         #   receivable
         for user, i in zip(receivable_data, range(len(receivable_data))):
             user_info["receivedEleCharge{}".format(i)] = user[1]
@@ -259,6 +260,9 @@ class DatabaseAccessor(object):
                 number_id["contractInfo{}".format(i)] = user[1]
                 number_id["contractStatus{}".format(i)] = user[2]
                 number_id["contractYear{}".format(i)] = user[3]
+                number_id["contractProprietorSign{}".format(i)] = user[4]
+                number_id["contractCeoAffirm{}".format(i)] = user[5]
+                number_id["contractCeoSign{}".format(i)] = user[6]
             #   receivable
             for user, i in zip(receivable_data, range(len(receivable_data))):
                 number_id["receivedEleCharge{}".format(i)] = user[1]
