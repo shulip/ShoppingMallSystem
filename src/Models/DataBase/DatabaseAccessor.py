@@ -160,6 +160,56 @@ class DatabaseAccessor(object):
         self.cursor.execute('INSERT INTO shops VALUES (?, ?)',
                             (shop_number, owner_id))
 
+    def get_contract_info_by_id(self, user_id):
+        """
+        根据id获取合同信息
+        :param user_id:
+        :return:
+        """
+        self.cursor.execute('SELECT * FROM contractInfos WHERE relevant_user_id = ?',
+                            str(user_id))
+        contract_data = self.cursor.fetchall()
+        user_info = {}
+        user_info["contractInfo"] = contract_data[0][1]
+        user_info["contractStatus"] = contract_data[0][2]
+        user_info["contractYear"] = contract_data[0][3]
+        user_info["proprietorSign"] = contract_data[0][4]
+        user_info["CEOAffirm"] = contract_data[0][5]
+        user_info["CEOSign"] = contract_data[0][6]
+        return user_info
+
+    def get_receipt_info_by_id(self, user_id):
+        """
+        根据id获取账单信息
+        :param user_id:
+        :return:
+        """
+        receipt_data = self.cursor.fetchall()
+        self.cursor.execute('SELECT * FROM contractInfos WHERE relevant_user_id = ?',
+                            str(user_id))
+        user_info = {}
+        user_info["electricCharge"] = receipt_data[0][1]
+        user_info["guaranteeCharge"] = receipt_data[0][2]
+        user_info["propertyFeeCharge"] = receipt_data[0][3]
+        user_info["waterCharge"] = receipt_data[0][4]
+        return user_info
+
+    def get_receivable_info_by_id(self, user_id):
+        """
+        根据id获取应收额信息
+        :param user_id:
+        :return:
+        """
+        receivable_data = self.cursor.fetchall()
+        self.cursor.execute('SELECT * FROM receipts WHERE PayerId= ?',
+                            str(user_id))
+        user_info = {}
+        user_info["electricCharge"] = receivable_data[0][1]
+        user_info["guaranteeCharge"] = receivable_data[0][2]
+        user_info["propertyFeeCharge"] = receivable_data[0][3]
+        user_info["waterCharge"] = receivable_data[0][4]
+        return user_info
+
     def get_user_info_by_id(self, user_id):
         """
         根据id获取用户所有信息（合同、已收额、应收额）
