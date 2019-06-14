@@ -8,18 +8,7 @@ from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtWidgets import *
 
 from .ProprietorWindow import Design_ProprietorWindow
-from Controllers import ProprietorControl
 
 class ProprietorWindow(Design_ProprietorWindow):
-    def __init__(self,ID, parent=None,):
-        print(5)
+    def __init__(self, parent=None):
         super().__init__(parent)
-        self.__ID = ID
-        print(6)
-        self.__control = ProprietorControl(ID)
-
-        self.electricCharge.setText(self.__control.receivable_electric())
-        self.guaranteeCharge.setText(self.__control.receivable_guarantee())
-        self.propertyFeeCharge.setText(self.__control.receivable_propertyfee())
-        self.waterCharge.setText(self.__control.receivable_water())
-

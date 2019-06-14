@@ -13,9 +13,6 @@ if __name__ == '__main__':
     MainWindow = LoginWindow()
 
     MainWindow.show()
-    # MainWindow.move(int((QApplication.desktop().width() - MainWindow.width()) / 2),
-    #                 int((QApplication.desktop().height() - MainWindow.height()) / 2 - 50))
+    MainWindow.move(int((QApplication.desktop().width() - MainWindow.width()) / 2),
+                    int((QApplication.desktop().height() - MainWindow.height()) / 2 - 50))
     sys.exit(app.exec_())
-
-
-

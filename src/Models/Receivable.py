@@ -1,22 +1,12 @@
 #!/usr/bin/env python 
 # -*- coding:utf-8 -*-
-from Models.DataBase import DatabaseAccessor
 
 class Receivable(object):
-    DB = DatabaseAccessor()
-    def __init__(self, ID):
-        self.__ID = ID
-        self.__receivable = self.DB.get_receivable_info_by_id(self.__ID)
-
-        self.__electricCharge = self.__receivable["electricCharge"]
-        self.__guaranteeCharge = self.__receivable["guaranteeCharge"]
-        self.__propertyFeeCharge = self.__receivable["propertyFeeCharge"]
-        self.__waterCharge = self.__receivable["waterCharge"]
-
-        # self.__electricCharge = 0.0
-        # self.__guaranteeCharge = 0.0
-        # self.__propertyFeeCharge = 0.0
-        # self.__waterCharge = 0.0
+    def __init__(self):
+        self.__electricCharge = 0.0
+        self.__guaranteeCharge = 0.0
+        self.__propertyFeeCharge = 0.0
+        self.__waterCharge = 0.0
 
     @property
     def electric(self):
