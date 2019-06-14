@@ -8,6 +8,7 @@ from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtWidgets import *
 
 from .ProprietorWindow import Design_ProprietorWindow
+from Controllers import ProprietorControl
 
 class ProprietorWindow(Design_ProprietorWindow):
     def __init__(self,ID, parent=None,):
