@@ -1,30 +1,15 @@
 #!/usr/bin/env python 
 # -*- coding:utf-8 -*-
-from Models.DataBase import DatabaseAccessor
 
 class Contract(object):
-    DB = DatabaseAccessor()
-    def __init__(self,ID):
-        self.__ID = ID
-        self.__contract = self.DB.get_contract_info_by_id(ID)
+    def __init__(self):
+        self.__information = ''
+        self.__status = ''
+        self.__year = -1
 
-        self.__information = self.__contract["information"]
-        self.__status = self.__contract["status"]
-        self.__year = self.__contract["year"]
-
-        self.__proprietorSign = self.__contract["proprietorSign"]  # 业主是否签字
-        self.__CEOAffirm = self.__contract["CEOAffirm"]  # 总经理是否确认
-        self.__CEOSign = self.__contract["CEOSign"]  # 总经理是否签字
-
-        # self.__information = ''
-        # self.__status = ''
-        # self.__year = -1
-
-        # self.__proprietorSign = False  # 业主是否签字
-        # self.__CEOAffirm = False  # 总经理是否确认
-        # self.__CEOSign = False  # 总经理是否签字
-
-
+        self.__proprietorSign = False  # 业主是否签字
+        self.__CEOAffirm = False  # 总经理是否确认
+        self.__CEOSign = False  # 总经理是否签字
 
     @property
     def information(self):

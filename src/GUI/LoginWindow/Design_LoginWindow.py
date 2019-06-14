@@ -11,7 +11,7 @@ from PyQt5.QtGui import *
 from PyQt5.Qt import QButtonGroup
 from PyQt5.Qt import QListView
 from PyQt5.Qt import QSplashScreen, QDateTime
-from GUI.LoginWindow.Ui import *
+from GUI.LoginWindow.Ui import Ui_LoginInterface
 from GUI.image.image import *
 
 
@@ -19,7 +19,7 @@ class Design_LoginWindow(QWidget, Ui_LoginInterface):
     def __init__(self, parent=None):
         super(Design_LoginWindow, self).__init__(parent)
         self.setupUi(self)
-        infomation = ["业主", "ceo", "cfo",'管理员']
+        infomation = ["业主", "ceo", "cfo", "manager"]
         #self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowSystemMenuHint)
         self.setWindowFlags(Qt.FramelessWindowHint | Qt.Tool)
         self.setAttribute(Qt.WA_TranslucentBackground)

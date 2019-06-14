@@ -10,5 +10,5 @@ from PyQt5.QtWidgets import *
 from .CEOWindow import Design_CEOWindow
 
 class CEOWindow(Design_CEOWindow):
-    def __init__(self,ID, parent=None):
+    def __init__(self, parent=None):
         super().__init__(parent)
