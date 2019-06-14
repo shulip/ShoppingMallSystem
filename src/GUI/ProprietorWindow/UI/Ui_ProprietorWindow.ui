@@ -1634,7 +1634,7 @@ background:transparent;
      <widget class="QWidget" name="Receivable" native="true">
       <property name="geometry">
        <rect>
-        <x>0</x>
+        <x>270</x>
         <y>100</y>
         <width>561</width>
         <height>471</height>
@@ -1751,8 +1751,8 @@ background:transparent;
      <zorder>myShop</zorder>
      <zorder>ReceiptCharge</zorder>
      <zorder>ReceivableCharge</zorder>
-     <zorder>Receivable</zorder>
      <zorder>Receipt</zorder>
+     <zorder>Receivable</zorder>
     </widget>
     <widget class="QWidget" name="MyInformation">
      <widget class="QLabel" name="myInformation">

@@ -1614,23 +1614,23 @@ font-size:14px</string>
        </property>
       </widget>
      </widget>
-     <widget class="QPushButton" name="secondFloor">
+     <widget class="QPushButton" name="fourthFloor">
       <property name="geometry">
        <rect>
-        <x>150</x>
+        <x>220</x>
         <y>50</y>
         <width>35</width>
         <height>35</height>
        </rect>
       </property>
       <property name="text">
-       <string>2f</string>
+       <string>4f</string>
       </property>
      </widget>
      <widget class="QPushButton" name="firstFloor">
       <property name="geometry">
        <rect>
-        <x>110</x>
+        <x>100</x>
         <y>50</y>
         <width>35</width>
         <height>35</height>
@@ -1643,7 +1643,7 @@ font-size:14px</string>
      <widget class="QPushButton" name="thirdFloor">
       <property name="geometry">
        <rect>
-        <x>190</x>
+        <x>180</x>
         <y>50</y>
         <width>35</width>
         <height>35</height>
@@ -1653,17 +1653,17 @@ font-size:14px</string>
        <string>3f</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="fourthFloor">
+     <widget class="QPushButton" name="secondFloor">
       <property name="geometry">
        <rect>
-        <x>230</x>
+        <x>140</x>
         <y>50</y>
         <width>35</width>
         <height>35</height>
        </rect>
       </property>
       <property name="text">
-       <string>4f</string>
+       <string>2f</string>
       </property>
      </widget>
     </widget>
