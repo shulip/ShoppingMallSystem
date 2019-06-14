@@ -1,7 +1,9 @@
 #!/usr/bin/env python 
 # -*- coding:utf-8 -*-
+from Models.DataBase import DatabaseAccessor
 
 class Statement(object):
+    DB = DatabaseAccessor()
     def __init__(self):
         self.__shops = self.DB.get_all_shop_infos()
         print(self.__shops)
