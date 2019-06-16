@@ -39,6 +39,11 @@ class DatabaseAccessor(object):
         self.create_receipt_table()
         self.create_receivable_amount_table()
         self.create_shop_table()
+        self.create_application_table()
+        self.connect.commit()
+
+
+    # Create tables
 
     def create_user_table(self):
         """
@@ -57,8 +62,14 @@ class DatabaseAccessor(object):
         """
         print("创建合同信息表")
         self.cursor.execute('CREATE TABLE IF NOT EXISTS '
-                            'contractInfos(relevant_user_id INTEGER,information TEXT, status TEXT, _year TEXT, '
-                            'proprietorSign INTEGER, ceoAffirm INTEGER, ceoSign INTEGER)')
+                            'contractInfos('
+                            'relevant_user_id INTEGER,'
+                            'information TEXT, '
+                            'status TEXT, '
+                            '_year TEXT, '
+                            'proprietorSign INTEGER, '
+                            'ceoAffirm INTEGER, '
+                            'ceoSign INTEGER)')
 
     def create_receivable_amount_table(self):
         """
@@ -67,8 +78,14 @@ class DatabaseAccessor(object):
         """
         print("创建应收额信息表")
         self.cursor.execute('CREATE TABLE IF NOT EXISTS '
-                            'receivableAmounts(PayerId integer, electricCharge INTEGER,'
-                            ' guaranteeCharge INTEGER, propertyFeeCharge INTEGER, waterCharge INTEGER)')
+                            'receivableAmounts(PayerId integer, '
+                            'electricCharge INTEGER,'
+                            ' guaranteeCharge INTEGER, '
+                            'propertyFeeCharge INTEGER,'
+                            ' waterCharge INTEGER)')
+
+
+
 
     def create_receipt_table(self):
         """
@@ -77,8 +94,47 @@ class DatabaseAccessor(object):
         """
         print("创建收据信息表")
         self.cursor.execute('CREATE TABLE IF NOT EXISTS '
-                            'receipts(PayerId INTEGER, electricCharge INTEGER, '
-                            'guaranteeCharge INTEGER, propertyFeeCharge INTEGER, waterCharge INTEGER)')
+                            'receipts(PayerId INTEGER, '
+                            'electricCharge INTEGER, '
+                            'guaranteeCharge INTEGER, '
+                            'propertyFeeCharge INTEGER, '
+                            'waterCharge INTEGER)')
+
+    def create_application_table(self):
+        print("创建申请信息表")
+        self.cursor.execute('CREATE TABLE IF NOT EXISTS '
+                            'applications('
+                            'shopIndex INTEGER, '
+                            'userName TEXT, '
+                            'telenumber TEXT, '
+                            'rentTime INTEGER, '
+                            'rentUsage TEXT)')
+
+
+    def add_new_application_info(self, shopIndex, userName, telenumber, rentTime, rentUsage):
+        print("添加申请：")
+        self.cursor.execute('INSERT INTO applications VALUES (?, ?, ?, ?, ?)',
+                            (shopIndex, userName, telenumber, rentTime, rentUsage))
+        self.connect.commit()
+
+    def get_all_application_info(self):
+        """
+        获取所有申请信息
+        :return: 一个装者字典的 list ，访问格式   listName["shopIndex"]
+        """
+        self.cursor.execute('SELECT * FROM applications ')
+        apps = self.cursor.fetchall()
+        appInfoList=[]
+        for app in apps:
+            appInfo={}
+            appInfo["shopIndex"]=app[0]
+            appInfo["userName"]=app[1]
+            appInfo["telenumber"]=app[2]
+            appInfo["rentTime"]=app[3]
+            appInfo["rentUsage"]=app[4]
+            appInfoList.append(appInfo)
+
+        return appInfoList
 
     def create_shop_table(self):
         """
@@ -87,8 +143,11 @@ class DatabaseAccessor(object):
         """
         print("创建商铺表")
         self.cursor.execute('CREATE TABLE IF NOT EXISTS '
-                            'shops(shopNumber INTEGER, ownerId INTEGER)')
+                            'shops(shopNumber INTEGER, '
+                            'ownerId INTEGER)')
 
+
+    # add informations
     def add_new_user(self, user_id, account, password, username):
         """
         添加用户，添加操作无法撤回，小心调用这个函数
@@ -137,7 +196,7 @@ class DatabaseAccessor(object):
         #   字典的列表
         #   list_.append({})
 
-    def add_new_contract_info(self, info, status, year):
+    def add_new_contract_info(self, user_id, info, status, year):
         """
         添加合同信息，默认三个bool值皆为false
         :param info:
@@ -146,8 +205,8 @@ class DatabaseAccessor(object):
         :return:
         """
         print("添加合同信息")
-        self.cursor.execute('INSERT INTO contractInfos VALUES (?, ?, ?, ?, ?, ?)',
-                            (info, status, year, 0, 0, 0))
+        self.cursor.execute('INSERT INTO contractInfos VALUES (?, ?, ?, ?, ?, ?, ?)',
+                            (user_id, info, status, year, 0, 0, 0))
         self.connect.commit()
 
     def add_new_shop_info(self, shop_number, owner_id):
@@ -162,6 +221,7 @@ class DatabaseAccessor(object):
                             (shop_number, owner_id))
         self.connect.commit()
 
+    # get
     def get_contract_info_by_id(self, user_id):
         """
         根据id获取合同信息
@@ -206,10 +266,10 @@ class DatabaseAccessor(object):
                             str(user_id))
         receivable_data = self.cursor.fetchall()
         user_info = {}
-        user_info["electricCharge"] = receivable_data[0][1]
-        user_info["guaranteeCharge"] = receivable_data[0][2]
-        user_info["propertyFeeCharge"] = receivable_data[0][3]
-        user_info["waterCharge"] = receivable_data[0][4]
+   #     user_info["electricCharge"] = receivable_data[0][1]
+   #     user_info["guaranteeCharge"] = receivable_data[0][2]
+   #     user_info["propertyFeeCharge"] = receivable_data[0][3]
+   #     user_info["waterCharge"] = receivable_data[0][4]
         return user_info
 
     def get_user_info_by_id(self, user_id):
@@ -277,7 +337,6 @@ class DatabaseAccessor(object):
 
         return user[0]
 
-
     def get_all_shop_infos(self):
         """
         获取所有商店的相关信息，number id 合同 应收额 已收额
@@ -330,6 +389,84 @@ class DatabaseAccessor(object):
                 number_id["receiptWaterCharge{}".format(i)] = user[4]
         return shop_info_list
 
+    # set contract
+
+    def set_contract_ceosign_by_id(self, user_id, ceosign):
+        self.cursor.execute('UPDATE contractInfos SET ceoSign = ? WHERE relevant_user_id = ?',
+                            (str(ceosign), str(user_id)))
+        self.connect.commit()
+
+    def set_contract_ceoaffirm_by_id(self, user_id, ceoaffirm):
+        self.cursor.execute('UPDATE contractInfos SET ceoAffirm = ? WHERE relevant_user_id = ?',
+                            (str(ceoaffirm), str(user_id)))
+        self.connect.commit()
+
+    def set_contract_information_by_id(self, user_id, text):
+        self.cursor.execute('UPDATE  contractInfos SET information = ? WHERE relevant_user_id = ? ',
+                            (str(text), str(user_id)))
+        self.connect.commit()
+
+    def set_contract_status_by_id(self, user_id, status):
+        self.cursor.execute('UPDATE contractInfos SET status = ? WHERE relevant_user_id = ?',
+                            (str(status), str(user_id)))
+        self.connect.commit()
+
+    def set_contract_year_by_id(self, user_id, year):
+        self.cursor.execute('UPDATE contractInfos SET _year = ? WHERE relevant_user_id = ?',
+                            (str(year), str(user_id)))
+        self.connect.commit()
+
+    def set_contract_proprietorsign_by_id(self, user_id, proprietorsign):
+        """
+        通过id修改合同 proprietroSign
+        :param user_id:
+        :param proprietorsign: 0 - 不确认，1 - 确认
+        :return:
+        """
+        self.cursor.execute('UPDATE contractInfos SET proprietorSign = ? WHERE relevant_user_id = ?',
+                            (str(proprietorsign), str(user_id)))
+        self.connect.commit()
+
+    def set_receipt_electriccharge_by_id(self, PayerId, electricCharge):
+        self.cursor.execute('UPDATE receipts SET electricCharge = ? WHERE PayerId = ?',
+                            (str(electricCharge), str(PayerId)))
+        self.connect.commit()
+
+    def set_receipt_guaranteecharge_by_id(self, PayerId, guaranteeCharge):
+        self.cursor.execute('UPDATE receipts SET guaranteeCharge = ? WHERE PayerId = ?',
+                            (str(guaranteeCharge), str(PayerId)))
+        self.connect.commit()
+
+    def set_receipt_propertyfee_by_id(self, PayerId, propertyFeeCharge):
+        self.cursor.execute('UPDATE receipts SET propertyFeeCharge = ? WHERE PayerId = ?',
+                            (str(propertyFeeCharge), str(PayerId)))
+        self.connect.commit()
+
+    def set_receipt_watercharge_by_id(self, PayerId, waterCharge):
+        self.cursor.execute('UPDATE receipts SET waterCharge = ? WHERE PayerId = ?',
+                            (str(waterCharge), str(PayerId)))
+        self.connect.commit()
+
+    def set_receivable_electriccharge_by_id(self, PayerId, electricCharge):
+        self.cursor.execute('UPDATE receivableAmounts SET electricCharge = ? WHERE PayerId = ?',
+                            (str(electricCharge), str(PayerId)))
+        self.connect.commit()
+
+    def set_receivable_guaranteecharge_by_id(self, PayerId, guaranteeCharge):
+        self.cursor.execute('UPDATE receivableAmounts SET guaranteeCharge = ? WHERE PayerId = ?',
+                            (str(guaranteeCharge), str(PayerId)))
+        self.connect.commit()
+
+    def set_receivable_propertyfee_by_id(self, PayerId, propertyFeeCharge):
+        self.cursor.execute('UPDATE receivableAmounts SET propertyFeeCharge = ? WHERE PayerId = ?',
+                            (str(propertyFeeCharge), str(PayerId)))
+        self.connect.commit()
+
+    def set_receivable_watercharge_by_id(self, PayerId, waterCharge):
+        self.cursor.execute('UPDATE receivableAmounts SET waterCharge = ? WHERE PayerId = ?',
+                            (str(waterCharge), str(PayerId)))
+        self.connect.commit()
+
     def __del__(self):
         self.cursor.close()
         self.connect.close()
@@ -339,11 +476,61 @@ class DatabaseAccessor(object):
 
 """
 testAccessor = DatabaseAccessor()
-shopNumbers = testAccessor.get_shop_number_by_user_id(1)
-user_info = testAccessor.get_user_info_by_id(1)
-all_shop_info = testAccessor.get_all_shop_infos()
-test = testAccessor.get_receivable_info_by_id(1)
-print(test)
+#shopNumbers = testAccessor.get_shop_number_by_user_id(1)
+#user_info = testAccessor.get_user_info_by_id(1)
+#all_shop_info = testAccessor.get_all_shop_infos()
+#test = testAccessor.get_receivable_info_by_id(1)
+
+#testAccessor.add_new_contract_info(100, "没事", "jb状态", 2019)
+#testAccessor.add_new_receipt_info(100,111,222,333,444)
+#testAccessor.add_new_receivable_amount_info(100,11,22,33,44)
+
+#testAccessor.add_new_application_info(100,"name1","186",100,"没用")
+#testAccessor.add_new_application_info(101,"name2","187",100,"没用")
+#testAccessor.add_new_application_info(102,"name3","188",100,"没用")
+
+print("改之前：")
+#testAccessor.cursor.execute('SELECT * FROM applications')
+#test = testAccessor.cursor.fetchall()
+#for info in test:
+#    print(info)
+
+#testAccessor.set_receipt_electriccharge_by_id(100,123)
+#testAccessor.set_receipt_guaranteecharge_by_id(100,123)
+#testAccessor.set_receipt_propertyfee_by_id(100,123)
+#testAccessor.set_receipt_watercharge_by_id(100,123)
+#
+#testAccessor.set_receivable_electriccharge_by_id(100,1203)
+#testAccessor.set_receivable_guaranteecharge_by_id(100,1203)
+#testAccessor.set_receivable_propertyfee_by_id(100,1203)
+#testAccessor.set_receivable_watercharge_by_id(100,1203)
+
+
+
+#testAccessor.set_contract_ceoaffirm_by_id(100, 1)
+#testAccessor.set_contract_information_by_id(100, "好事！")
+#testAccessor.set_contract_status_by_id(100, "可以")
+#testAccessor.set_contract_ceosign_by_id(100, 1)
+#testAccessor.set_contract_year_by_id(100, 2077)
+#testAccessor.set_contract_proprietorsign_by_id(100, 1)
+
+
+
+print("改之后")
+#testAccessor.cursor.execute('SELECT * FROM applications')
+#test = testAccessor.cursor.fetchall()
+#for info in test:
+#    print(info)
+
+testAccessor.cursor.execute('DELETE FROM contractInfos WHERE relevant_user_id = 100')
+testAccessor.connect.commit()
+testAccessor.cursor.execute('DELETE FROM receivableAmounts WHERE PayerId = 100')
+testAccessor.connect.commit()
+testAccessor.cursor.execute('DELETE FROM receipts WHERE PayerId = 100')
+testAccessor.connect.commit()
+testAccessor.cursor.execute('DELETE FROM applications WHERE shopIndex >= 100')
+testAccessor.connect.commit()
+
 
 
 
