@@ -154,7 +154,7 @@ class Ui_ProprietorWindow(object):
 "font-size:22px;")
         self.allShop.setObjectName("allShop")
         self.stackedWidgetShop = QtWidgets.QStackedWidget(self.AllShop)
-        self.stackedWidgetShop.setGeometry(QtCore.QRect(0, 70, 851, 501))
+        self.stackedWidgetShop.setGeometry(QtCore.QRect(0, 70, 850, 500))
         self.stackedWidgetShop.setStyleSheet("\n"
 "#_1f\n"
 "{\n"
@@ -174,7 +174,7 @@ class Ui_ProprietorWindow(object):
         self._1f = QtWidgets.QWidget()
         self._1f.setObjectName("_1f")
         self.firstFloorShop = QtWidgets.QWidget(self._1f)
-        self.firstFloorShop.setGeometry(QtCore.QRect(20, 20, 400, 460))
+        self.firstFloorShop.setGeometry(QtCore.QRect(20, 20, 400, 471))
         self.firstFloorShop.setStyleSheet("#firstFloorShop\n"
 "{\n"
 "    background:white;\n"
@@ -198,11 +198,11 @@ class Ui_ProprietorWindow(object):
         self.widget_2.setStyleSheet("background: rgb(255, 201, 125);")
         self.widget_2.setObjectName("widget_2")
         self.pushButtonShop_12 = QtWidgets.QPushButton(self.widget_2)
-        self.pushButtonShop_12.setGeometry(QtCore.QRect(95, 10, 45, 371))
+        self.pushButtonShop_12.setGeometry(QtCore.QRect(95, 10, 45, 370))
         self.pushButtonShop_12.setStyleSheet("background:rgb(255, 0, 4);")
         self.pushButtonShop_12.setObjectName("pushButtonShop_12")
         self.pushButtonShop_11 = QtWidgets.QPushButton(self.widget_2)
-        self.pushButtonShop_11.setGeometry(QtCore.QRect(10, 210, 70, 161))
+        self.pushButtonShop_11.setGeometry(QtCore.QRect(10, 210, 70, 170))
         self.pushButtonShop_11.setStyleSheet("background:rgb(255, 0, 4);")
         self.pushButtonShop_11.setObjectName("pushButtonShop_11")
         self.pushButtonShop_01 = QtWidgets.QPushButton(self.widget_2)
@@ -218,7 +218,7 @@ class Ui_ProprietorWindow(object):
         self.pushButtonShop_08.setStyleSheet("background:rgb(255, 0, 4);")
         self.pushButtonShop_08.setObjectName("pushButtonShop_08")
         self.widget_3 = QtWidgets.QWidget(self.firstFloorShop)
-        self.widget_3.setGeometry(QtCore.QRect(160, 320, 231, 131))
+        self.widget_3.setGeometry(QtCore.QRect(160, 320, 230, 130))
         self.widget_3.setStyleSheet("background: rgb(255, 201, 125);")
         self.widget_3.setObjectName("widget_3")
         self.pushButtonShop_09 = QtWidgets.QPushButton(self.widget_3)
@@ -282,15 +282,15 @@ class Ui_ProprietorWindow(object):
 "")
         self.widget_5.setObjectName("widget_5")
         self.widget_6 = QtWidgets.QWidget(self.firstFloorShop_2)
-        self.widget_6.setGeometry(QtCore.QRect(10, 60, 151, 401))
+        self.widget_6.setGeometry(QtCore.QRect(10, 60, 151, 391))
         self.widget_6.setStyleSheet("background: rgb(255, 201, 125);")
         self.widget_6.setObjectName("widget_6")
         self.pushButtonShop_13 = QtWidgets.QPushButton(self.widget_6)
-        self.pushButtonShop_13.setGeometry(QtCore.QRect(95, 10, 45, 351))
+        self.pushButtonShop_13.setGeometry(QtCore.QRect(95, 10, 45, 370))
         self.pushButtonShop_13.setStyleSheet("background:rgb(255, 0, 4);")
         self.pushButtonShop_13.setObjectName("pushButtonShop_13")
         self.pushButtonShop_14 = QtWidgets.QPushButton(self.widget_6)
-        self.pushButtonShop_14.setGeometry(QtCore.QRect(10, 220, 70, 140))
+        self.pushButtonShop_14.setGeometry(QtCore.QRect(10, 210, 70, 170))
         self.pushButtonShop_14.setStyleSheet("background:rgb(255, 0, 4);")
         self.pushButtonShop_14.setObjectName("pushButtonShop_14")
         self.pushButtonShop_ = QtWidgets.QPushButton(self.widget_6)
@@ -306,7 +306,7 @@ class Ui_ProprietorWindow(object):
         self.pushButtonShop_17.setStyleSheet("background:rgb(255, 0, 4);")
         self.pushButtonShop_17.setObjectName("pushButtonShop_17")
         self.widget_7 = QtWidgets.QWidget(self.firstFloorShop_2)
-        self.widget_7.setGeometry(QtCore.QRect(160, 300, 231, 161))
+        self.widget_7.setGeometry(QtCore.QRect(160, 320, 231, 130))
         self.widget_7.setStyleSheet("background: rgb(255, 201, 125);")
         self.widget_7.setObjectName("widget_7")
         self.pushButtonShop_15 = QtWidgets.QPushButton(self.widget_7)
@@ -322,7 +322,7 @@ class Ui_ProprietorWindow(object):
         self.widget_8.setStyleSheet("background: rgb(255, 201, 125);")
         self.widget_8.setObjectName("widget_8")
         self.pushButtonShop_18 = QtWidgets.QPushButton(self.widget_8)
-        self.pushButtonShop_18.setGeometry(QtCore.QRect(0, 80, 61, 41))
+        self.pushButtonShop_18.setGeometry(QtCore.QRect(10, 85, 61, 41))
         self.pushButtonShop_18.setStyleSheet("\n"
 "QPushButton\n"
 "{\n"
@@ -338,7 +338,7 @@ class Ui_ProprietorWindow(object):
         self.pushButtonShop_24.setStyleSheet("background:rgb(0, 255, 127)")
         self.pushButtonShop_24.setObjectName("pushButtonShop_24")
         self.pushButtonShop_23 = QtWidgets.QPushButton(self.widget_8)
-        self.pushButtonShop_23.setGeometry(QtCore.QRect(0, 10, 81, 40))
+        self.pushButtonShop_23.setGeometry(QtCore.QRect(10, 10, 81, 40))
         self.pushButtonShop_23.setStyleSheet("background:rgb(255, 0, 4);")
         self.pushButtonShop_23.setObjectName("pushButtonShop_23")
         self.pushButtonShop_20 = QtWidgets.QPushButton(self.widget_8)
