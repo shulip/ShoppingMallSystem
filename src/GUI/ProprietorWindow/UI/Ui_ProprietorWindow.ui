@@ -1093,7 +1093,7 @@ font-size:16px;</string>
         </rect>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="immediateApplication">
        <property name="geometry">
         <rect>
          <x>290</x>
@@ -1127,7 +1127,7 @@ font-size:16px;</string>
         <string>商铺号：</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="shopName_2">
+      <widget class="QLineEdit" name="shopNum">
        <property name="geometry">
         <rect>
          <x>120</x>
@@ -1833,7 +1833,7 @@ font-size:22px;</string>
        <rect>
         <x>20</x>
         <y>60</y>
-        <width>400</width>
+        <width>800</width>
         <height>500</height>
        </rect>
       </property>
@@ -1855,9 +1855,9 @@ font-size:16px;
        <property name="geometry">
         <rect>
          <x>19</x>
-         <y>80</y>
-         <width>360</width>
-         <height>160</height>
+         <y>50</y>
+         <width>750</width>
+         <height>391</height>
         </rect>
        </property>
        <property name="readOnly">
@@ -1868,7 +1868,7 @@ font-size:16px;
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>40</y>
+         <y>10</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -1881,7 +1881,7 @@ font-size:16px;
        <property name="geometry">
         <rect>
          <x>20</x>
-         <y>250</y>
+         <y>460</y>
          <width>81</width>
          <height>21</height>
         </rect>
@@ -1890,43 +1890,75 @@ font-size:16px;
         <string>签订年份:</string>
        </property>
       </widget>
-      <widget class="QLabel" name="rentTime">
-       <property name="geometry">
-        <rect>
-         <x>110</x>
-         <y>250</y>
-         <width>54</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
       <widget class="QLabel" name="label_8">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>290</y>
-         <width>71</width>
+         <x>250</x>
+         <y>460</y>
+         <width>101</width>
          <height>21</height>
         </rect>
        </property>
        <property name="text">
-        <string>甲方签字</string>
+        <string>甲方签字情况</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_10">
        <property name="geometry">
         <rect>
-         <x>20</x>
-         <y>330</y>
-         <width>71</width>
+         <x>510</x>
+         <y>460</y>
+         <width>101</width>
          <height>21</height>
         </rect>
        </property>
        <property name="text">
-        <string>乙方签字</string>
+        <string>乙方签字情况</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="ASigned">
+       <property name="geometry">
+        <rect>
+         <x>360</x>
+         <y>460</y>
+         <width>71</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>已签字</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="BSigned">
+       <property name="geometry">
+        <rect>
+         <x>620</x>
+         <y>460</y>
+         <width>71</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>已签字</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="rentTime">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>460</y>
+         <width>113</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
        </property>
       </widget>
      </widget>
