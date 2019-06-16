@@ -293,19 +293,6 @@ QToolButton:hover
        <string>我的合同</string>
       </property>
      </widget>
-     <widget class="QToolButton" name="btnSublease">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>200</y>
-        <width>150</width>
-        <height>50</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>申请转租</string>
-      </property>
-     </widget>
     </widget>
    </widget>
    <widget class="QStackedWidget" name="stackedWidget">
@@ -323,16 +310,16 @@ background:rgb(234, 234, 234)
 }</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="AllShop">
      <widget class="QLabel" name="allShop">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>0</y>
+        <x>10</x>
+        <y>10</y>
         <width>91</width>
-        <height>41</height>
+        <height>30</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1108,6 +1095,9 @@ font-size:14px</string>
        <property name="text">
         <string>已确认</string>
        </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
       </widget>
       <widget class="QCheckBox" name="userSignature">
        <property name="geometry">
@@ -1120,6 +1110,9 @@ font-size:14px</string>
        </property>
        <property name="text">
         <string>已签字</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
        </property>
       </widget>
       <widget class="QCheckBox" name="ceoSingature">
@@ -1134,6 +1127,9 @@ font-size:14px</string>
        <property name="text">
         <string>已签字</string>
        </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
       </widget>
       <widget class="QLineEdit" name="rentTimeContract">
        <property name="geometry">
@@ -1143,6 +1139,9 @@ font-size:14px</string>
          <width>113</width>
          <height>20</height>
         </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
        </property>
       </widget>
       <widget class="QLineEdit" name="RentStateContract">
@@ -1154,6 +1153,9 @@ font-size:14px</string>
          <height>20</height>
         </rect>
        </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
       </widget>
       <widget class="QLineEdit" name="shopNumberContract">
        <property name="geometry">
@@ -1164,6 +1166,9 @@ font-size:14px</string>
          <height>20</height>
         </rect>
        </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
       </widget>
       <widget class="QTextEdit" name="contractInfomation">
        <property name="geometry">
@@ -1173,6 +1178,9 @@ font-size:14px</string>
          <width>231</width>
          <height>71</height>
         </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
        </property>
       </widget>
      </widget>
@@ -1314,6 +1322,9 @@ font-size:14px</string>
        <property name="text">
         <string>欠费</string>
        </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
       </widget>
       <widget class="QCheckBox" name="checkBox_8">
        <property name="geometry">
@@ -1330,6 +1341,9 @@ font-size:14px</string>
        </property>
        <property name="text">
         <string>欠费</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
        </property>
       </widget>
       <widget class="QCheckBox" name="owePropertyFee">
@@ -1348,6 +1362,9 @@ font-size:14px</string>
        <property name="text">
         <string>欠费</string>
        </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
       </widget>
       <widget class="QCheckBox" name="oweGuaranteePaid">
        <property name="geometry">
@@ -1365,6 +1382,9 @@ font-size:14px</string>
        <property name="text">
         <string>欠费</string>
        </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
       </widget>
       <widget class="QLineEdit" name="waterFeePaid">
        <property name="geometry">
@@ -1374,6 +1394,9 @@ font-size:14px</string>
          <width>70</width>
          <height>20</height>
         </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
        </property>
       </widget>
       <widget class="QLineEdit" name="electricFeePaid">
@@ -1385,6 +1408,9 @@ font-size:14px</string>
          <height>20</height>
         </rect>
        </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
       </widget>
       <widget class="QLineEdit" name="propertyFee">
        <property name="geometry">
@@ -1394,6 +1420,9 @@ font-size:14px</string>
          <width>70</width>
          <height>20</height>
         </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
        </property>
       </widget>
       <widget class="QLineEdit" name="guaranteePaid">
@@ -1405,9 +1434,12 @@ font-size:14px</string>
          <height>20</height>
         </rect>
        </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
       </widget>
      </widget>
-     <widget class="QLabel" name="label_12">
+     <widget class="QLabel" name="curFloor">
       <property name="geometry">
        <rect>
         <x>320</x>
@@ -1578,10 +1610,10 @@ background:transparent;</string>
      <widget class="QWidget" name="widget" native="true">
       <property name="geometry">
        <rect>
-        <x>290</x>
+        <x>300</x>
         <y>70</y>
-        <width>541</width>
-        <height>471</height>
+        <width>540</width>
+        <height>470</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -2033,7 +2065,7 @@ font-size:18px;</string>
         <string>签订年份:</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit_2">
+      <widget class="QTextEdit" name="contractInformation">
        <property name="geometry">
         <rect>
          <x>30</x>
@@ -2062,7 +2094,7 @@ font-size:18px;</string>
          <x>680</x>
          <y>460</y>
          <width>101</width>
-         <height>23</height>
+         <height>20</height>
         </rect>
        </property>
        <property name="text">
@@ -2108,7 +2140,7 @@ font-size:18px;</string>
         <string>业主联系方式：</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit">
+      <widget class="QLineEdit" name="userTelContract">
        <property name="geometry">
         <rect>
          <x>320</x>
@@ -2135,21 +2167,6 @@ font-size:18px;</string>
       </property>
       <property name="text">
        <string>我的合同</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="ApplyForSublease">
-     <widget class="QLabel" name="applyForSublease">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>20</y>
-        <width>54</width>
-        <height>12</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>申请转租</string>
       </property>
      </widget>
     </widget>

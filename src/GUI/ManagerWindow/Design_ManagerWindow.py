@@ -32,26 +32,34 @@ class Design_ManagerWindow(QWidget, Ui_ManagerWindow):
         self.m_flag = False
         self.setCursor(QCursor(Qt.ArrowCursor))
 
-    def click_receipt(self):
-        self.Receipt.setVisible(True)
-        self.Receivable.setVisible(False)
+    def combox_changed(self, index):
+        self.curFloor.setText(self.comboBox.itemText(index))
 
-    def click_receivable(self):
-        self.Receipt.setVisible(False)
-        self.Receivable.setVisible(True)
+        if index==0:
+            self.stackedWidgetShop.setCurrentIndex(0)
+        elif index==1:
+            self.stackedWidgetShop.setCurrentIndex(1)
 
     def __init__(self, parent=None):
         super(Design_ManagerWindow, self).__init__(parent)
         self.setupUi(self)
         self.setWindowFlags(Qt.FramelessWindowHint | Qt.Tool)
+        self.setAttribute(Qt.WA_TranslucentBackground)
+        self.btnMenu_Close.clicked.connect(self.close)
+
+
         self.btnAllShop.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(0))
-        self.btnMyShop.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))
+        self.btnApprochHandling.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))
         self.btnContract.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(3))
         self.btnInf.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(2))
-        self.btnSublease.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(4))
-        self.ReceiptCharge.clicked.connect(self.click_receipt)
-        self.ReceivableCharge.clicked.connect(self.click_receivable)
-        self.btnMenu_Close.clicked.connect(self.close)
+        self.stackedWidget.setCurrentIndex(0)
+
+        #申请进场
+        self.comboBox.addItem("1 楼")
+        self.comboBox.addItem("2 楼")
+        self.comboBox.currentIndexChanged.connect(lambda x: self.combox_changed(x))
+        self.combox_changed(0)
+
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
