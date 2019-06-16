@@ -22,6 +22,9 @@
      <height>600</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">font: 9pt &quot;黑体&quot;;</string>
+   </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
    </property>
@@ -216,6 +219,8 @@ color:rgb(255, 255, 255);
 background:#66A5ad;
 border-radius:10px;
 
+font-size:16px;
+
 }
 QWidget
 {
@@ -322,14 +327,15 @@ background:rgb(234, 234, 234)
      <widget class="QLabel" name="allShop">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>91</width>
-        <height>41</height>
+        <x>10</x>
+        <y>10</y>
+        <width>90</width>
+        <height>30</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-size:22px</string>
+       <string notr="true">
+font-size:22px;</string>
       </property>
       <property name="text">
        <string>申请进场</string>
@@ -339,9 +345,9 @@ background:rgb(234, 234, 234)
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>40</y>
+        <y>70</y>
         <width>851</width>
-        <height>531</height>
+        <height>501</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -362,16 +368,16 @@ background:rgb(234, 234, 234)
 </string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="_1f">
        <widget class="QWidget" name="firstFloorShop" native="true">
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>50</y>
-          <width>401</width>
-          <height>471</height>
+          <y>20</y>
+          <width>400</width>
+          <height>460</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -408,7 +414,7 @@ background:rgb(234, 234, 234)
            <x>10</x>
            <y>60</y>
            <width>151</width>
-           <height>361</height>
+           <height>391</height>
           </rect>
          </property>
          <property name="styleSheet">
@@ -420,7 +426,7 @@ background:rgb(234, 234, 234)
             <x>95</x>
             <y>10</y>
             <width>45</width>
-            <height>345</height>
+            <height>371</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -436,7 +442,7 @@ background:rgb(234, 234, 234)
             <x>10</x>
             <y>210</y>
             <width>70</width>
-            <height>140</height>
+            <height>161</height>
            </rect>
           </property>
           <property name="styleSheet">
@@ -499,9 +505,9 @@ background:rgb(234, 234, 234)
          <property name="geometry">
           <rect>
            <x>160</x>
-           <y>300</y>
+           <y>320</y>
            <width>231</width>
-           <height>121</height>
+           <height>131</height>
           </rect>
          </property>
          <property name="styleSheet">
@@ -527,7 +533,7 @@ background:rgb(234, 234, 234)
           <property name="geometry">
            <rect>
             <x>10</x>
-            <y>70</y>
+            <y>80</y>
             <width>210</width>
             <height>40</height>
            </rect>
@@ -644,7 +650,7 @@ background:rgb(0, 255, 127)
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>50</y>
+          <y>20</y>
           <width>401</width>
           <height>471</height>
          </rect>
@@ -703,7 +709,7 @@ background:rgb(0, 255, 127)
            <string notr="true">background:rgb(255, 0, 4);</string>
           </property>
           <property name="text">
-           <string>12</string>
+           <string>13</string>
           </property>
          </widget>
          <widget class="QPushButton" name="pushButtonShop_14">
@@ -719,10 +725,10 @@ background:rgb(0, 255, 127)
            <string notr="true">background:rgb(255, 0, 4);</string>
           </property>
           <property name="text">
-           <string>11</string>
+           <string>14</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButtonShop_2">
+         <widget class="QPushButton" name="pushButtonShop_">
           <property name="geometry">
            <rect>
             <x>10</x>
@@ -735,7 +741,7 @@ background:rgb(0, 255, 127)
            <string notr="true">background:rgb(255, 0, 4);</string>
           </property>
           <property name="text">
-           <string>01</string>
+           <string>16</string>
           </property>
          </widget>
          <widget class="QPushButton" name="pushButtonShop_5">
@@ -751,10 +757,10 @@ background:rgb(0, 255, 127)
            <string notr="true">background:rgb(255, 0, 4);</string>
           </property>
           <property name="text">
-           <string>04</string>
+           <string>17</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButtonShop_9">
+         <widget class="QPushButton" name="pushButtonShop_17">
           <property name="geometry">
            <rect>
             <x>10</x>
@@ -767,7 +773,7 @@ background:rgb(0, 255, 127)
            <string notr="true">background:rgb(255, 0, 4);</string>
           </property>
           <property name="text">
-           <string>08</string>
+           <string>17</string>
           </property>
          </widget>
         </widget>
@@ -796,7 +802,7 @@ background:rgb(0, 255, 127)
            <string notr="true">background:rgb(0, 255, 127)</string>
           </property>
           <property name="text">
-           <string>09</string>
+           <string>15</string>
           </property>
          </widget>
          <widget class="QPushButton" name="pushButtonShop_16">
@@ -812,7 +818,7 @@ background:rgb(0, 255, 127)
            <string notr="true">background:rgb(255, 0, 4);</string>
           </property>
           <property name="text">
-           <string>10</string>
+           <string>16</string>
           </property>
          </widget>
         </widget>
@@ -828,7 +834,7 @@ background:rgb(0, 255, 127)
          <property name="styleSheet">
           <string notr="true">background: rgb(255, 201, 125);</string>
          </property>
-         <widget class="QPushButton" name="pushButtonShop_3">
+         <widget class="QPushButton" name="pushButtonShop_18">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -845,10 +851,10 @@ background:rgb(0, 255, 127)
 }</string>
           </property>
           <property name="text">
-           <string>02</string>
+           <string>18</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButtonShop_7">
+         <widget class="QPushButton" name="pushButtonShop_19">
           <property name="geometry">
            <rect>
             <x>75</x>
@@ -861,10 +867,10 @@ background:rgb(0, 255, 127)
            <string notr="true">background:rgb(255, 0, 4);</string>
           </property>
           <property name="text">
-           <string>06</string>
+           <string>19</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButtonShop_4">
+         <widget class="QPushButton" name="pushButtonShop_24">
           <property name="geometry">
            <rect>
             <x>100</x>
@@ -877,10 +883,10 @@ background:rgb(0, 255, 127)
            <string notr="true">background:rgb(0, 255, 127)</string>
           </property>
           <property name="text">
-           <string>03</string>
+           <string>24</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButtonShop_6">
+         <widget class="QPushButton" name="pushButtonShop_23">
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -893,10 +899,10 @@ background:rgb(0, 255, 127)
            <string notr="true">background:rgb(255, 0, 4);</string>
           </property>
           <property name="text">
-           <string>05</string>
+           <string>23</string>
           </property>
          </widget>
-         <widget class="QPushButton" name="pushButtonShop_8">
+         <widget class="QPushButton" name="pushButtonShop_20">
           <property name="geometry">
            <rect>
             <x>160</x>
@@ -909,7 +915,7 @@ background:rgb(0, 255, 127)
            <string notr="true">background:rgb(255, 0, 4);</string>
           </property>
           <property name="text">
-           <string>07</string>
+           <string>20</string>
           </property>
          </widget>
         </widget>
@@ -980,7 +986,8 @@ background:rgb(0, 255, 127)
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background:transparent</string>
+        <string notr="true">background:transparent;
+font-size:16px;</string>
        </property>
        <property name="text">
         <string>姓名：</string>
@@ -996,7 +1003,8 @@ background:rgb(0, 255, 127)
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background:transparent</string>
+        <string notr="true">background:transparent;
+font-size:16px;</string>
        </property>
        <property name="text">
         <string>租借用途：</string>
@@ -1012,7 +1020,8 @@ background:rgb(0, 255, 127)
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background:transparent</string>
+        <string notr="true">background:transparent;
+font-size:16px;</string>
        </property>
        <property name="text">
         <string>联系方式：</string>
@@ -1028,7 +1037,8 @@ background:rgb(0, 255, 127)
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">background:transparent</string>
+        <string notr="true">background:transparent;
+font-size:16px;</string>
        </property>
        <property name="text">
         <string>租用时间：</string>
@@ -1092,8 +1102,42 @@ background:rgb(0, 255, 127)
          <height>23</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">
+font-size:16px;</string>
+       </property>
        <property name="text">
         <string>立即申请</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>60</y>
+         <width>50</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:transparent;
+font-size:16px;</string>
+       </property>
+       <property name="text">
+        <string>商铺号：</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="shopName_2">
+       <property name="geometry">
+        <rect>
+         <x>120</x>
+         <y>60</y>
+         <width>120</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background:rgb(206, 206, 206)</string>
        </property>
       </widget>
      </widget>
@@ -1112,7 +1156,7 @@ background:rgb(0, 255, 127)
 	background:white;
  border-top-left-radius:15px;
 	border-top-right-radius:15px;
-font-size:14px
+font-size:16px;
 }
 </string>
       </property>
@@ -1151,12 +1195,12 @@ font-size:14px
         </property>
        </widget>
       </widget>
-      <widget class="QLabel" name="areaCovered">
+      <widget class="QLabel" name="areaCoveredLalel">
        <property name="geometry">
         <rect>
-         <x>130</x>
+         <x>50</x>
          <y>60</y>
-         <width>111</width>
+         <width>81</width>
          <height>20</height>
         </rect>
        </property>
@@ -1164,12 +1208,12 @@ font-size:14px
         <string>占地面积：</string>
        </property>
       </widget>
-      <widget class="QLabel" name="annualRent">
+      <widget class="QLabel" name="annualRentLabel">
        <property name="geometry">
         <rect>
-         <x>130</x>
+         <x>50</x>
          <y>90</y>
-         <width>111</width>
+         <width>61</width>
          <height>20</height>
         </rect>
        </property>
@@ -1177,12 +1221,12 @@ font-size:14px
         <string>年租金：</string>
        </property>
       </widget>
-      <widget class="QLabel" name="deposit">
+      <widget class="QLabel" name="depositLabel">
        <property name="geometry">
         <rect>
-         <x>240</x>
+         <x>230</x>
          <y>60</y>
-         <width>100</width>
+         <width>61</width>
          <height>20</height>
         </rect>
        </property>
@@ -1190,12 +1234,12 @@ font-size:14px
         <string>保证金：</string>
        </property>
       </widget>
-      <widget class="QLabel" name="propertyFee">
+      <widget class="QLabel" name="propertyFeeLabel">
        <property name="geometry">
         <rect>
-         <x>240</x>
+         <x>230</x>
          <y>90</y>
-         <width>120</width>
+         <width>61</width>
          <height>20</height>
         </rect>
        </property>
@@ -1203,30 +1247,56 @@ font-size:14px
         <string>物业费：</string>
        </property>
       </widget>
-      <widget class="QLabel" name="shopNumber">
+      <widget class="QLabel" name="areaCovered">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>140</x>
          <y>60</y>
-         <width>91</width>
+         <width>54</width>
          <height>20</height>
         </rect>
        </property>
        <property name="text">
-        <string>店铺号：</string>
+        <string/>
        </property>
       </widget>
-      <widget class="QLabel" name="rentState">
+      <widget class="QLabel" name="annualRent">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>140</x>
          <y>90</y>
-         <width>91</width>
+         <width>54</width>
          <height>20</height>
         </rect>
        </property>
        <property name="text">
-        <string>租借状态：</string>
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="deposit">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>60</y>
+         <width>54</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>90</y>
+         <width>54</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
        </property>
       </widget>
      </widget>
@@ -1255,12 +1325,13 @@ border-radius:10px;
        <rect>
         <x>170</x>
         <y>105</y>
-        <width>51</width>
+        <width>61</width>
         <height>20</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background:transparent;</string>
+       <string notr="true">background:transparent;
+font-size:13px;</string>
       </property>
       <property name="text">
        <string>已租店铺</string>
@@ -1269,14 +1340,15 @@ border-radius:10px;
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>240</x>
+        <x>250</x>
         <y>105</y>
-        <width>50</width>
+        <width>61</width>
         <height>20</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background:transparent;</string>
+       <string notr="true">background:transparent;
+font-size:13px;</string>
       </property>
       <property name="text">
        <string>可租店铺</string>
@@ -1285,7 +1357,7 @@ border-radius:10px;
      <widget class="QPushButton" name="pushButton_15">
       <property name="geometry">
        <rect>
-        <x>220</x>
+        <x>230</x>
         <y>105</y>
         <width>20</width>
         <height>20</height>
@@ -1351,12 +1423,12 @@ background:transparent;</string>
        <rect>
         <x>320</x>
         <y>320</y>
-        <width>54</width>
-        <height>12</height>
+        <width>41</width>
+        <height>16</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-size:18px;
+       <string notr="true">font-size:20px;
 background:transparent;</string>
       </property>
       <property name="text">
@@ -1373,11 +1445,37 @@ background:transparent;</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-size:18px;
+       <string notr="true">font-size:20px;
 background:transparent;</string>
       </property>
       <property name="text">
        <string>当前楼层：</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>61</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>店铺情况</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_3">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>50</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>申请查询</string>
       </property>
      </widget>
     </widget>
@@ -1387,12 +1485,13 @@ background:transparent;</string>
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>101</width>
+        <width>90</width>
         <height>31</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-size:22px</string>
+       <string notr="true">
+font-size:22px;</string>
       </property>
       <property name="text">
        <string>我的店铺</string>
@@ -1696,11 +1795,15 @@ background:transparent;
      <widget class="QLabel" name="myInformation">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>20</y>
-        <width>54</width>
-        <height>12</height>
+        <x>10</x>
+        <y>10</y>
+        <width>90</width>
+        <height>30</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+font-size:22px;</string>
       </property>
       <property name="text">
        <string>我的信息</string>
@@ -1711,15 +1814,121 @@ background:transparent;
      <widget class="QLabel" name="myContract">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>20</y>
-        <width>54</width>
-        <height>12</height>
+        <x>10</x>
+        <y>10</y>
+        <width>90</width>
+        <height>30</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+font-size:22px;</string>
       </property>
       <property name="text">
        <string>我的合同</string>
       </property>
+     </widget>
+     <widget class="QWidget" name="ContractWidget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>400</width>
+        <height>500</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#ContractWidget
+{
+	background:white;
+ border-top-left-radius:15px;
+	border-top-right-radius:15px;
+}
+
+
+QLabel
+{	
+font-size:16px;
+}</string>
+      </property>
+      <widget class="QTextEdit" name="contractInf">
+       <property name="geometry">
+        <rect>
+         <x>19</x>
+         <y>80</y>
+         <width>360</width>
+         <height>160</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>40</y>
+         <width>81</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>合同内容：</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>250</y>
+         <width>81</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>签订年份:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="rentTime">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>250</y>
+         <width>54</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>290</y>
+         <width>71</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>甲方签字</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>330</y>
+         <width>71</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>乙方签字</string>
+       </property>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="ApplyForSublease">
