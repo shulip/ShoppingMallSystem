@@ -31,6 +31,26 @@ class Design_CEOWindow(QWidget,Ui_CEOWindow):
         self.m_flag = False
         self.setCursor(QCursor(Qt.ArrowCursor))
 
+    def check_contract(self, index):
+        self.contractConfirm.setDisabled(False)
+        self.auditConfirmation.setDisabled(False)
+        self.ceoSignature.setDisabled(True)
+        self.signatureConfirmation.setDisabled(True)
+
+    def sign_contract(self, index):
+        self.contractConfirm.setDisabled(True)
+        self.auditConfirmation.setDisabled(True)
+        self.ceoSignature.setDisabled(False)
+        self.signatureConfirmation.setDisabled(False)
+
+    def combox_changed(self, index):
+        self.label_12.setText(self.comboBox.itemText(index))
+
+        if index==0:
+            self.stackedWidgetShop.setCurrentIndex(0)
+        elif index==1:
+            self.stackedWidgetShop.setCurrentIndex(1)
+
     def __init__(self, parent=None):
         super(Design_CEOWindow, self).__init__(parent)
         self.setupUi(self)
@@ -41,7 +61,19 @@ class Design_CEOWindow(QWidget,Ui_CEOWindow):
         self.btnMyShop.clicked.connect(lambda : self.stackedWidget.setCurrentIndex(1))
         self.btnInf.clicked.connect(lambda : self.stackedWidget.setCurrentIndex(2))
         self.stackedWidget.setCurrentIndex(0)
+        self.contractConfirm.setDisabled(True)
+        self.auditConfirmation.setDisabled(True)
+        self.ceoSignature.setDisabled(True)
+        self.signatureConfirmation.setDisabled(True)
 
+        self.residualAudit.currentIndexChanged.connect(lambda index:self.check_contract(index))
+        self.quantityAudited.currentIndexChanged.connect(lambda index:self.sign_contract(index))
+
+        # 申请进场
+        self.comboBox.addItem("1 楼")
+        self.comboBox.addItem("2 楼")
+        self.comboBox.currentIndexChanged.connect(lambda x: self.combox_changed(x))
+        self.combox_changed(0)
 
 
 if __name__ == '__main__':
