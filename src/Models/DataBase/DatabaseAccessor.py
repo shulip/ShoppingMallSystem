@@ -41,6 +41,16 @@ class DatabaseAccessor(object):
         self.create_shop_table()
         self.create_application_table()
         self.connect.commit()
+        self.clear_empty_form()
+
+    def clear_empty_form(self):
+        self.cursor.execute('DELETE FROM applicationTable  WHERE userId = ""')
+        self.cursor.execute('DELETE FROM contractInfoTable WHERE relevant_user_id = ""')
+        self.cursor.execute('DELETE FROM receivableAmounts WHERE PayerId = ""')
+        self.cursor.execute('DELETE FROM receipts WHERE PayerId = ""')
+        self.cursor.execute('DELETE FROM shops WHERE shopNumber = ""')
+        self.cursor.execute('DELETE FROM users WHERE user_id = ""')
+        self.connect.commit()
 
 
     # user table
