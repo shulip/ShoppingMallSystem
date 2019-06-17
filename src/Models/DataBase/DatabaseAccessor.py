@@ -507,6 +507,7 @@ testAccessor = DatabaseAccessor()
 #test = testAccessor.get_receivable_info_by_id(1)
 
 testAccessor.add_new_contract_info(100,100,"name","186","info",99)
+
 #testAccessor.add_new_receipt_info(100,111,222,333,444)
 #testAccessor.add_new_receivable_amount_info(100,11,22,33,44)
 
@@ -548,14 +549,14 @@ test = testAccessor.cursor.fetchall()
 for info in test:
     print(info)
 
-testAccessor.cursor.execute('DELETE FROM contractInfoTable WHERE relevant_user_id = 100')
-testAccessor.connect.commit()
-testAccessor.cursor.execute('DELETE FROM receivableAmounts WHERE PayerId = 100')
-testAccessor.connect.commit()
-testAccessor.cursor.execute('DELETE FROM receipts WHERE PayerId = 100')
-testAccessor.connect.commit()
-testAccessor.cursor.execute('DELETE FROM applicationTable WHERE shopIndex >= 100')
-testAccessor.connect.commit()
+#testAccessor.cursor.execute('DELETE FROM contractInfoTable WHERE relevant_user_id = 100')
+#testAccessor.connect.commit()
+#testAccessor.cursor.execute('DELETE FROM receivableAmounts WHERE PayerId = 100')
+#testAccessor.connect.commit()
+#testAccessor.cursor.execute('DELETE FROM receipts WHERE PayerId = 100')
+#testAccessor.connect.commit()
+#testAccessor.cursor.execute('DELETE FROM applicationTable WHERE shopIndex >= 100')
+#testAccessor.connect.commit()
 
 
 
