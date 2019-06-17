@@ -245,7 +245,7 @@ class DatabaseAccessor(object):
     def create_application_table(self):
         print("创建申请信息表")
         self.cursor.execute('CREATE TABLE IF NOT EXISTS '
-                            'applications('
+                            'applicationTable('
                             'userId INTEGER,'
                             'shopIndex INTEGER, '
                             'userName TEXT, '
@@ -255,7 +255,7 @@ class DatabaseAccessor(object):
 
     def add_new_application_info(self, userId, shopIndex, userName, telenumber, rentTime, rentUsage):
         print("添加申请：")
-        self.cursor.execute('INSERT INTO applications VALUES (?, ?, ?, ?, ?, ?)',
+        self.cursor.execute('INSERT INTO applicationTable VALUES (?, ?, ?, ?, ?, ?)',
                             (userId, shopIndex, userName, telenumber, rentTime, rentUsage))
         self.connect.commit()
 
@@ -264,7 +264,7 @@ class DatabaseAccessor(object):
         获取所有申请信息
         :return: 一个装者字典的 list ，访问格式   dicName["shopIndex"]
         """
-        self.cursor.execute('SELECT * FROM applications ')
+        self.cursor.execute('SELECT * FROM applicationTable ')
         apps = self.cursor.fetchall()
         appInfoList=[]
         for app in apps:
@@ -393,7 +393,7 @@ class DatabaseAccessor(object):
         """
         print("创建合同信息表")
         self.cursor.execute('CREATE TABLE IF NOT EXISTS '
-                            'contractInfos('
+                            'contractInfoTable('
                             'relevant_user_id INTEGER,'
                             'information TEXT, '
                             'status TEXT, '
@@ -409,7 +409,7 @@ class DatabaseAccessor(object):
                               rentTimeManager):
 
         print("添加合同信息")
-        self.cursor.execute('INSERT INTO contractInfos VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        self.cursor.execute('INSERT INTO contractInfoTable VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
                             (user_id, contractInformation, 0, rentTimeManager, shopIndex, userName, userTelContract, 0,
                              0, 0))
         self.connect.commit()
@@ -420,8 +420,9 @@ class DatabaseAccessor(object):
         :param user_id:
         :return:
         """
-        self.cursor.execute('SELECT * FROM contractInfos WHERE relevant_user_id = ?',
-                            str(user_id))
+        self.cursor.execute('SELECT * FROM contractInfoTable WHERE relevant_user_id = ?',
+                            (str(user_id),))
+
         contract_data = self.cursor.fetchall()
         user_info = {}
         user_info["contractInfo"] = contract_data[0][1]
@@ -440,42 +441,43 @@ class DatabaseAccessor(object):
     # set contract
 
     def set_contract_ceosign_by_id(self, user_id, ceosign):
-        self.cursor.execute('UPDATE contractInfos SET ceoSign = ? WHERE relevant_user_id = ?',
+        self.cursor.execute('UPDATE contractInfoTable SET ceoSign = ? WHERE relevant_user_id = ?',
                             (str(ceosign), str(user_id)))
         self.connect.commit()
 
     def set_contract_ceoaffirm_by_id(self, user_id, ceoaffirm):
-        self.cursor.execute('UPDATE contractInfos SET ceoAffirm = ? WHERE relevant_user_id = ?',
+        self.cursor.execute('UPDATE contractInfoTable SET ceoAffirm = ? WHERE relevant_user_id = ?',
                             (str(ceoaffirm), str(user_id)))
         self.connect.commit()
 
     def set_contract_information_by_id(self, user_id, text):
-        self.cursor.execute('UPDATE  contractInfos SET information = ? WHERE relevant_user_id = ? ',
+        self.cursor.execute('UPDATE  contractInfoTable SET information = ? WHERE relevant_user_id = ? ',
                             (str(text), str(user_id)))
         self.connect.commit()
 
     def set_contract_status_by_id(self, user_id, status):
-        self.cursor.execute('UPDATE contractInfos SET status = ? WHERE relevant_user_id = ?',
+        self.cursor.execute('UPDATE contractInfoTable SET status = ? WHERE relevant_user_id = ?',
                             (str(status), str(user_id)))
         self.connect.commit()
 
     def set_contract_year_by_id(self, user_id, year):
-        self.cursor.execute('UPDATE contractInfos SET _year = ? WHERE relevant_user_id = ?',
+        self.cursor.execute('UPDATE contractInfoTable SET _year = ? WHERE relevant_user_id = ?',
                             (str(year), str(user_id)))
         self.connect.commit()
 
     def set_contract_shopIndex_by_id(self, user_id, shopIndex):
-        self.cursor.execute('UPDATE contractInfos SET shopIndex = ? WHERE relevant_user_id = ?',
+        self.cursor.execute('UPDATE contractInfoTable SET shopIndex = ? WHERE relevant_user_id = ?',
                             (str(shopIndex), str(user_id)))
         self.connect.commit()
 
     def set_contract_username_by_id(self, user_id, userName):
-        self.cursor.execute('UPDATE contractInfos SET userName = ? WHERE relevant_user_id = ?',
+        self.cursor.execute('UPDATE contractInfoTable SET userName = ? WHERE relevant_user_id = ?',
                             (str(userName), str(user_id)))
         self.connect.commit()
 
     def set_contract_usertelcontract_by_id(self, user_id, userTelContract):
-        self.cursor.execute('UPDATE contractInfos SET userTelContract = ? WHERE relevant_user_id = ?',
+
+        self.cursor.execute('UPDATE contractInfoTable SET userTelContract = ? WHERE relevant_user_id = ?',
                             (str(userTelContract), str(user_id)))
         self.connect.commit()
 
@@ -486,7 +488,7 @@ class DatabaseAccessor(object):
         :param proprietorsign: 0 - 不确认，1 - 确认
         :return:
         """
-        self.cursor.execute('UPDATE contractInfos SET proprietorSign = ? WHERE relevant_user_id = ?',
+        self.cursor.execute('UPDATE contractInfoTable SET proprietorSign = ? WHERE relevant_user_id = ?',
                             (str(proprietorsign), str(user_id)))
         self.connect.commit()
 
@@ -504,7 +506,7 @@ testAccessor = DatabaseAccessor()
 #all_shop_info = testAccessor.get_all_shop_infos()
 #test = testAccessor.get_receivable_info_by_id(1)
 
-#testAccessor.add_new_contract_info(100, "没事", "jb状态", 2019)
+testAccessor.add_new_contract_info(100,100,"name","186","info",99)
 #testAccessor.add_new_receipt_info(100,111,222,333,444)
 #testAccessor.add_new_receivable_amount_info(100,11,22,33,44)
 
@@ -513,7 +515,9 @@ testAccessor.add_new_application_info(13,101,"name2","187",100,"没用")
 testAccessor.add_new_application_info(14,102,"name3","188",100,"没用")
 
 print("改之前：")
+print(testAccessor.get_contract_info_by_id(100))
 test=testAccessor.get_all_application_info()
+
 for info in test:
     print(info["ID"])
 
@@ -539,18 +543,18 @@ for info in test:
 
 
 print("改之后")
-testAccessor.cursor.execute('SELECT * FROM applications')
+testAccessor.cursor.execute('SELECT * FROM applicationTable')
 test = testAccessor.cursor.fetchall()
 for info in test:
     print(info)
 
-testAccessor.cursor.execute('DELETE FROM contractInfos WHERE relevant_user_id = 100')
+testAccessor.cursor.execute('DELETE FROM contractInfoTable WHERE relevant_user_id = 100')
 testAccessor.connect.commit()
 testAccessor.cursor.execute('DELETE FROM receivableAmounts WHERE PayerId = 100')
 testAccessor.connect.commit()
 testAccessor.cursor.execute('DELETE FROM receipts WHERE PayerId = 100')
 testAccessor.connect.commit()
-testAccessor.cursor.execute('DELETE FROM applications WHERE shopIndex >= 100')
+testAccessor.cursor.execute('DELETE FROM applicationTable WHERE shopIndex >= 100')
 testAccessor.connect.commit()
 
 
