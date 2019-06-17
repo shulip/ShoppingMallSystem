@@ -267,7 +267,7 @@ border-radius:10px;
 }</string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="AllShop">
      <widget class="QLabel" name="allShop">

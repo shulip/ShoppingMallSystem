@@ -12,7 +12,7 @@ class Ui_ManagerWindow(object):
     def setupUi(self, ManagerWindow):
         ManagerWindow.setObjectName("ManagerWindow")
         ManagerWindow.resize(1092, 730)
-        ManagerWindow.setStyleSheet("font: 10pt \"黑体\";")
+        ManagerWindow.setStyleSheet("font: 9pt \"华文中宋\";")
         self.frame = QtWidgets.QFrame(ManagerWindow)
         self.frame.setGeometry(QtCore.QRect(20, 20, 1000, 600))
         self.frame.setStyleSheet("font: 9pt \"黑体\";")
@@ -23,7 +23,7 @@ class Ui_ManagerWindow(object):
         self.widgetMenu.setGeometry(QtCore.QRect(0, 0, 1001, 30))
         self.widgetMenu.setStyleSheet("QWidget\n"
 "{\n"
-"background:rgb(237, 251, 255)\n"
+"background:white;\n"
 "}")
         self.widgetMenu.setObjectName("widgetMenu")
         self.btnMenu_Close = QtWidgets.QPushButton(self.widgetMenu)
@@ -81,22 +81,6 @@ class Ui_ManagerWindow(object):
         self.btnMenu_Min.setText("")
         self.btnMenu_Min.setIconSize(QtCore.QSize(30, 30))
         self.btnMenu_Min.setObjectName("btnMenu_Min")
-        self.btnMenu_Min_2 = QtWidgets.QPushButton(self.widgetMenu)
-        self.btnMenu_Min_2.setGeometry(QtCore.QRect(0, 0, 30, 30))
-        self.btnMenu_Min_2.setStyleSheet("\n"
-"QPushButton\n"
-"{\n"
-"background:transparent;\n"
-"    \n"
-"    image: url(:/icon/5.png);\n"
-"}")
-        self.btnMenu_Min_2.setText("")
-        self.btnMenu_Min_2.setIconSize(QtCore.QSize(30, 30))
-        self.btnMenu_Min_2.setObjectName("btnMenu_Min_2")
-        self.label = QtWidgets.QLabel(self.widgetMenu)
-        self.label.setGeometry(QtCore.QRect(40, 0, 131, 31))
-        self.label.setStyleSheet("font-size:20px")
-        self.label.setObjectName("label")
         self.widgetLeft = QtWidgets.QWidget(self.frame)
         self.widgetLeft.setGeometry(QtCore.QRect(0, 30, 150, 571))
         self.widgetLeft.setObjectName("widgetLeft")
@@ -111,14 +95,14 @@ class Ui_ManagerWindow(object):
 "}\n"
 "QWidget\n"
 "{\n"
-"background:rgb(67, 66, 58)\n"
+"background:#333645;\n"
 "}\n"
 "\n"
 "QToolButton:hover\n"
 "{\n"
 "    color:rgb(255, 234, 246);\n"
-"    borderr-radius:10px;\n"
-"    background:#07575B;\n"
+"border-radius:10px;\n"
+"    background:#39c0c3;\n"
 "}\n"
 "\n"
 "\n"
@@ -129,7 +113,8 @@ class Ui_ManagerWindow(object):
         self.btnApprochHandling.setObjectName("btnApprochHandling")
         self.btnAllShop = QtWidgets.QToolButton(self.widgetBtn)
         self.btnAllShop.setGeometry(QtCore.QRect(0, 0, 150, 50))
-        self.btnAllShop.setStyleSheet("")
+        self.btnAllShop.setStyleSheet(" border-top-left-radius:0px;\n"
+"    border-top-right-radius:0px;")
         self.btnAllShop.setObjectName("btnAllShop")
         self.btnInf = QtWidgets.QToolButton(self.widgetBtn)
         self.btnInf.setGeometry(QtCore.QRect(0, 100, 150, 50))
@@ -140,17 +125,17 @@ class Ui_ManagerWindow(object):
         self.stackedWidget = QtWidgets.QStackedWidget(self.frame)
         self.stackedWidget.setGeometry(QtCore.QRect(150, 30, 851, 571))
         self.stackedWidget.setStyleSheet("QWidget{\n"
-"background:rgb(234, 234, 234)\n"
+"    background:rgb(243,244,248);\n"
 "}")
         self.stackedWidget.setObjectName("stackedWidget")
         self.AllShop = QtWidgets.QWidget()
         self.AllShop.setObjectName("AllShop")
         self.allShop = QtWidgets.QLabel(self.AllShop)
-        self.allShop.setGeometry(QtCore.QRect(10, 10, 91, 30))
+        self.allShop.setGeometry(QtCore.QRect(15, 15, 91, 30))
         self.allShop.setStyleSheet("font-size:22px")
         self.allShop.setObjectName("allShop")
         self.stackedWidgetShop = QtWidgets.QStackedWidget(self.AllShop)
-        self.stackedWidgetShop.setGeometry(QtCore.QRect(0, 40, 851, 531))
+        self.stackedWidgetShop.setGeometry(QtCore.QRect(0, 70, 851, 530))
         self.stackedWidgetShop.setStyleSheet("\n"
 "#_1f\n"
 "{\n"
@@ -170,94 +155,143 @@ class Ui_ManagerWindow(object):
         self._1f = QtWidgets.QWidget()
         self._1f.setObjectName("_1f")
         self.firstFloorShop = QtWidgets.QWidget(self._1f)
-        self.firstFloorShop.setGeometry(QtCore.QRect(20, 50, 401, 471))
+        self.firstFloorShop.setGeometry(QtCore.QRect(20, 20, 401, 471))
         self.firstFloorShop.setStyleSheet("#firstFloorShop\n"
 "{\n"
-"    background:white;\n"
+"        background:white;\n"
 " border-top-left-radius:15px;\n"
 "    border-top-right-radius:15px;\n"
+" border-bottom-left-radius:10px;\n"
+"    border-bottom-right-radius:10px;\n"
 "}\n"
 "")
         self.firstFloorShop.setObjectName("firstFloorShop")
         self.firstFloorInf = QtWidgets.QWidget(self.firstFloorShop)
-        self.firstFloorInf.setGeometry(QtCore.QRect(0, 0, 401, 51))
-        self.firstFloorInf.setStyleSheet("#firstFloorInf\n"
+        self.firstFloorInf.setGeometry(QtCore.QRect(0, 0, 401, 40))
+        self.firstFloorInf.setStyleSheet("QWidget\n"
 "{\n"
-"    background:rgb(127, 127, 127);\n"
+"    background:rgb(165, 200, 255);\n"
 " border-top-left-radius:15px;\n"
 "    border-top-right-radius:15px;\n"
 "}\n"
 "")
         self.firstFloorInf.setObjectName("firstFloorInf")
         self.widget_2 = QtWidgets.QWidget(self.firstFloorShop)
-        self.widget_2.setGeometry(QtCore.QRect(10, 60, 151, 401))
-        self.widget_2.setStyleSheet("background: rgb(255, 201, 125);")
+        self.widget_2.setGeometry(QtCore.QRect(10, 60, 150, 400))
+        self.widget_2.setStyleSheet("background: rgb(255, 255, 255);")
         self.widget_2.setObjectName("widget_2")
         self.pushButtonShop_12 = QtWidgets.QPushButton(self.widget_2)
-        self.pushButtonShop_12.setGeometry(QtCore.QRect(95, 9, 45, 351))
-        self.pushButtonShop_12.setStyleSheet("background:rgb(255, 0, 4);")
+        self.pushButtonShop_12.setGeometry(QtCore.QRect(95, 9, 45, 380))
+        self.pushButtonShop_12.setStyleSheet("QPushButton\n"
+"{\n"
+"background:rgb(171, 146,196);\n"
+"border-radius:10px;\n"
+"}")
         self.pushButtonShop_12.setObjectName("pushButtonShop_12")
         self.pushButtonShop_11 = QtWidgets.QPushButton(self.widget_2)
-        self.pushButtonShop_11.setGeometry(QtCore.QRect(10, 220, 70, 140))
-        self.pushButtonShop_11.setStyleSheet("background:rgb(255, 0, 4);")
+        self.pushButtonShop_11.setGeometry(QtCore.QRect(10, 220, 70, 170))
+        self.pushButtonShop_11.setStyleSheet("QPushButton\n"
+"{\n"
+"background:rgb(171, 146,196);\n"
+"border-radius:10px;\n"
+"}")
         self.pushButtonShop_11.setObjectName("pushButtonShop_11")
         self.pushButtonShop_01 = QtWidgets.QPushButton(self.widget_2)
         self.pushButtonShop_01.setGeometry(QtCore.QRect(10, 10, 70, 70))
-        self.pushButtonShop_01.setStyleSheet("background:rgb(255, 0, 4);")
+        self.pushButtonShop_01.setStyleSheet("QPushButton\n"
+"{\n"
+"background:rgb(171, 146,196);\n"
+"border-radius:10px;\n"
+"}")
         self.pushButtonShop_01.setObjectName("pushButtonShop_01")
         self.pushButtonShop_04 = QtWidgets.QPushButton(self.widget_2)
         self.pushButtonShop_04.setGeometry(QtCore.QRect(10, 90, 70, 45))
-        self.pushButtonShop_04.setStyleSheet("background:rgb(255, 0, 4);")
+        self.pushButtonShop_04.setStyleSheet("QPushButton\n"
+"{\n"
+"background:rgb(171, 146,196);\n"
+"border-radius:10px;\n"
+"}")
         self.pushButtonShop_04.setObjectName("pushButtonShop_04")
         self.pushButtonShop_08 = QtWidgets.QPushButton(self.widget_2)
         self.pushButtonShop_08.setGeometry(QtCore.QRect(10, 150, 70, 41))
-        self.pushButtonShop_08.setStyleSheet("background:rgb(255, 0, 4);")
+        self.pushButtonShop_08.setStyleSheet("QPushButton\n"
+"{\n"
+"background:rgb(171, 146,196);\n"
+"border-radius:10px;\n"
+"}")
         self.pushButtonShop_08.setObjectName("pushButtonShop_08")
         self.widget_3 = QtWidgets.QWidget(self.firstFloorShop)
-        self.widget_3.setGeometry(QtCore.QRect(160, 300, 231, 161))
-        self.widget_3.setStyleSheet("background: rgb(255, 201, 125);")
+        self.widget_3.setGeometry(QtCore.QRect(160, 329, 230, 131))
+        self.widget_3.setStyleSheet("background: rgb(255, 255, 255);")
         self.widget_3.setObjectName("widget_3")
         self.pushButtonShop_09 = QtWidgets.QPushButton(self.widget_3)
         self.pushButtonShop_09.setGeometry(QtCore.QRect(10, 10, 210, 40))
-        self.pushButtonShop_09.setStyleSheet("background:rgb(0, 255, 127)")
+        self.pushButtonShop_09.setStyleSheet("QPushButton\n"
+"{\n"
+"background:rgb(60,192,192);\n"
+"border-radius:10px;\n"
+"}")
         self.pushButtonShop_09.setObjectName("pushButtonShop_09")
         self.pushButtonShop_10 = QtWidgets.QPushButton(self.widget_3)
-        self.pushButtonShop_10.setGeometry(QtCore.QRect(10, 70, 210, 40))
-        self.pushButtonShop_10.setStyleSheet("background:rgb(255, 0, 4);")
+        self.pushButtonShop_10.setGeometry(QtCore.QRect(10, 80, 210, 40))
+        self.pushButtonShop_10.setStyleSheet("QPushButton\n"
+"{\n"
+"background:rgb(171, 146,196);\n"
+"border-radius:10px;\n"
+"}")
         self.pushButtonShop_10.setObjectName("pushButtonShop_10")
         self.widget_4 = QtWidgets.QWidget(self.firstFloorShop)
         self.widget_4.setGeometry(QtCore.QRect(160, 60, 231, 141))
-        self.widget_4.setStyleSheet("background: rgb(255, 201, 125);")
+        self.widget_4.setStyleSheet("background: rgb(255, 255, 255);")
         self.widget_4.setObjectName("widget_4")
         self.pushButtonShop_02 = QtWidgets.QPushButton(self.widget_4)
         self.pushButtonShop_02.setGeometry(QtCore.QRect(5, 10, 91, 41))
-        self.pushButtonShop_02.setStyleSheet("\n"
-"QPushButton\n"
+        self.pushButtonShop_02.setStyleSheet("QPushButton\n"
 "{\n"
-"background:rgb(0, 255, 127)\n"
+"background:rgb(60,192,192);\n"
+"border-radius:10px;\n"
 "}")
         self.pushButtonShop_02.setObjectName("pushButtonShop_02")
         self.pushButtonShop_06 = QtWidgets.QPushButton(self.widget_4)
         self.pushButtonShop_06.setGeometry(QtCore.QRect(75, 85, 81, 40))
-        self.pushButtonShop_06.setStyleSheet("background:rgb(255, 0, 4);")
+        self.pushButtonShop_06.setStyleSheet("QPushButton\n"
+"{\n"
+"background:rgb(171, 146,196);\n"
+"border-radius:10px;\n"
+"}")
         self.pushButtonShop_06.setObjectName("pushButtonShop_06")
         self.pushButtonShop_03 = QtWidgets.QPushButton(self.widget_4)
         self.pushButtonShop_03.setGeometry(QtCore.QRect(100, 10, 125, 40))
-        self.pushButtonShop_03.setStyleSheet("background:rgb(0, 255, 127)")
+        self.pushButtonShop_03.setStyleSheet("QPushButton\n"
+"{\n"
+"background:rgb(60,192,192);\n"
+"border-radius:10px;\n"
+"}")
         self.pushButtonShop_03.setObjectName("pushButtonShop_03")
         self.pushButtonShop_05 = QtWidgets.QPushButton(self.widget_4)
         self.pushButtonShop_05.setGeometry(QtCore.QRect(10, 85, 61, 40))
-        self.pushButtonShop_05.setStyleSheet("background:rgb(255, 0, 4);")
+        self.pushButtonShop_05.setStyleSheet("QPushButton\n"
+"{\n"
+"background:rgb(171, 146,196);\n"
+"border-radius:10px;\n"
+"}")
         self.pushButtonShop_05.setObjectName("pushButtonShop_05")
         self.pushButtonShop_07 = QtWidgets.QPushButton(self.widget_4)
         self.pushButtonShop_07.setGeometry(QtCore.QRect(160, 85, 65, 40))
-        self.pushButtonShop_07.setStyleSheet("background:rgb(255, 0, 4);")
+        self.pushButtonShop_07.setStyleSheet("QPushButton\n"
+"{\n"
+"background:rgb(171, 146,196);\n"
+"border-radius:10px;\n"
+"}")
         self.pushButtonShop_07.setObjectName("pushButtonShop_07")
+        self.widget_17 = QtWidgets.QWidget(self.widget_4)
+        self.widget_17.setGeometry(QtCore.QRect(0, 130, 221, 151))
+        self.widget_17.setObjectName("widget_17")
         self.stackedWidgetShop.addWidget(self._1f)
         self._2f = QtWidgets.QWidget()
         self._2f.setObjectName("_2f")
         self.secondFloorShop = QtWidgets.QWidget(self._2f)
-        self.secondFloorShop.setGeometry(QtCore.QRect(20, 50, 401, 471))
+        self.secondFloorShop.setGeometry(QtCore.QRect(20, 20, 401, 471))
         self.secondFloorShop.setStyleSheet("#secondFloorShop\n"
 "{\n"
 "    background:white;\n"
@@ -267,104 +301,164 @@ class Ui_ManagerWindow(object):
 "")
         self.secondFloorShop.setObjectName("secondFloorShop")
         self.widget_5 = QtWidgets.QWidget(self.secondFloorShop)
-        self.widget_5.setGeometry(QtCore.QRect(0, 0, 401, 51))
+        self.widget_5.setGeometry(QtCore.QRect(0, 0, 401, 41))
         self.widget_5.setStyleSheet("QWidget\n"
 "{\n"
-"    background:rgb(127, 127, 127);\n"
+"    background:rgb(165, 200, 255);\n"
 " border-top-left-radius:15px;\n"
 "    border-top-right-radius:15px;\n"
 "}\n"
 "")
         self.widget_5.setObjectName("widget_5")
         self.widget_6 = QtWidgets.QWidget(self.secondFloorShop)
-        self.widget_6.setGeometry(QtCore.QRect(10, 60, 151, 401))
-        self.widget_6.setStyleSheet("background: rgb(255, 201, 125);")
+        self.widget_6.setGeometry(QtCore.QRect(10, 60, 150, 400))
+        self.widget_6.setStyleSheet("background: rgb(255, 255, 255);\n"
+"\n"
+"border-radius:5px;")
         self.widget_6.setObjectName("widget_6")
         self.pushButtonShop_13 = QtWidgets.QPushButton(self.widget_6)
-        self.pushButtonShop_13.setGeometry(QtCore.QRect(95, 9, 45, 351))
-        self.pushButtonShop_13.setStyleSheet("background:rgb(255, 0, 4);")
+        self.pushButtonShop_13.setGeometry(QtCore.QRect(95, 9, 45, 381))
+        self.pushButtonShop_13.setStyleSheet("QPushButton\n"
+"{\n"
+"background:rgb(171, 146,196);\n"
+"border-radius:10px;\n"
+"}")
         self.pushButtonShop_13.setObjectName("pushButtonShop_13")
         self.pushButtonShop_14 = QtWidgets.QPushButton(self.widget_6)
-        self.pushButtonShop_14.setGeometry(QtCore.QRect(10, 220, 70, 140))
-        self.pushButtonShop_14.setStyleSheet("background:rgb(255, 0, 4);")
+        self.pushButtonShop_14.setGeometry(QtCore.QRect(10, 220, 70, 171))
+        self.pushButtonShop_14.setStyleSheet("QPushButton\n"
+"{\n"
+"background:rgb(171, 146,196);\n"
+"border-radius:10px;\n"
+"}")
         self.pushButtonShop_14.setObjectName("pushButtonShop_14")
         self.pushButtonShop_2 = QtWidgets.QPushButton(self.widget_6)
         self.pushButtonShop_2.setGeometry(QtCore.QRect(10, 10, 70, 70))
-        self.pushButtonShop_2.setStyleSheet("background:rgb(255, 0, 4);")
+        self.pushButtonShop_2.setStyleSheet("QPushButton\n"
+"{\n"
+"background:rgb(171, 146,196);\n"
+"border-radius:10px;\n"
+"}")
         self.pushButtonShop_2.setObjectName("pushButtonShop_2")
         self.pushButtonShop_5 = QtWidgets.QPushButton(self.widget_6)
         self.pushButtonShop_5.setGeometry(QtCore.QRect(10, 90, 70, 45))
-        self.pushButtonShop_5.setStyleSheet("background:rgb(255, 0, 4);")
+        self.pushButtonShop_5.setStyleSheet("QPushButton\n"
+"{\n"
+"background:rgb(171, 146,196);\n"
+"border-radius:10px;\n"
+"}")
         self.pushButtonShop_5.setObjectName("pushButtonShop_5")
         self.pushButtonShop_9 = QtWidgets.QPushButton(self.widget_6)
         self.pushButtonShop_9.setGeometry(QtCore.QRect(10, 150, 70, 41))
-        self.pushButtonShop_9.setStyleSheet("background:rgb(255, 0, 4);")
+        self.pushButtonShop_9.setStyleSheet("QPushButton\n"
+"{\n"
+"background:rgb(171, 146,196);\n"
+"border-radius:10px;\n"
+"}")
         self.pushButtonShop_9.setObjectName("pushButtonShop_9")
         self.widget_7 = QtWidgets.QWidget(self.secondFloorShop)
-        self.widget_7.setGeometry(QtCore.QRect(160, 300, 231, 161))
-        self.widget_7.setStyleSheet("background: rgb(255, 201, 125);")
+        self.widget_7.setGeometry(QtCore.QRect(160, 329, 231, 130))
+        self.widget_7.setStyleSheet("background: rgb(255, 255, 255);\n"
+"border-radius:5px;")
         self.widget_7.setObjectName("widget_7")
         self.pushButtonShop_15 = QtWidgets.QPushButton(self.widget_7)
         self.pushButtonShop_15.setGeometry(QtCore.QRect(10, 10, 210, 40))
-        self.pushButtonShop_15.setStyleSheet("background:rgb(0, 255, 127)")
+        self.pushButtonShop_15.setStyleSheet("QPushButton\n"
+"{\n"
+"background:rgb(60,192,192);\n"
+"border-radius:10px;\n"
+"}")
         self.pushButtonShop_15.setObjectName("pushButtonShop_15")
         self.pushButtonShop_16 = QtWidgets.QPushButton(self.widget_7)
-        self.pushButtonShop_16.setGeometry(QtCore.QRect(10, 70, 210, 40))
-        self.pushButtonShop_16.setStyleSheet("background:rgb(255, 0, 4);")
+        self.pushButtonShop_16.setGeometry(QtCore.QRect(10, 80, 210, 40))
+        self.pushButtonShop_16.setStyleSheet("QPushButton\n"
+"{\n"
+"background:rgb(171, 146,196);\n"
+"border-radius:10px;\n"
+"}")
         self.pushButtonShop_16.setObjectName("pushButtonShop_16")
         self.widget_8 = QtWidgets.QWidget(self.secondFloorShop)
         self.widget_8.setGeometry(QtCore.QRect(160, 60, 231, 141))
-        self.widget_8.setStyleSheet("background: rgb(255, 201, 125);")
+        self.widget_8.setStyleSheet("background: rgb(255, 255, 255);\n"
+"\n"
+"border-radius:5px;")
         self.widget_8.setObjectName("widget_8")
         self.pushButtonShop_3 = QtWidgets.QPushButton(self.widget_8)
         self.pushButtonShop_3.setGeometry(QtCore.QRect(5, 10, 91, 41))
-        self.pushButtonShop_3.setStyleSheet("\n"
-"QPushButton\n"
+        self.pushButtonShop_3.setStyleSheet("QPushButton\n"
 "{\n"
-"background:rgb(0, 255, 127)\n"
+"background:rgb(60,192,192);\n"
+"border-radius:10px;\n"
 "}")
         self.pushButtonShop_3.setObjectName("pushButtonShop_3")
         self.pushButtonShop_7 = QtWidgets.QPushButton(self.widget_8)
         self.pushButtonShop_7.setGeometry(QtCore.QRect(75, 85, 81, 40))
-        self.pushButtonShop_7.setStyleSheet("background:rgb(255, 0, 4);")
+        self.pushButtonShop_7.setStyleSheet("QPushButton\n"
+"{\n"
+"background:rgb(171, 146,196);\n"
+"border-radius:10px;\n"
+"}")
         self.pushButtonShop_7.setObjectName("pushButtonShop_7")
         self.pushButtonShop_4 = QtWidgets.QPushButton(self.widget_8)
         self.pushButtonShop_4.setGeometry(QtCore.QRect(100, 10, 125, 40))
-        self.pushButtonShop_4.setStyleSheet("background:rgb(0, 255, 127)")
+        self.pushButtonShop_4.setStyleSheet("QPushButton\n"
+"{\n"
+"background:rgb(60,192,192);\n"
+"border-radius:10px;\n"
+"}")
         self.pushButtonShop_4.setObjectName("pushButtonShop_4")
         self.pushButtonShop_6 = QtWidgets.QPushButton(self.widget_8)
         self.pushButtonShop_6.setGeometry(QtCore.QRect(10, 85, 61, 40))
-        self.pushButtonShop_6.setStyleSheet("background:rgb(255, 0, 4);")
+        self.pushButtonShop_6.setStyleSheet("QPushButton\n"
+"{\n"
+"background:rgb(171, 146,196);\n"
+"border-radius:10px;\n"
+"}")
         self.pushButtonShop_6.setObjectName("pushButtonShop_6")
         self.pushButtonShop_8 = QtWidgets.QPushButton(self.widget_8)
         self.pushButtonShop_8.setGeometry(QtCore.QRect(160, 85, 65, 40))
-        self.pushButtonShop_8.setStyleSheet("background:rgb(255, 0, 4);")
+        self.pushButtonShop_8.setStyleSheet("QPushButton\n"
+"{\n"
+"background:rgb(171, 146,196);\n"
+"border-radius:10px;\n"
+"}")
         self.pushButtonShop_8.setObjectName("pushButtonShop_8")
         self.stackedWidgetShop.addWidget(self._2f)
         self.contractInf = QtWidgets.QWidget(self.AllShop)
         self.contractInf.setGeometry(QtCore.QRect(440, 250, 380, 311))
         self.contractInf.setStyleSheet("#contractInf\n"
-"{\n"
-"    background:white;\n"
-"     border-top-left-radius:15px;\n"
-"    border-top-right-radius:15px;\n"
-"    font-size:14px\n"
 "\n"
+"{\n"
+"        background:white;\n"
+" border-top-left-radius:15px;\n"
+"    border-top-right-radius:15px;\n"
+" border-bottom-left-radius:10px;\n"
+"    border-bottom-right-radius:10px;\n"
 "}\n"
+"QLineEdit\n"
+"{\n"
+"  background:transparent;\n"
+"    padding-left:5px ;\n"
+"    padding-top:1px ;\n"
+"    border-bottom-left-radius:6px;\n"
+"    border-bottom-right-radius:6px;\n"
+"    border: 1px solid rgb(123 ,123 , 123);\n"
+"}\n"
+"\n"
 "")
         self.contractInf.setObjectName("contractInf")
         self.widget_13 = QtWidgets.QWidget(self.contractInf)
         self.widget_13.setGeometry(QtCore.QRect(0, 0, 380, 40))
         self.widget_13.setStyleSheet("QWidget\n"
 "{\n"
-"    background:rgb(127, 127, 127);\n"
+"    background:rgb(165, 200, 255);\n"
 " border-top-left-radius:15px;\n"
 "    border-top-right-radius:15px;\n"
 "}\n"
 "")
         self.widget_13.setObjectName("widget_13")
         self.label_15 = QtWidgets.QLabel(self.widget_13)
-        self.label_15.setGeometry(QtCore.QRect(150, 5, 101, 31))
+        self.label_15.setGeometry(QtCore.QRect(15, 15, 101, 20))
         self.label_15.setStyleSheet("font-size:22px")
         self.label_15.setObjectName("label_15")
         self.label_3 = QtWidgets.QLabel(self.contractInf)
@@ -404,14 +498,17 @@ class Ui_ManagerWindow(object):
         self.label_18.setObjectName("label_18")
         self.ceoConfirm = QtWidgets.QCheckBox(self.contractInf)
         self.ceoConfirm.setGeometry(QtCore.QRect(150, 150, 71, 16))
+        self.ceoConfirm.setStyleSheet("background:transparent;")
         self.ceoConfirm.setCheckable(False)
         self.ceoConfirm.setObjectName("ceoConfirm")
         self.userSignature = QtWidgets.QCheckBox(self.contractInf)
         self.userSignature.setGeometry(QtCore.QRect(110, 180, 71, 16))
+        self.userSignature.setStyleSheet("background:transparent;")
         self.userSignature.setCheckable(False)
         self.userSignature.setObjectName("userSignature")
         self.ceoSingature = QtWidgets.QCheckBox(self.contractInf)
         self.ceoSingature.setGeometry(QtCore.QRect(120, 210, 71, 16))
+        self.ceoSingature.setStyleSheet("background:transparent;")
         self.ceoSingature.setCheckable(False)
         self.ceoSingature.setObjectName("ceoSingature")
         self.rentTimeContract = QtWidgets.QLineEdit(self.contractInf)
@@ -428,16 +525,36 @@ class Ui_ManagerWindow(object):
         self.shopNumberContract.setObjectName("shopNumberContract")
         self.contractInfomation = QtWidgets.QTextEdit(self.contractInf)
         self.contractInfomation.setGeometry(QtCore.QRect(120, 230, 231, 71))
+        self.contractInfomation.setStyleSheet("QTextEdit\n"
+"{\n"
+" background:transparent;\n"
+"    padding-left:5px ;\n"
+"    padding-top:1px ;\n"
+"    border-bottom-left-radius:9px;\n"
+"    border-bottom-right-radius:9px;\n"
+"    border: 1px solid rgb(123 ,123 , 123);\n"
+"}")
         self.contractInfomation.setReadOnly(True)
         self.contractInfomation.setObjectName("contractInfomation")
         self.shopInfomation = QtWidgets.QWidget(self.AllShop)
         self.shopInfomation.setGeometry(QtCore.QRect(440, 90, 380, 151))
         self.shopInfomation.setStyleSheet("#shopInfomation\n"
 "{\n"
-"    background:white;\n"
+"        background:white;\n"
 " border-top-left-radius:15px;\n"
 "    border-top-right-radius:15px;\n"
+" border-bottom-left-radius:10px;\n"
+"    border-bottom-right-radius:10px;\n"
+"}\n"
 "\n"
+"QLineEdit\n"
+"{\n"
+"  background:transparent;\n"
+"    padding-left:5px ;\n"
+"    padding-top:1px ;\n"
+"    border-bottom-left-radius:6px;\n"
+"    border-bottom-right-radius:6px;\n"
+"    border: 1px solid rgb(123 ,123 , 123);\n"
 "}\n"
 "")
         self.shopInfomation.setObjectName("shopInfomation")
@@ -445,14 +562,15 @@ class Ui_ManagerWindow(object):
         self.widget_12.setGeometry(QtCore.QRect(0, 0, 380, 41))
         self.widget_12.setStyleSheet("QWidget\n"
 "{\n"
-"    background:rgb(127, 127, 127);\n"
+"\n"
+"    background:rgb(165, 200, 255);\n"
 " border-top-left-radius:15px;\n"
 "    border-top-right-radius:15px;\n"
 "}\n"
 "")
         self.widget_12.setObjectName("widget_12")
         self.label_14 = QtWidgets.QLabel(self.widget_12)
-        self.label_14.setGeometry(QtCore.QRect(150, 5, 101, 31))
+        self.label_14.setGeometry(QtCore.QRect(15, 15, 101, 20))
         self.label_14.setStyleSheet("font-size:22px")
         self.label_14.setObjectName("label_14")
         self.label_19 = QtWidgets.QLabel(self.shopInfomation)
@@ -480,6 +598,7 @@ class Ui_ManagerWindow(object):
         self.oweWaterFee.setStyleSheet("background:transparent;\n"
 "font-size:14px")
         self.oweWaterFee.setCheckable(False)
+        self.oweWaterFee.setChecked(False)
         self.oweWaterFee.setObjectName("oweWaterFee")
         self.checkBox_8 = QtWidgets.QCheckBox(self.shopInfomation)
         self.checkBox_8.setGeometry(QtCore.QRect(180, 80, 50, 20))
@@ -516,51 +635,51 @@ class Ui_ManagerWindow(object):
         self.guaranteePaid.setReadOnly(True)
         self.guaranteePaid.setObjectName("guaranteePaid")
         self.curFloor = QtWidgets.QLabel(self.AllShop)
-        self.curFloor.setGeometry(QtCore.QRect(320, 340, 54, 12))
+        self.curFloor.setGeometry(QtCore.QRect(320, 350, 54, 12))
         self.curFloor.setStyleSheet("font-size:18px;\n"
 "background:transparent;")
         self.curFloor.setObjectName("curFloor")
         self.label_7 = QtWidgets.QLabel(self.AllShop)
-        self.label_7.setGeometry(QtCore.QRect(30, 100, 141, 31))
+        self.label_7.setGeometry(QtCore.QRect(40, 100, 100, 30))
         self.label_7.setStyleSheet("font-size:22px;\n"
 "background:transparent;")
         self.label_7.setObjectName("label_7")
         self.pushButton_15 = QtWidgets.QPushButton(self.AllShop)
-        self.pushButton_15.setGeometry(QtCore.QRect(220, 110, 20, 20))
+        self.pushButton_15.setGeometry(QtCore.QRect(150, 105, 20, 20))
         self.pushButton_15.setStyleSheet("QPushButton\n"
 "{\n"
-"background:rgb(0, 255, 7);\n"
+"background:rgb(171, 146,196);\n"
 "border-radius:10px;\n"
 "}")
         self.pushButton_15.setText("")
         self.pushButton_15.setObjectName("pushButton_15")
         self.label_13 = QtWidgets.QLabel(self.AllShop)
-        self.label_13.setGeometry(QtCore.QRect(310, 110, 50, 20))
+        self.label_13.setGeometry(QtCore.QRect(310, 105, 50, 20))
         self.label_13.setStyleSheet("font-size:15px;\n"
 "background:transparent;")
         self.label_13.setObjectName("label_13")
         self.label_2 = QtWidgets.QLabel(self.AllShop)
-        self.label_2.setGeometry(QtCore.QRect(160, 110, 61, 20))
+        self.label_2.setGeometry(QtCore.QRect(170, 105, 61, 20))
         self.label_2.setStyleSheet("background:transparent;")
         self.label_2.setObjectName("label_2")
         self.comboBox = QtWidgets.QComboBox(self.AllShop)
-        self.comboBox.setGeometry(QtCore.QRect(360, 110, 40, 20))
+        self.comboBox.setGeometry(QtCore.QRect(350, 100, 60, 25))
         self.comboBox.setObjectName("comboBox")
         self.label_4 = QtWidgets.QLabel(self.AllShop)
-        self.label_4.setGeometry(QtCore.QRect(240, 110, 61, 20))
+        self.label_4.setGeometry(QtCore.QRect(250, 105, 61, 20))
         self.label_4.setStyleSheet("background:transparent;")
         self.label_4.setObjectName("label_4")
         self.pushButton_13 = QtWidgets.QPushButton(self.AllShop)
-        self.pushButton_13.setGeometry(QtCore.QRect(140, 110, 20, 20))
+        self.pushButton_13.setGeometry(QtCore.QRect(230, 105, 20, 20))
         self.pushButton_13.setStyleSheet("QPushButton\n"
 "{\n"
-"background:rgb(255, 0, 7);\n"
+"background:rgb(60,192,192);\n"
 "border-radius:10px;\n"
 "}")
         self.pushButton_13.setText("")
         self.pushButton_13.setObjectName("pushButton_13")
         self.label_11 = QtWidgets.QLabel(self.AllShop)
-        self.label_11.setGeometry(QtCore.QRect(230, 330, 91, 31))
+        self.label_11.setGeometry(QtCore.QRect(230, 340, 91, 31))
         self.label_11.setStyleSheet("font-size:18px;\n"
 "background:transparent;")
         self.label_11.setObjectName("label_11")
@@ -568,127 +687,192 @@ class Ui_ManagerWindow(object):
         self.MyShop = QtWidgets.QWidget()
         self.MyShop.setObjectName("MyShop")
         self.myShop = QtWidgets.QLabel(self.MyShop)
-        self.myShop.setGeometry(QtCore.QRect(10, 10, 101, 31))
+        self.myShop.setGeometry(QtCore.QRect(15, 15, 101, 31))
         self.myShop.setStyleSheet("font-size:22px")
         self.myShop.setObjectName("myShop")
-        self.widget = QtWidgets.QWidget(self.MyShop)
-        self.widget.setGeometry(QtCore.QRect(300, 70, 540, 470))
-        self.widget.setStyleSheet("QLabel\n"
-"{\n"
-"font-size:20px;\n"
-"}\n"
-"")
-        self.widget.setObjectName("widget")
-        self.label_16 = QtWidgets.QLabel(self.widget)
-        self.label_16.setGeometry(QtCore.QRect(30, 10, 161, 41))
-        self.label_16.setObjectName("label_16")
-        self.label_17 = QtWidgets.QLabel(self.widget)
-        self.label_17.setGeometry(QtCore.QRect(310, 70, 100, 20))
-        self.label_17.setObjectName("label_17")
-        self.label_23 = QtWidgets.QLabel(self.widget)
-        self.label_23.setGeometry(QtCore.QRect(30, 100, 100, 20))
-        self.label_23.setObjectName("label_23")
-        self.label_24 = QtWidgets.QLabel(self.widget)
-        self.label_24.setGeometry(QtCore.QRect(310, 100, 100, 20))
-        self.label_24.setObjectName("label_24")
-        self.label_25 = QtWidgets.QLabel(self.widget)
-        self.label_25.setGeometry(QtCore.QRect(30, 130, 91, 20))
-        self.label_25.setObjectName("label_25")
-        self.label_26 = QtWidgets.QLabel(self.widget)
-        self.label_26.setGeometry(QtCore.QRect(30, 70, 91, 20))
-        self.label_26.setObjectName("label_26")
-        self.approvingEntry = QtWidgets.QPushButton(self.widget)
-        self.approvingEntry.setGeometry(QtCore.QRect(360, 440, 75, 23))
-        self.approvingEntry.setObjectName("approvingEntry")
-        self.refuseEntry = QtWidgets.QPushButton(self.widget)
-        self.refuseEntry.setGeometry(QtCore.QRect(450, 440, 75, 23))
-        self.refuseEntry.setObjectName("refuseEntry")
-        self.rentReason = QtWidgets.QTextEdit(self.widget)
-        self.rentReason.setGeometry(QtCore.QRect(30, 159, 491, 271))
-        self.rentReason.setReadOnly(True)
-        self.rentReason.setObjectName("rentReason")
-        self.rentTime = QtWidgets.QLineEdit(self.widget)
-        self.rentTime.setGeometry(QtCore.QRect(400, 100, 113, 20))
-        self.rentTime.setObjectName("rentTime")
-        self.userTel = QtWidgets.QLineEdit(self.widget)
-        self.userTel.setGeometry(QtCore.QRect(120, 100, 113, 20))
-        self.userTel.setObjectName("userTel")
-        self.userName = QtWidgets.QLineEdit(self.widget)
-        self.userName.setGeometry(QtCore.QRect(370, 70, 113, 20))
-        self.userName.setObjectName("userName")
-        self.intentionShopNum = QtWidgets.QLineEdit(self.widget)
-        self.intentionShopNum.setGeometry(QtCore.QRect(120, 70, 113, 20))
-        self.intentionShopNum.setObjectName("intentionShopNum")
-        self.widget_9 = QtWidgets.QWidget(self.MyShop)
-        self.widget_9.setGeometry(QtCore.QRect(10, 70, 271, 131))
+        self.widget_10 = QtWidgets.QWidget(self.MyShop)
+        self.widget_10.setGeometry(QtCore.QRect(0, 70, 850, 500))
+        self.widget_10.setStyleSheet("\n"
+"\n"
+"#widget_10\n"
+"{    background:rgb(226, 232, 255);\n"
+" border-top-left-radius:15px;\n"
+"    border-top-right-radius:15px;\n"
+"}")
+        self.widget_10.setObjectName("widget_10")
+        self.widget_9 = QtWidgets.QWidget(self.widget_10)
+        self.widget_9.setGeometry(QtCore.QRect(20, 20, 250, 200))
         self.widget_9.setStyleSheet("QLabel\n"
 "{\n"
+"  background:transparent;\n"
 "font-size:16px;\n"
+"}\n"
+"\n"
+"#widget_9\n"
+"{\n"
+"            background:white;\n"
+" border-top-left-radius:15px;\n"
+"    border-top-right-radius:15px;\n"
+" border-bottom-left-radius:10px;\n"
+"    border-bottom-right-radius:10px;\n"
 "}\n"
 "")
         self.widget_9.setObjectName("widget_9")
-        self.label_33 = QtWidgets.QLabel(self.widget_9)
-        self.label_33.setGeometry(QtCore.QRect(10, 20, 141, 25))
-        self.label_33.setStyleSheet("font-size:18px;")
-        self.label_33.setObjectName("label_33")
         self.label_34 = QtWidgets.QLabel(self.widget_9)
-        self.label_34.setGeometry(QtCore.QRect(20, 50, 110, 20))
+        self.label_34.setGeometry(QtCore.QRect(40, 90, 110, 20))
         self.label_34.setStyleSheet("")
         self.label_34.setObjectName("label_34")
         self.pendingApplicationNum = QtWidgets.QLabel(self.widget_9)
-        self.pendingApplicationNum.setGeometry(QtCore.QRect(130, 50, 54, 20))
+        self.pendingApplicationNum.setGeometry(QtCore.QRect(150, 90, 80, 20))
         self.pendingApplicationNum.setStyleSheet("")
         self.pendingApplicationNum.setObjectName("pendingApplicationNum")
         self.label_36 = QtWidgets.QLabel(self.widget_9)
-        self.label_36.setGeometry(QtCore.QRect(20, 80, 81, 16))
+        self.label_36.setGeometry(QtCore.QRect(40, 130, 80, 20))
         self.label_36.setObjectName("label_36")
         self.pendingApplication = QtWidgets.QComboBox(self.widget_9)
-        self.pendingApplication.setGeometry(QtCore.QRect(100, 80, 161, 21))
+        self.pendingApplication.setGeometry(QtCore.QRect(120, 130, 80, 20))
         self.pendingApplication.setObjectName("pendingApplication")
-        self.widget_10 = QtWidgets.QWidget(self.MyShop)
-        self.widget_10.setGeometry(QtCore.QRect(10, 210, 271, 131))
-        self.widget_10.setStyleSheet("QLabel\n"
+        self.widget_14 = QtWidgets.QWidget(self.widget_9)
+        self.widget_14.setGeometry(QtCore.QRect(0, 0, 251, 40))
+        self.widget_14.setStyleSheet("QWidget\n"
 "{\n"
-"font-size:16px;\n"
+"\n"
+"    background:rgb(165, 200, 255);\n"
+" border-top-left-radius:15px;\n"
+"    border-top-right-radius:15px;\n"
 "}\n"
 "")
-        self.widget_10.setObjectName("widget_10")
-        self.label_37 = QtWidgets.QLabel(self.widget_10)
-        self.label_37.setGeometry(QtCore.QRect(10, 30, 141, 25))
-        self.label_37.setStyleSheet("font-size:18px;")
+        self.widget_14.setObjectName("widget_14")
+        self.label_37 = QtWidgets.QLabel(self.widget_14)
+        self.label_37.setGeometry(QtCore.QRect(15, 15, 151, 20))
+        self.label_37.setStyleSheet("font-size:20px")
         self.label_37.setObjectName("label_37")
-        self.label_38 = QtWidgets.QLabel(self.widget_10)
-        self.label_38.setGeometry(QtCore.QRect(20, 60, 120, 20))
-        self.label_38.setObjectName("label_38")
-        self.processedApplicationNum = QtWidgets.QLabel(self.widget_10)
-        self.processedApplicationNum.setGeometry(QtCore.QRect(150, 60, 54, 20))
-        self.processedApplicationNum.setObjectName("processedApplicationNum")
-        self.label_40 = QtWidgets.QLabel(self.widget_10)
-        self.label_40.setGeometry(QtCore.QRect(20, 90, 90, 20))
-        self.label_40.setObjectName("label_40")
-        self.processedApplication = QtWidgets.QComboBox(self.widget_10)
-        self.processedApplication.setGeometry(QtCore.QRect(120, 90, 131, 22))
-        self.processedApplication.setObjectName("processedApplication")
-        self.widget_11 = QtWidgets.QWidget(self.MyShop)
-        self.widget_11.setGeometry(QtCore.QRect(10, 350, 271, 191))
-        self.widget_11.setStyleSheet("QLabel\n"
+        self.widget = QtWidgets.QWidget(self.widget_10)
+        self.widget.setGeometry(QtCore.QRect(300, 20, 540, 461))
+        self.widget.setStyleSheet("QLabel\n"
 "{\n"
-"font-size:16px;\n"
+"  background:transparent;\n"
+"font-size:18px;\n"
+"\n"
+"}\n"
+"QLineEdit\n"
+"{\n"
+"  background:transparent;\n"
+"    padding-left:5px ;\n"
+"    padding-top:1px ;\n"
+"    border-bottom-left-radius:6px;\n"
+"    border-bottom-right-radius:6px;\n"
+"    border: 1px solid rgb(123 ,123 , 123);\n"
+"}\n"
+"\n"
+"\n"
+"#widget\n"
+"{\n"
+"        background:white;\n"
+" border-top-left-radius:15px;\n"
+"    border-top-right-radius:15px;\n"
+" border-bottom-left-radius:10px;\n"
+"    border-bottom-right-radius:10px;\n"
+"}\n"
+"")
+        self.widget.setObjectName("widget")
+        self.label_17 = QtWidgets.QLabel(self.widget)
+        self.label_17.setGeometry(QtCore.QRect(310, 60, 100, 20))
+        self.label_17.setObjectName("label_17")
+        self.label_23 = QtWidgets.QLabel(self.widget)
+        self.label_23.setGeometry(QtCore.QRect(30, 90, 100, 20))
+        self.label_23.setObjectName("label_23")
+        self.label_24 = QtWidgets.QLabel(self.widget)
+        self.label_24.setGeometry(QtCore.QRect(310, 90, 100, 20))
+        self.label_24.setObjectName("label_24")
+        self.label_25 = QtWidgets.QLabel(self.widget)
+        self.label_25.setGeometry(QtCore.QRect(30, 120, 91, 20))
+        self.label_25.setObjectName("label_25")
+        self.label_26 = QtWidgets.QLabel(self.widget)
+        self.label_26.setGeometry(QtCore.QRect(30, 60, 91, 20))
+        self.label_26.setObjectName("label_26")
+        self.approvingEntry = QtWidgets.QPushButton(self.widget)
+        self.approvingEntry.setGeometry(QtCore.QRect(360, 430, 75, 23))
+        self.approvingEntry.setStyleSheet("QPushButton\n"
+"{\n"
+" border-radius:5px;font-size:16px;background:rgb(200, 222,255);\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"background:rgb(142, 182, 255)\n"
+"}")
+        self.approvingEntry.setObjectName("approvingEntry")
+        self.refuseEntry = QtWidgets.QPushButton(self.widget)
+        self.refuseEntry.setGeometry(QtCore.QRect(450, 430, 75, 23))
+        self.refuseEntry.setStyleSheet("QPushButton\n"
+"{\n"
+" border-radius:5px;font-size:16px;background:rgb(200, 222,255);\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"background:rgb(142, 182, 255)\n"
+"}")
+        self.refuseEntry.setObjectName("refuseEntry")
+        self.rentReason = QtWidgets.QTextEdit(self.widget)
+        self.rentReason.setGeometry(QtCore.QRect(30, 150, 491, 271))
+        self.rentReason.setStyleSheet("QTextEdit\n"
+"{\n"
+" background:transparent;\n"
+"    padding-left:5px ;\n"
+"    padding-top:1px ;\n"
+"    border-bottom-left-radius:9px;\n"
+"    border-bottom-right-radius:9px;\n"
+"    border: 1px solid rgb(123 ,123 , 123);\n"
+"}")
+        self.rentReason.setReadOnly(True)
+        self.rentReason.setObjectName("rentReason")
+        self.rentTime = QtWidgets.QLineEdit(self.widget)
+        self.rentTime.setGeometry(QtCore.QRect(400, 90, 113, 20))
+        self.rentTime.setObjectName("rentTime")
+        self.userTel = QtWidgets.QLineEdit(self.widget)
+        self.userTel.setGeometry(QtCore.QRect(120, 90, 113, 20))
+        self.userTel.setObjectName("userTel")
+        self.userName = QtWidgets.QLineEdit(self.widget)
+        self.userName.setGeometry(QtCore.QRect(370, 60, 113, 20))
+        self.userName.setObjectName("userName")
+        self.intentionShopNum = QtWidgets.QLineEdit(self.widget)
+        self.intentionShopNum.setGeometry(QtCore.QRect(120, 60, 113, 20))
+        self.intentionShopNum.setObjectName("intentionShopNum")
+        self.widget_11 = QtWidgets.QWidget(self.widget)
+        self.widget_11.setGeometry(QtCore.QRect(0, 0, 541, 40))
+        self.widget_11.setStyleSheet("QWidget\n"
+"{\n"
+"    background:rgb(165, 200, 255);\n"
+" border-top-left-radius:15px;\n"
+"    border-top-right-radius:15px;\n"
 "}\n"
 "")
         self.widget_11.setObjectName("widget_11")
-        self.label_41 = QtWidgets.QLabel(self.widget_11)
-        self.label_41.setGeometry(QtCore.QRect(20, 20, 111, 21))
-        self.label_41.setObjectName("label_41")
+        self.label_30 = QtWidgets.QLabel(self.widget_11)
+        self.label_30.setGeometry(QtCore.QRect(15, 15, 141, 20))
+        self.label_30.setStyleSheet("font-size:20px;")
+        self.label_30.setObjectName("label_30")
         self.stackedWidget.addWidget(self.MyShop)
         self.ApprochHandling = QtWidgets.QWidget()
         self.ApprochHandling.setObjectName("ApprochHandling")
         self.myInformation = QtWidgets.QLabel(self.ApprochHandling)
-        self.myInformation.setGeometry(QtCore.QRect(10, 10, 90, 30))
+        self.myInformation.setGeometry(QtCore.QRect(15, 15, 90, 30))
         self.myInformation.setStyleSheet("font-size:22px")
         self.myInformation.setObjectName("myInformation")
-        self.leaseContract = QtWidgets.QWidget(self.ApprochHandling)
-        self.leaseContract.setGeometry(QtCore.QRect(20, 60, 800, 500))
+        self.widget_15 = QtWidgets.QWidget(self.ApprochHandling)
+        self.widget_15.setGeometry(QtCore.QRect(0, 70, 851, 501))
+        self.widget_15.setStyleSheet("\n"
+"\n"
+"#widget_15\n"
+"{    background:rgb(226, 232, 255);\n"
+" border-top-left-radius:15px;\n"
+"    border-top-right-radius:15px;\n"
+"}")
+        self.widget_15.setObjectName("widget_15")
+        self.leaseContract = QtWidgets.QWidget(self.widget_15)
+        self.leaseContract.setGeometry(QtCore.QRect(20, 20, 800, 471))
         self.leaseContract.setStyleSheet("#leaseContract\n"
 "{\n"
 "    background:white;\n"
@@ -698,52 +882,102 @@ class Ui_ManagerWindow(object):
 "\n"
 "\n"
 "QLabel\n"
-"{    \n"
-"font-size:16px;\n"
+"{\n"
+"  background:transparent;\n"
+"font-size:18px;\n"
+"\n"
+"}\n"
+"QLineEdit\n"
+"{\n"
+"  background:transparent;\n"
+"    padding-left:5px ;\n"
+"    padding-top:1px ;\n"
+"    border-bottom-left-radius:6px;\n"
+"    border-bottom-right-radius:6px;\n"
+"    border: 1px solid rgb(123 ,123 , 123);\n"
 "}")
         self.leaseContract.setObjectName("leaseContract")
-        self.label_27 = QtWidgets.QLabel(self.leaseContract)
-        self.label_27.setGeometry(QtCore.QRect(10, 10, 80, 25))
-        self.label_27.setStyleSheet("\n"
-"font-size:18px;")
-        self.label_27.setObjectName("label_27")
         self.label_28 = QtWidgets.QLabel(self.leaseContract)
-        self.label_28.setGeometry(QtCore.QRect(30, 40, 80, 20))
+        self.label_28.setGeometry(QtCore.QRect(20, 55, 80, 20))
         self.label_28.setObjectName("label_28")
         self.label_29 = QtWidgets.QLabel(self.leaseContract)
-        self.label_29.setGeometry(QtCore.QRect(460, 460, 80, 20))
+        self.label_29.setGeometry(QtCore.QRect(460, 440, 80, 20))
         self.label_29.setObjectName("label_29")
         self.contractInformation = QtWidgets.QTextEdit(self.leaseContract)
-        self.contractInformation.setGeometry(QtCore.QRect(30, 69, 750, 380))
+        self.contractInformation.setGeometry(QtCore.QRect(30, 80, 750, 350))
+        self.contractInformation.setStyleSheet("QTextEdit\n"
+"{\n"
+" background:transparent;\n"
+"    padding-left:5px ;\n"
+"    padding-top:1px ;\n"
+"    border-bottom-left-radius:9px;\n"
+"    border-bottom-right-radius:9px;\n"
+"    border: 1px solid rgb(123 ,123 , 123);\n"
+"}")
         self.contractInformation.setObjectName("contractInformation")
         self.rentTimeManager = QtWidgets.QLineEdit(self.leaseContract)
-        self.rentTimeManager.setGeometry(QtCore.QRect(550, 460, 113, 20))
+        self.rentTimeManager.setGeometry(QtCore.QRect(550, 440, 113, 20))
         self.rentTimeManager.setReadOnly(True)
         self.rentTimeManager.setObjectName("rentTimeManager")
         self.submitAudit = QtWidgets.QPushButton(self.leaseContract)
-        self.submitAudit.setGeometry(QtCore.QRect(680, 460, 101, 20))
+        self.submitAudit.setGeometry(QtCore.QRect(680, 440, 101, 20))
+        self.submitAudit.setStyleSheet("QPushButton\n"
+"{\n"
+" border-radius:5px;font-size:16px;background:rgb(200, 222,255);\n"
+"}\n"
+"\n"
+"QPushButton:hover\n"
+"{\n"
+"background:rgb(142, 182, 255)\n"
+"}")
         self.submitAudit.setObjectName("submitAudit")
         self.label_35 = QtWidgets.QLabel(self.leaseContract)
-        self.label_35.setGeometry(QtCore.QRect(40, 460, 54, 20))
+        self.label_35.setGeometry(QtCore.QRect(40, 440, 54, 20))
         self.label_35.setObjectName("label_35")
         self.shopNum = QtWidgets.QLineEdit(self.leaseContract)
-        self.shopNum.setGeometry(QtCore.QRect(100, 460, 80, 20))
+        self.shopNum.setGeometry(QtCore.QRect(100, 440, 80, 20))
         self.shopNum.setReadOnly(True)
         self.shopNum.setObjectName("shopNum")
         self.label_39 = QtWidgets.QLabel(self.leaseContract)
-        self.label_39.setGeometry(QtCore.QRect(200, 460, 110, 20))
+        self.label_39.setGeometry(QtCore.QRect(200, 440, 110, 20))
         self.label_39.setObjectName("label_39")
         self.userTelContract = QtWidgets.QLineEdit(self.leaseContract)
-        self.userTelContract.setGeometry(QtCore.QRect(320, 460, 120, 20))
+        self.userTelContract.setGeometry(QtCore.QRect(320, 440, 120, 20))
         self.userTelContract.setReadOnly(True)
         self.userTelContract.setObjectName("userTelContract")
+        self.widget_16 = QtWidgets.QWidget(self.leaseContract)
+        self.widget_16.setGeometry(QtCore.QRect(0, 0, 801, 40))
+        self.widget_16.setStyleSheet("QWidget\n"
+"{\n"
+"    background:rgb(165, 200, 255);\n"
+" border-top-left-radius:15px;\n"
+"    border-top-right-radius:15px;\n"
+"}\n"
+"")
+        self.widget_16.setObjectName("widget_16")
+        self.label_31 = QtWidgets.QLabel(self.widget_16)
+        self.label_31.setGeometry(QtCore.QRect(15, 15, 141, 20))
+        self.label_31.setStyleSheet("font-size:20px;")
+        self.label_31.setObjectName("label_31")
         self.stackedWidget.addWidget(self.ApprochHandling)
         self.MyContract = QtWidgets.QWidget()
         self.MyContract.setObjectName("MyContract")
         self.myContract = QtWidgets.QLabel(self.MyContract)
-        self.myContract.setGeometry(QtCore.QRect(20, 20, 54, 12))
+        self.myContract.setGeometry(QtCore.QRect(15, 15, 91, 31))
+        self.myContract.setStyleSheet("font: 15pt \"华文中宋\";")
         self.myContract.setObjectName("myContract")
         self.stackedWidget.addWidget(self.MyContract)
+        self.label = QtWidgets.QLabel(ManagerWindow)
+        self.label.setGeometry(QtCore.QRect(30, 20, 70, 30))
+        font = QtGui.QFont()
+        font.setFamily("华文中宋")
+        font.setPointSize(15)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.label.setFont(font)
+        self.label.setStyleSheet("font: 15pt \"华文中宋\";")
+        self.label.setObjectName("label")
 
         self.retranslateUi(ManagerWindow)
         self.stackedWidget.setCurrentIndex(0)
@@ -753,11 +987,10 @@ class Ui_ManagerWindow(object):
     def retranslateUi(self, ManagerWindow):
         _translate = QtCore.QCoreApplication.translate
         ManagerWindow.setWindowTitle(_translate("ManagerWindow", "Form"))
-        self.label.setText(_translate("ManagerWindow", "Cool购物中心"))
         self.btnApprochHandling.setText(_translate("ManagerWindow", "申请处理"))
         self.btnAllShop.setText(_translate("ManagerWindow", "全部店铺"))
         self.btnInf.setText(_translate("ManagerWindow", "拟定合同"))
-        self.btnContract.setText(_translate("ManagerWindow", "我的合同"))
+        self.btnContract.setText(_translate("ManagerWindow", "待做功能"))
         self.allShop.setText(_translate("ManagerWindow", "全部店铺"))
         self.pushButtonShop_12.setText(_translate("ManagerWindow", "12"))
         self.pushButtonShop_11.setText(_translate("ManagerWindow", "11"))
@@ -810,7 +1043,10 @@ class Ui_ManagerWindow(object):
         self.label_4.setText(_translate("ManagerWindow", "可租店铺"))
         self.label_11.setText(_translate("ManagerWindow", "当前楼层："))
         self.myShop.setText(_translate("ManagerWindow", "申请处理"))
-        self.label_16.setText(_translate("ManagerWindow", "当前申请信息："))
+        self.label_34.setText(_translate("ManagerWindow", "剩余申请数量："))
+        self.pendingApplicationNum.setText(_translate("ManagerWindow", "TextLabel"))
+        self.label_36.setText(_translate("ManagerWindow", "处理申请："))
+        self.label_37.setText(_translate("ManagerWindow", "当月待处理申请"))
         self.label_17.setText(_translate("ManagerWindow", "姓名："))
         self.label_23.setText(_translate("ManagerWindow", "联系方式："))
         self.label_24.setText(_translate("ManagerWindow", "租借时间："))
@@ -818,22 +1054,14 @@ class Ui_ManagerWindow(object):
         self.label_26.setText(_translate("ManagerWindow", "意向店铺："))
         self.approvingEntry.setText(_translate("ManagerWindow", "批准进场"))
         self.refuseEntry.setText(_translate("ManagerWindow", "拒接进场"))
-        self.label_33.setText(_translate("ManagerWindow", "当月待处理申请："))
-        self.label_34.setText(_translate("ManagerWindow", "剩余申请数量："))
-        self.pendingApplicationNum.setText(_translate("ManagerWindow", "TextLabel"))
-        self.label_36.setText(_translate("ManagerWindow", "处理申请："))
-        self.label_37.setText(_translate("ManagerWindow", "当月已处理申请："))
-        self.label_38.setText(_translate("ManagerWindow", "已处理申请数量："))
-        self.processedApplicationNum.setText(_translate("ManagerWindow", "TextLabel"))
-        self.label_40.setText(_translate("ManagerWindow", "已处理申请："))
-        self.label_41.setText(_translate("ManagerWindow", "本月申请总数:"))
+        self.label_30.setText(_translate("ManagerWindow", "当前申请信息"))
         self.myInformation.setText(_translate("ManagerWindow", "合同内容"))
-        self.label_27.setText(_translate("ManagerWindow", "租赁合同"))
         self.label_28.setText(_translate("ManagerWindow", "合同内容:"))
         self.label_29.setText(_translate("ManagerWindow", "签订年份:"))
         self.submitAudit.setText(_translate("ManagerWindow", "提交审核"))
         self.label_35.setText(_translate("ManagerWindow", "店铺号："))
         self.label_39.setText(_translate("ManagerWindow", "业主联系方式："))
+        self.label_31.setText(_translate("ManagerWindow", "租赁合同"))
         self.myContract.setText(_translate("ManagerWindow", "我的合同"))
-
+        self.label.setText(_translate("ManagerWindow", "JOJO"))
 
