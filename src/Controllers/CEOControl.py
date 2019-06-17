@@ -12,11 +12,13 @@ from Controllers.User import User
 from Controllers.Login import Login
 
 class CEOControl(User):
-    m_Statement= Statement()
-    m_Login = Login()
 
-    def __init__(self):
+
+    def __init__(self,ID):
+        super().__init__()
         self.__identity = 'ceo'
+        self.__ID = ID
+        self.m_Statement = Statement()
 
     def check_all_information(self):
         pass

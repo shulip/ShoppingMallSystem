@@ -4,17 +4,25 @@ from Models.DataBase import DatabaseAccessor
 
 class Contract(object):
     DB = DatabaseAccessor()
-    def __init__(self,ID):
-        self.__ID = ID
-        self.__contract = self.DB.get_contract_info_by_id(ID)
+    def __init__(self,ID=None):
+        if ID is not None:
+            self.__ID = ID
+            self.__contract = self.DB.get_contract_info_by_id(ID)
 
-        self.__information = self.__contract["information"]
-        self.__status = self.__contract["status"]
-        self.__year = self.__contract["year"]
+            self.__information = self.__contract["contractInfo"]
+            self.__status = self.__contract["contractStatus"]
+            self.__year = self.__contract["contractYear"]
 
-        self.__proprietorSign = self.__contract["proprietorSign"]  # 业主是否签字
-        self.__CEOAffirm = self.__contract["CEOAffirm"]  # 总经理是否确认
-        self.__CEOSign = self.__contract["CEOSign"]  # 总经理是否签字
+            self.__proprietorSign = self.__contract["proprietorSign"]  # 业主是否签字
+            self.__CEOAffirm = self.__contract["CEOAffirm"]  # 总经理是否确认
+            self.__CEOSign = self.__contract["CEOSign"]  # 总经理是否签字
+
+            self.__userName = self.__contract["userName"]
+            self.__shopIndex = self.__contract["shopIndex"]
+            self.__userTelContract = self.__contract["userTelContract"]
+
+        else:
+            pass
 
         # self.__information = ''
         # self.__status = ''
@@ -24,8 +32,24 @@ class Contract(object):
         # self.__CEOAffirm = False  # 总经理是否确认
         # self.__CEOSign = False  # 总经理是否签字
 
+    def add_new_contract_info(self,ID,shopNum,userName,userTelContract,contractInformation,rentTimeManager):
+        self.DB.add_new_contract_info(ID,shopNum,userName,userTelContract,contractInformation,rentTimeManager)
 
+    def set_contract_ceoaffirm_by_id(self, user_id, ceoaffirm):
 
+        self.DB.set_contract_ceoaffirm_by_id(user_id, ceoaffirm)
+
+    @property
+    def proprietorSign(self):
+        return self.__proprietorSign
+
+    @property
+    def CEOAffirm(self):
+        return self.__CEOAffirm
+
+    @property
+    def CEOSign(self):
+        return self.__CEOSign
     @property
     def information(self):
         return self.__information
@@ -55,7 +79,8 @@ class Contract(object):
         总经理确认
         :return: None
         """
-        self.__CEOAffirm = True
+        self.__CEOAffirm = 1
+        self.DB.set_contract_ceoaffirm_by_id(self.__ID,1)
 
         return None
 

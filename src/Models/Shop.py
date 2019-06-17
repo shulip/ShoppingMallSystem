@@ -19,13 +19,22 @@ class Shop(object):
         return self.__number
 
     def contract_information(self):
-        return self.__contract.information()
+        return self.__contract.information
 
     def contract_status(self):
         return self.__contract.status
 
     def contract_year(self):
         return self.__contract.year
+
+    def contract_proprietorSign(self):
+        return self.__contract.proprietorSign
+
+    def contract_CEOAffirm(self):
+        return self.__contract.CEOAffirm
+
+    def contract_CEOSign(self):
+        return self.__contract.CEOSign
 
     def receipt_electric(self):
         return self.__receipt.electric

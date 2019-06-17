@@ -7,6 +7,11 @@ class Statement(object):
     def __init__(self):
         self.__shops = self.DB.get_all_shop_infos()
         print(self.__shops)
+        self.__applications = self.DB.get_all_application_info()
+
+    @property
+    def applications(self):
+        return self.__applications
 
     @property
     def allInfo(self):
@@ -28,6 +33,10 @@ class Statement(object):
                 "contractInfo": shop["contractInfo0"],
                 "contractStatus":shop["contractStatus0"],
                 "contractYear":shop["contractYear0"],
+                "contractProprietorSign": shop["contractProprietorSign0"],
+                "contractCeoAffirm": shop["contractCeoAffirm0"],
+                "contractCeoSign": shop["contractCeoSign0"],
+
             })
         return contractsInfo
 

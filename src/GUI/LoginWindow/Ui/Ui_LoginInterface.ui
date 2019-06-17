@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>457</width>
-    <height>356</height>
+    <width>463</width>
+    <height>359</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -25,11 +25,12 @@
      <x>10</x>
      <y>10</y>
      <width>430</width>
-     <height>330</height>
+     <height>321</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">*{
+
 	font-family:century gothic;
 	font-size:16px
 }
@@ -42,12 +43,14 @@ QFrame
 {
     border-top-left-radius:15px;
 	border-bottom-right-radius:15px;
-	
+	font: 9pt &quot;黑体&quot;;
+font-size:20px;
 }
 
 QLabel
 {
 	color:white;
+
 }
 
 
@@ -80,9 +83,9 @@ QCheckBox
     <property name="geometry">
      <rect>
       <x>150</x>
-      <y>110</y>
+      <y>105</y>
       <width>141</width>
-      <height>31</height>
+      <height>30</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -113,7 +116,7 @@ QLineEdit:hover
     <property name="geometry">
      <rect>
       <x>130</x>
-      <y>280</y>
+      <y>270</y>
       <width>171</width>
       <height>31</height>
      </rect>
@@ -122,8 +125,10 @@ QLineEdit:hover
      <string notr="true">QPushButton
 {
     color:white;
-    background-color:rgb(14 , 150 , 254);
-    border-radius:5px;
+  
+background-color:rgb(14 , 135 , 228);
+font: 9pt &quot;黑体&quot;;
+    border-radius:5px;font-size:18px;
 }
 
 QPushButton:hover
@@ -135,7 +140,7 @@ QPushButton:hover
 QPushButton:pressed
 {
     color:white;
-    background-color:rgb(14 , 135 , 228);
+      background-color:rgb(14 , 150 , 254);
     padding-left:3px;
     padding-top:3px;
 }
@@ -148,7 +153,7 @@ QPushButton:pressed
    <widget class="QCheckBox" name="rememberKey">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>70</x>
       <y>230</y>
       <width>91</width>
       <height>31</height>
@@ -162,7 +167,7 @@ QPushButton:pressed
     <property name="geometry">
      <rect>
       <x>150</x>
-      <y>150</y>
+      <y>145</y>
       <width>141</width>
       <height>31</height>
      </rect>
@@ -198,9 +203,9 @@ QLineEdit:hover
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>110</y>
-      <width>71</width>
-      <height>41</height>
+      <y>100</y>
+      <width>70</width>
+      <height>40</height>
      </rect>
     </property>
     <property name="text">
@@ -211,9 +216,9 @@ QLineEdit:hover
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>150</y>
+      <y>145</y>
       <width>61</width>
-      <height>31</height>
+      <height>30</height>
      </rect>
     </property>
     <property name="text">
@@ -250,7 +255,10 @@ font-size:35px;
 }</string>
     </property>
     <property name="text">
-     <string>Cool购物中心</string>
+     <string>JOJO</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QPushButton" name="registAccount">
@@ -265,8 +273,9 @@ font-size:35px;
     <property name="styleSheet">
      <string notr="true">QPushButton
 {
-    color:rgb(222, 255, 253);
+    color:rgb(222, 255, 253);font: 9pt &quot;黑体&quot;;
     background-color:transparent;
+font-size:13px;
 }
 
 QPushButton:hover
@@ -291,8 +300,9 @@ QPushButton:hover
     <property name="styleSheet">
      <string notr="true">QPushButton
 {
-     color:rgb(222, 255, 253);
+     color:rgb(222, 255, 253);font: 9pt &quot;黑体&quot;;
     background-color:transparent;
+font-size:13px;
 }
 
 QPushButton:hover
@@ -378,7 +388,7 @@ image: url(:/icon/min_.png);
       <x>60</x>
       <y>190</y>
       <width>61</width>
-      <height>31</height>
+      <height>30</height>
      </rect>
     </property>
     <property name="text">
@@ -389,7 +399,7 @@ image: url(:/icon/min_.png);
     <property name="geometry">
      <rect>
       <x>150</x>
-      <y>191</y>
+      <y>190</y>
       <width>141</width>
       <height>31</height>
      </rect>
