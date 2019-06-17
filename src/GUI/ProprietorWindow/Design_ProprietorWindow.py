@@ -8,10 +8,12 @@ from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication,QMainWindow,QDesktopWidget
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import *
+
 from PyQt5.Qt import QButtonGroup
 from PyQt5.Qt import QListView
 from PyQt5.Qt import QSplashScreen, QDateTime
 
+from GUI.ProprietorWindow.Design_UIPayWindow import Design_UIPayWindow
 from GUI.ProprietorWindow.UI import *
 
 class Design_ProprietorWindow(QWidget,Ui_ProprietorWindow):
@@ -48,13 +50,19 @@ class Design_ProprietorWindow(QWidget,Ui_ProprietorWindow):
         elif index==1:
             self.stackedWidgetShop.setCurrentIndex(1)
 
+    def pay(self):
+
+        self.window.show()
+
     def __init__(self, parent=None):
         super(Design_ProprietorWindow, self).__init__(parent)
         self.setupUi(self)
         self.setWindowFlags(Qt.FramelessWindowHint | Qt.Tool)
 
+        self.window = Design_UIPayWindow()
 
         self.setAttribute(Qt.WA_TranslucentBackground)
+
 
         #我的店铺
         self.btnAllShop.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(0))
@@ -72,6 +80,8 @@ class Design_ProprietorWindow(QWidget,Ui_ProprietorWindow):
         self.comboBox.addItem("2 楼")
         self.comboBox.currentIndexChanged.connect(lambda x: self.combox_changed(x))
         self.combox_changed(0)
+
+        self.PayImmediately.clicked.connect(self.pay)
 
 
 

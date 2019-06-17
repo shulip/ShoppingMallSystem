@@ -61,9 +61,9 @@ class Design_CEOWindow(QWidget,Ui_CEOWindow):
         self.btnMyShop.clicked.connect(lambda : self.stackedWidget.setCurrentIndex(1))
         self.btnInf.clicked.connect(lambda : self.stackedWidget.setCurrentIndex(2))
         self.stackedWidget.setCurrentIndex(0)
+
         self.contractConfirm.setDisabled(True)
         self.auditConfirmation.setDisabled(True)
-        self.ceoSignature.setDisabled(True)
         self.signatureConfirmation.setDisabled(True)
 
         self.residualAudit.currentIndexChanged.connect(lambda index:self.check_contract(index))

@@ -381,9 +381,9 @@ class DatabaseAccessor(object):
                 number_id["contractInfo{}".format(i)] = user[1]
                 number_id["contractStatus{}".format(i)] = user[2]
                 number_id["contractYear{}".format(i)] = user[3]
-                number_id["contractProprietorSign{}".format(i)] = user[4]
-                number_id["contractCeoAffirm{}".format(i)] = user[5]
-                number_id["contractCeoSign{}".format(i)] = user[6]
+                number_id["contractProprietorSign{}".format(i)] = user[7]
+                number_id["contractCeoAffirm{}".format(i)] = user[8]
+                number_id["contractCeoSign{}".format(i)] = user[9]
             #   receivable
             for user, i in zip(receivable_data, range(len(receivable_data))):
                 number_id["receivedEleCharge{}".format(i)] = user[1]
@@ -511,7 +511,9 @@ class DatabaseAccessor(object):
         self.connect.close()
 
 
-"""TEST
+"""
+
+TEST
 
 """
 testAccessor = DatabaseAccessor()

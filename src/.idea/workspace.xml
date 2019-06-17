@@ -11,34 +11,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GUI/ProprietorWindow/Design_ProprietorWindow.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1830">
-              <caret line="72" column="53" selection-start-line="72" selection-start-column="53" selection-end-line="72" selection-end-column="53" />
-              <folding>
-                <element signature="e#47#57#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/GUI/LoginWindow/Design_LoginWindow.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="452">
-              <caret line="29" column="26" lean-forward="true" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-              <folding>
-                <element signature="e#47#57#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Models/Contract.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+            <state relative-caret-position="630">
+              <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -46,8 +22,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Models/DataBase/DatabaseAccessor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8070">
-              <caret line="270" column="60" selection-start-line="270" selection-start-column="60" selection-end-line="270" selection-end-column="60" />
+            <state relative-caret-position="9570">
+              <caret line="320" column="50" selection-start-line="320" selection-start-column="50" selection-end-line="320" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -64,11 +40,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GUI/ProprietorWindow/UI/Ui_ProprietorWindow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="775" selection-start-line="775" selection-end-line="775" />
+            <state relative-caret-position="662">
+              <caret line="1333" selection-start-line="1333" selection-end-line="1333" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GUI/LoginWindow/Ui/Ui_LoginInterface.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="388">
+              <caret line="268" selection-start-line="268" selection-end-line="268" />
             </state>
           </provider>
         </entry>
@@ -76,8 +61,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GUI/CEOWindow/UI/Ui_CEOWindow.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+            <state relative-caret-position="455">
+              <caret line="1106" selection-start-line="1106" selection-end-line="1106" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GUI/ManagerWindow/UI/Ui_ManagerWindow.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="358">
+              <caret line="1066" selection-start-line="1066" selection-end-line="1066" />
             </state>
           </provider>
         </entry>
@@ -119,12 +113,13 @@
         <option value="$PROJECT_DIR$/GUI/ManagerWindow/Design_ManagerWindow.py" />
         <option value="$PROJECT_DIR$/GUI/CEOWindow/Design_CEOWindow.py" />
         <option value="$PROJECT_DIR$/GUI/LoginWindow/Design_LoginWindow.py" />
-        <option value="$PROJECT_DIR$/GUI/LoginWindow/Ui/Ui_LoginInterface.py" />
-        <option value="$PROJECT_DIR$/GUI/CEOWindow/UI/Ui_CEOWindow.py" />
         <option value="$PROJECT_DIR$/GUI/LManagerWindow.py" />
         <option value="$PROJECT_DIR$/Controllers/__init__.py" />
         <option value="$PROJECT_DIR$/GUI/ProprietorWindow/Design_ProprietorWindow.py" />
         <option value="$PROJECT_DIR$/Models/DataBase/DatabaseAccessor.py" />
+        <option value="$PROJECT_DIR$/GUI/LoginWindow/Ui/Ui_LoginInterface.py" />
+        <option value="$PROJECT_DIR$/GUI/CEOWindow/UI/Ui_CEOWindow.py" />
+        <option value="$PROJECT_DIR$/GUI/ManagerWindow/UI/Ui_ManagerWindow.py" />
         <option value="$PROJECT_DIR$/GUI/ProprietorWindow/UI/Ui_ProprietorWindow.py" />
       </list>
     </option>
@@ -205,11 +200,6 @@
               <item name="GUI" type="462c0819:PsiDirectoryNode" />
               <item name="ProprietorWindow" type="462c0819:PsiDirectoryNode" />
               <item name="UI" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="src" type="b2602c69:ProjectViewProjectNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -367,7 +357,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18282403" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18282403" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -457,22 +447,8 @@
     <entry file="file://$PROJECT_DIR$/GUI/ManagerWindow/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUI/ManagerWindow/UI/Ui_ManagerWindow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="839" lean-forward="true" selection-start-line="839" selection-end-line="839" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GUI/ProprietorWindow/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GUI/LoginWindow/Ui/Ui_LoginInterface.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="268" selection-start-line="268" selection-end-line="268" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GUI/LCEOWindow.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -545,17 +521,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/LoginWindow/Design_LoginWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
+          <folding>
+            <element signature="e#47#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Models/Contract.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="12" column="44" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+        <state relative-caret-position="630">
+          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Models/DataBase/DatabaseAccessor.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8070">
-          <caret line="270" column="60" selection-start-line="270" selection-start-column="60" selection-end-line="270" selection-end-column="60" />
+        <state relative-caret-position="9570">
+          <caret line="320" column="50" selection-start-line="320" selection-start-column="50" selection-end-line="320" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -566,13 +552,6 @@
           <folding>
             <element signature="e#47#57#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GUI/CEOWindow/UI/Ui_CEOWindow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -593,20 +572,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUI/ProprietorWindow/UI/Ui_ProprietorWindow.py">
+    <entry file="file://$PROJECT_DIR$/GUI/LoginWindow/Ui/Ui_LoginInterface.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="775" selection-start-line="775" selection-end-line="775" />
+        <state relative-caret-position="388">
+          <caret line="268" selection-start-line="268" selection-end-line="268" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUI/LoginWindow/Design_LoginWindow.py">
+    <entry file="file://$PROJECT_DIR$/GUI/CEOWindow/UI/Ui_CEOWindow.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="29" column="26" lean-forward="true" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-          <folding>
-            <element signature="e#47#57#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="455">
+          <caret line="1106" selection-start-line="1106" selection-end-line="1106" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/ManagerWindow/UI/Ui_ManagerWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="1066" selection-start-line="1066" selection-end-line="1066" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GUI/ProprietorWindow/UI/Ui_ProprietorWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="662">
+          <caret line="1333" selection-start-line="1333" selection-end-line="1333" />
         </state>
       </provider>
     </entry>

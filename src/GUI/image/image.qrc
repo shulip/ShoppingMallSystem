@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="icon">
+    <file>587485E7898F1773A0CF2807D4D4A126.jpg</file>
+    <file>B36AC9D518FCA380A0E56850D2CE2889.jpg</file>
     <file>晴.png</file>
     <file>close.png</file>
     <file>close_hover.png</file>
