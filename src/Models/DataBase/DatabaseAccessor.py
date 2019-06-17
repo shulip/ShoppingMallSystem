@@ -145,13 +145,13 @@ class DatabaseAccessor(object):
         :return:
         """
         self.cursor.execute('SELECT * FROM receivableAmounts WHERE PayerId= ?',
-                            str(user_id))
+                            (str(user_id),))
         receivable_data = self.cursor.fetchall()
         user_info = {}
-        #     user_info["electricCharge"] = receivable_data[0][1]
-        #     user_info["guaranteeCharge"] = receivable_data[0][2]
-        #     user_info["propertyFeeCharge"] = receivable_data[0][3]
-        #     user_info["waterCharge"] = receivable_data[0][4]
+        user_info["electricCharge"] = receivable_data[0][1]
+        user_info["guaranteeCharge"] = receivable_data[0][2]
+        user_info["propertyFeeCharge"] = receivable_data[0][3]
+        user_info["waterCharge"] = receivable_data[0][4]
         return user_info
 
     def set_receivable_electriccharge_by_id(self, PayerId, electricCharge):
@@ -211,7 +211,7 @@ class DatabaseAccessor(object):
         :return:
         """
         self.cursor.execute('SELECT * FROM receipts WHERE PayerId = ?',
-                            str(user_id))
+                            (str(user_id),))
         receipt_data = self.cursor.fetchall()
         user_info = {}
         user_info["electricCharge"] = receipt_data[0][1]
@@ -311,7 +311,7 @@ class DatabaseAccessor(object):
         :return:用户id对应的商店number的字典，用dict["number%d"]来获取
         """
         print("获得对应用户id的商铺number")
-        self.cursor.execute('SELECT shopNumber FROM shops WHERE ownerId = ?', str(user_id))
+        self.cursor.execute('SELECT shopNumber FROM shops WHERE ownerId = ?', (str(user_id),))
         shop_numbers = self.cursor.fetchall()
         numbers_dict = {}
         for shopNum, i in zip(shop_numbers, range(len(shop_numbers))):
@@ -354,13 +354,13 @@ class DatabaseAccessor(object):
             this_id = number_id["id"]
             print("获取对应id的合同、已收额、应收额")
             self.cursor.execute('SELECT * FROM receivableAmounts WHERE PayerId= ?',
-                                str(this_id))
+                                (str(this_id),))
             receivable_data = self.cursor.fetchall()
             self.cursor.execute('SELECT * FROM receipts WHERE PayerId= ?',
-                                str(this_id))
+                                (str(this_id),))
             receipt_data = self.cursor.fetchall()
-            self.cursor.execute('SELECT * FROM contractInfos WHERE relevant_user_id = ?',
-                                str(this_id))
+            self.cursor.execute('SELECT * FROM contractInfoTable WHERE relevant_user_id = ?',
+                                (str(this_id),))
             contract_data = self.cursor.fetchall()
             #   contract
             for user, i in zip(contract_data, range(len(contract_data))):
@@ -500,27 +500,27 @@ class DatabaseAccessor(object):
 """TEST
 
 """
-testAccessor = DatabaseAccessor()
-#shopNumbers = testAccessor.get_shop_number_by_user_id(1)
-#user_info = testAccessor.get_user_info_by_id(1)
-#all_shop_info = testAccessor.get_all_shop_infos()
-#test = testAccessor.get_receivable_info_by_id(1)
-
-testAccessor.add_new_contract_info(100,100,"name","186","info",99)
-
-#testAccessor.add_new_receipt_info(100,111,222,333,444)
-#testAccessor.add_new_receivable_amount_info(100,11,22,33,44)
-
-testAccessor.add_new_application_info(12,100,"name1","186",100,"没用")
-testAccessor.add_new_application_info(13,101,"name2","187",100,"没用")
-testAccessor.add_new_application_info(14,102,"name3","188",100,"没用")
-
-print("改之前：")
-print(testAccessor.get_contract_info_by_id(100))
-test=testAccessor.get_all_application_info()
-
-for info in test:
-    print(info["ID"])
+# testAccessor = DatabaseAccessor()
+# #shopNumbers = testAccessor.get_shop_number_by_user_id(1)
+# #user_info = testAccessor.get_user_info_by_id(1)
+# #all_shop_info = testAccessor.get_all_shop_infos()
+# #test = testAccessor.get_receivable_info_by_id(1)
+#
+# testAccessor.add_new_contract_info(100,100,"name","186","info",99)
+#
+# #testAccessor.add_new_receipt_info(100,111,222,333,444)
+# #testAccessor.add_new_receivable_amount_info(100,11,22,33,44)
+#
+# testAccessor.add_new_application_info(12,100,"name1","186",100,"没用")
+# testAccessor.add_new_application_info(13,101,"name2","187",100,"没用")
+# testAccessor.add_new_application_info(14,102,"name3","188",100,"没用")
+#
+# print("改之前：")
+# print(testAccessor.get_contract_info_by_id(100))
+# test=testAccessor.get_all_application_info()
+#
+# for info in test:
+#     print(info["ID"])
 
 #testAccessor.set_receipt_electriccharge_by_id(100,123)
 #testAccessor.set_receipt_guaranteecharge_by_id(100,123)
@@ -543,11 +543,11 @@ for info in test:
 
 
 
-print("改之后")
-testAccessor.cursor.execute('SELECT * FROM applicationTable')
-test = testAccessor.cursor.fetchall()
-for info in test:
-    print(info)
+# print("改之后")
+# testAccessor.cursor.execute('SELECT * FROM applicationTable')
+# test = testAccessor.cursor.fetchall()
+# for info in test:
+#     print(info)
 
 #testAccessor.cursor.execute('DELETE FROM contractInfoTable WHERE relevant_user_id = 100')
 #testAccessor.connect.commit()

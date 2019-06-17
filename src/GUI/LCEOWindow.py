@@ -32,7 +32,8 @@ class CEOWindow(Design_CEOWindow):
         self.pushButtonShop_12.clicked.connect(lambda :self.set_information(12))
 
         self.btnMyShop.clicked.connect(self.show_combo)
-        self.processingConfirmation.clicked.connect(self.confirm_contract)
+        self.auditConfirmation.clicked.connect(self.confirm_contract)
+        self.signatureConfirmation.clicked.connect(self.sign_contract)
 
     def show_combo(self):
         """
@@ -151,6 +152,19 @@ class CEOWindow(Design_CEOWindow):
         :return:
         """
         if self.contractConfirm.isChecked():
+            for contract in self.__contracts:
+                if str(contract["number"]) == str(self.shopNun.text()):
+                    self.__control.set_contract_ceoaffirm_by_id(contract["ID"],1)
+                    break
+        return None
+
+    def sign_contract(self):
+        """
+        签字
+        :return:
+        """
+
+        return None
 
 
 if __name__ == '__main__':

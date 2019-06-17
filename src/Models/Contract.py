@@ -32,9 +32,24 @@ class Contract(object):
         # self.__CEOAffirm = False  # 总经理是否确认
         # self.__CEOSign = False  # 总经理是否签字
 
-    def add_new_contract_info(self,shopNum,userName,userTelContract,contractInformation,rentTimeManager):
-        pass
+    def add_new_contract_info(self,ID,shopNum,userName,userTelContract,contractInformation,rentTimeManager):
+        self.DB.add_new_contract_info(ID,shopNum,userName,userTelContract,contractInformation,rentTimeManager)
 
+    def set_contract_ceoaffirm_by_id(self, user_id, ceoaffirm):
+
+        self.DB.set_contract_ceoaffirm_by_id(user_id, ceoaffirm)
+
+    @property
+    def proprietorSign(self):
+        return self.__proprietorSign
+
+    @property
+    def CEOAffirm(self):
+        return self.__CEOAffirm
+
+    @property
+    def CEOSign(self):
+        return self.__CEOSign
     @property
     def information(self):
         return self.__information
@@ -64,7 +79,8 @@ class Contract(object):
         总经理确认
         :return: None
         """
-        self.__CEOAffirm = True
+        self.__CEOAffirm = 1
+        self.DB.set_contract_ceoaffirm_by_id(self.__ID,1)
 
         return None
 
