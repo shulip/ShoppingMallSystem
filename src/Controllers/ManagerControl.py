@@ -8,13 +8,29 @@
 # 
 #######################################################
 from Models.Statement import Statement
+from Models.Contract import Contract
 from Controllers.User import User
 from Controllers.Login import Login
 
 class ManagerControl(User):
     m_Login = Login()
-    def __init__(self):
-        pass
+    def __init__(self,ID):
+        super().__init__()
+        self.__ID = ID
+        self.m_Statement = Statement()
+        self.__contractCon = Contract()
+
+
+    def create_contract(self,shopNum,userName,userTelContract,contractInformation,rentTimeManager):
+        self.__contractCon.add_new_contract_info(shopNum,userName,userTelContract,contractInformation,rentTimeManager)
+
+
+    def get_applications(self):
+        """
+        获取所有申请信息
+        :return:
+        """
+        return self.m_Statement.applications
 
     def enter_contract(self):
         pass

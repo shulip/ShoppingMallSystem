@@ -12,18 +12,101 @@ from Controllers.User import User
 from Controllers.Login import Login
 
 class ProprietorControl(User):
-    m_Login = Login()
-    def __init__(self):
-        pass
+
+    def __init__(self,ID):
+        super().__init__()
+        self.__ID = ID
+        self.__shop = Shop(ID)
+
+    def number(self):
+        """
+        获取商铺号
+        :return: 商铺号
+        """
+        return self.__shop.number()
+
+    def contract_information(self):
+        """
+        获取合同具体信息
+        :return:
+        """
+        return self.__shop.contract_information()
+
+    def contract_status(self):
+        """
+        获取合同状态
+        :return:
+        """
+        return self.__shop.contract_status()
+
+    def contract_year(self):
+        """
+        获取合同年限
+        :return:
+        """
+        return self.__shop.contract_year()
+
+    def receipt_electric(self):
+        """
+        获取以缴纳电费信息
+        :return:
+        """
+        return self.__shop.receipt_electric()
+
+    def receipt_guarantee(self):
+        """
+        获取以缴纳保证金信息
+        :return:
+        """
+        return self.__shop.receipt_guarantee()
+
+    def receipt_propertyfee(self):
+        """
+        获取以缴纳物业费信息
+        :return:
+        """
+        return self.__shop.receipt_propertyfee()
+
+    def receipt_water(self):
+        """
+        获取以缴纳水费信息
+        :return:
+        """
+        return self.__shop.receipt_water()
+
+    def receivable_electric(self):
+        """
+        获取以应缴纳电费信息
+        :return:
+        """
+        return self.__shop.receivable_electric()
+
+    def receivable_guarantee(self):
+        """
+        获取以应缴纳保证金信息
+        :return:
+        """
+        return self.__shop.receivable_guarantee()
+
+    def receivable_propertyfee(self):
+        """
+        获取以应缴纳物业费信息
+        :return:
+        """
+        return self.__shop.receivable_propertyfee()
+
+    def receivable_water(self):
+        """
+        获取以应缴纳水费信息
+        :return:
+        """
+        return self.__shop.receivable_water()
 
     def apply_to_enter(self):
         pass
 
     def apply_to_sublet(self):
         pass
-
-    def login(self,name,password,identity):
-        super().login(name,password,identity)
 
     def pay(self):
         pass
@@ -32,7 +115,13 @@ class ProprietorControl(User):
         pass
 
     def sign_contract(self):
+        """
+        签字
+        :return:None
+        """
+        #TODO: 更新数据库
         pass
 
     def view_status(self):
+
         pass

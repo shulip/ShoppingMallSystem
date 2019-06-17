@@ -4,17 +4,25 @@ from Models.DataBase import DatabaseAccessor
 
 class Contract(object):
     DB = DatabaseAccessor()
-    def __init__(self,ID):
-        self.__ID = ID
-        self.__contract = self.DB.get_contract_info_by_id(ID)
+    def __init__(self,ID=None):
+        if ID is not None:
+            self.__ID = ID
+            self.__contract = self.DB.get_contract_info_by_id(ID)
 
-        self.__information = self.__contract["information"]
-        self.__status = self.__contract["status"]
-        self.__year = self.__contract["year"]
+            self.__information = self.__contract["contractInfo"]
+            self.__status = self.__contract["contractStatus"]
+            self.__year = self.__contract["contractYear"]
 
-        self.__proprietorSign = self.__contract["proprietorSign"]  # 业主是否签字
-        self.__CEOAffirm = self.__contract["CEOAffirm"]  # 总经理是否确认
-        self.__CEOSign = self.__contract["CEOSign"]  # 总经理是否签字
+            self.__proprietorSign = self.__contract["proprietorSign"]  # 业主是否签字
+            self.__CEOAffirm = self.__contract["CEOAffirm"]  # 总经理是否确认
+            self.__CEOSign = self.__contract["CEOSign"]  # 总经理是否签字
+
+            self.__userName = self.__contract["userName"]
+            self.__shopIndex = self.__contract["shopIndex"]
+            self.__userTelContract = self.__contract["userTelContract"]
+
+        else:
+            pass
 
         # self.__information = ''
         # self.__status = ''
@@ -24,7 +32,8 @@ class Contract(object):
         # self.__CEOAffirm = False  # 总经理是否确认
         # self.__CEOSign = False  # 总经理是否签字
 
-
+    def add_new_contract_info(self,shopNum,userName,userTelContract,contractInformation,rentTimeManager):
+        pass
 
     @property
     def information(self):
