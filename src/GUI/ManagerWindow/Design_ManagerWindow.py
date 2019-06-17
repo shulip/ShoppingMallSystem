@@ -60,6 +60,8 @@ class Design_ManagerWindow(QWidget, Ui_ManagerWindow):
         self.comboBox.currentIndexChanged.connect(lambda x: self.combox_changed(x))
         self.combox_changed(0)
 
+        self.approvingEntry.clicked.connect(lambda : self.stackedWidget.setCurrentIndex(2))
+
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)

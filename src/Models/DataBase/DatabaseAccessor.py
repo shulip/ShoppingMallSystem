@@ -259,6 +259,10 @@ class DatabaseAccessor(object):
                             (userId, shopIndex, userName, telenumber, rentTime, rentUsage))
         self.connect.commit()
 
+    def delete_application_by_id(self, user_id):
+        self.cursor.execute('DELETE FROM applicationTable WHERE userId = ?',(str(user_id),))
+        self.connect.commit()
+
     def get_all_application_info(self):
         """
         获取所有申请信息
@@ -500,7 +504,8 @@ class DatabaseAccessor(object):
 """TEST
 
 """
-# testAccessor = DatabaseAccessor()
+testAccessor = DatabaseAccessor()
+#testAccessor.delete_application_by_id(13)
 # #shopNumbers = testAccessor.get_shop_number_by_user_id(1)
 # #user_info = testAccessor.get_user_info_by_id(1)
 # #all_shop_info = testAccessor.get_all_shop_infos()
