@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icon">
+    <file>晴.png</file>
     <file>close.png</file>
     <file>close_hover.png</file>
     <file>close_press.png</file>
