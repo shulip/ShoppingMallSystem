@@ -12,11 +12,12 @@ class Ui_LoginInterface(object):
     def setupUi(self, LoginInterface):
         LoginInterface.setObjectName("LoginInterface")
         LoginInterface.setEnabled(True)
-        LoginInterface.resize(457, 356)
+        LoginInterface.resize(463, 359)
         LoginInterface.setStyleSheet("")
         self.frame = QtWidgets.QFrame(LoginInterface)
-        self.frame.setGeometry(QtCore.QRect(10, 10, 430, 330))
+        self.frame.setGeometry(QtCore.QRect(10, 10, 430, 321))
         self.frame.setStyleSheet("*{\n"
+"\n"
 "    font-family:century gothic;\n"
 "    font-size:16px\n"
 "}\n"
@@ -29,12 +30,14 @@ class Ui_LoginInterface(object):
 "{\n"
 "    border-top-left-radius:15px;\n"
 "    border-bottom-right-radius:15px;\n"
-"    \n"
+"    font: 9pt \"黑体\";\n"
+"font-size:20px;\n"
 "}\n"
 "\n"
 "QLabel\n"
 "{\n"
 "    color:white;\n"
+"\n"
 "}\n"
 "\n"
 "\n"
@@ -60,7 +63,7 @@ class Ui_LoginInterface(object):
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
         self.ID = QtWidgets.QLineEdit(self.frame)
-        self.ID.setGeometry(QtCore.QRect(150, 110, 141, 31))
+        self.ID.setGeometry(QtCore.QRect(150, 105, 141, 30))
         self.ID.setStyleSheet("QLineEdit\n"
 "{\n"
 "    background:white;\n"
@@ -79,12 +82,14 @@ class Ui_LoginInterface(object):
         self.ID.setText("")
         self.ID.setObjectName("ID")
         self.logIn = QtWidgets.QPushButton(self.frame)
-        self.logIn.setGeometry(QtCore.QRect(130, 280, 171, 31))
+        self.logIn.setGeometry(QtCore.QRect(130, 270, 171, 31))
         self.logIn.setStyleSheet("QPushButton\n"
 "{\n"
 "    color:white;\n"
-"    background-color:rgb(14 , 150 , 254);\n"
-"    border-radius:5px;\n"
+"  \n"
+"background-color:rgb(14 , 135 , 228);\n"
+"font: 9pt \"黑体\";\n"
+"    border-radius:5px;font-size:18px;\n"
 "}\n"
 "\n"
 "QPushButton:hover\n"
@@ -96,17 +101,17 @@ class Ui_LoginInterface(object):
 "QPushButton:pressed\n"
 "{\n"
 "    color:white;\n"
-"    background-color:rgb(14 , 135 , 228);\n"
+"      background-color:rgb(14 , 150 , 254);\n"
 "    padding-left:3px;\n"
 "    padding-top:3px;\n"
 "}\n"
 "")
         self.logIn.setObjectName("logIn")
         self.rememberKey = QtWidgets.QCheckBox(self.frame)
-        self.rememberKey.setGeometry(QtCore.QRect(60, 230, 91, 31))
+        self.rememberKey.setGeometry(QtCore.QRect(70, 230, 91, 31))
         self.rememberKey.setObjectName("rememberKey")
         self.Key = QtWidgets.QLineEdit(self.frame)
-        self.Key.setGeometry(QtCore.QRect(150, 150, 141, 31))
+        self.Key.setGeometry(QtCore.QRect(150, 145, 141, 31))
         self.Key.setStyleSheet("QLineEdit\n"
 "{\n"
 "    background:white;\n"
@@ -126,10 +131,10 @@ class Ui_LoginInterface(object):
         self.Key.setEchoMode(QtWidgets.QLineEdit.Password)
         self.Key.setObjectName("Key")
         self.userID = QtWidgets.QLabel(self.frame)
-        self.userID.setGeometry(QtCore.QRect(60, 110, 71, 41))
+        self.userID.setGeometry(QtCore.QRect(60, 100, 70, 40))
         self.userID.setObjectName("userID")
         self.userKey = QtWidgets.QLabel(self.frame)
-        self.userKey.setGeometry(QtCore.QRect(60, 150, 61, 31))
+        self.userKey.setGeometry(QtCore.QRect(60, 145, 61, 30))
         self.userKey.setObjectName("userKey")
         self.autLog = QtWidgets.QCheckBox(self.frame)
         self.autLog.setGeometry(QtCore.QRect(210, 230, 121, 31))
@@ -141,13 +146,15 @@ class Ui_LoginInterface(object):
 "    color:white;\n"
 "font-size:35px;\n"
 "}")
+        self.mallName.setAlignment(QtCore.Qt.AlignCenter)
         self.mallName.setObjectName("mallName")
         self.registAccount = QtWidgets.QPushButton(self.frame)
         self.registAccount.setGeometry(QtCore.QRect(310, 110, 91, 31))
         self.registAccount.setStyleSheet("QPushButton\n"
 "{\n"
-"    color:rgb(222, 255, 253);\n"
+"    color:rgb(222, 255, 253);font: 9pt \"黑体\";\n"
 "    background-color:transparent;\n"
+"font-size:13px;\n"
 "}\n"
 "\n"
 "QPushButton:hover\n"
@@ -160,8 +167,9 @@ class Ui_LoginInterface(object):
         self.forgetPassword.setGeometry(QtCore.QRect(310, 150, 91, 31))
         self.forgetPassword.setStyleSheet("QPushButton\n"
 "{\n"
-"     color:rgb(222, 255, 253);\n"
+"     color:rgb(222, 255, 253);font: 9pt \"黑体\";\n"
 "    background-color:transparent;\n"
+"font-size:13px;\n"
 "}\n"
 "\n"
 "QPushButton:hover\n"
@@ -211,10 +219,10 @@ class Ui_LoginInterface(object):
         self.arrowcloseLogInWindow.setIconSize(QtCore.QSize(30, 30))
         self.arrowcloseLogInWindow.setObjectName("arrowcloseLogInWindow")
         self.userKey_2 = QtWidgets.QLabel(self.frame)
-        self.userKey_2.setGeometry(QtCore.QRect(60, 190, 61, 31))
+        self.userKey_2.setGeometry(QtCore.QRect(60, 190, 61, 30))
         self.userKey_2.setObjectName("userKey_2")
         self.jobPosition = QtWidgets.QComboBox(self.frame)
-        self.jobPosition.setGeometry(QtCore.QRect(150, 191, 141, 31))
+        self.jobPosition.setGeometry(QtCore.QRect(150, 190, 141, 31))
         self.jobPosition.setStyleSheet("QComboBox\n"
 "{\n"
 "    background:white;\n"
@@ -261,8 +269,9 @@ class Ui_LoginInterface(object):
         self.userID.setText(_translate("LoginInterface", "用户名："))
         self.userKey.setText(_translate("LoginInterface", "密码："))
         self.autLog.setText(_translate("LoginInterface", "自动登录"))
-        self.mallName.setText(_translate("LoginInterface", "Cool购物中心"))
+        self.mallName.setText(_translate("LoginInterface", "JOJO"))
         self.registAccount.setText(_translate("LoginInterface", "注册账号"))
         self.forgetPassword.setText(_translate("LoginInterface", "忘记密码"))
         self.userKey_2.setText(_translate("LoginInterface", "职位："))
 
+from GUI.image.image import *

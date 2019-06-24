@@ -1434,7 +1434,7 @@ font-size:14px</string>
         <bool>false</bool>
        </property>
       </widget>
-      <widget class="QCheckBox" name="checkBox_8">
+      <widget class="QCheckBox" name="oweElectricFee">
        <property name="geometry">
         <rect>
          <x>180</x>

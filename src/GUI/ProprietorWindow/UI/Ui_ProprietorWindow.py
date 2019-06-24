@@ -1332,3 +1332,4 @@ class Ui_ProprietorWindow(object):
         self.label_5.setText(_translate("ProprietorWindow", "合同内容："))
         self.applyForSublease.setText(_translate("ProprietorWindow", "申请转租"))
 
+from GUI.image.image import *

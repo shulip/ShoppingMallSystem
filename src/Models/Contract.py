@@ -39,6 +39,13 @@ class Contract(object):
 
         self.DB.set_contract_ceoaffirm_by_id(user_id, ceoaffirm)
 
+        return None
+
+    def set_contract_ceosign_by_id(self,user_id, ceosign):
+        self.DB.set_contract_ceosign_by_id(user_id, ceosign)
+
+        return None
+
     @property
     def proprietorSign(self):
         return self.__proprietorSign

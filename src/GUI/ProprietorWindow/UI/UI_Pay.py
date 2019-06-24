@@ -78,3 +78,4 @@ class Ui_Pay(object):
         Pay.setWindowTitle(_translate("Pay", "Form"))
         self.label_31.setText(_translate("Pay", "租赁合同"))
 
+from GUI.image.image import *

@@ -8,6 +8,7 @@
 # 
 #######################################################
 from Models.Shop import Shop
+from Models.Application import Application
 from Controllers.User import User
 from Controllers.Login import Login
 
@@ -17,6 +18,7 @@ class ProprietorControl(User):
         super().__init__()
         self.__ID = ID
         self.__shop = Shop(ID)
+        self.__applicationCon = Application(ID)
 
     def number(self):
         """
@@ -24,6 +26,9 @@ class ProprietorControl(User):
         :return: 商铺号
         """
         return self.__shop.number()
+
+    def create_application(self,ID,shopIndex, userName, telenumber, rentTime, rentUsage):
+        self.__applicationCon.create_application(ID,shopIndex, userName, telenumber, rentTime, rentUsage)
 
     def contract_information(self):
         """
@@ -45,6 +50,15 @@ class ProprietorControl(User):
         :return:
         """
         return self.__shop.contract_year()
+
+    def contract_CEOAffirm(self):
+        return self.__shop.contract_CEOAffirm()
+
+    def contract_CEOSign(self):
+        return self.__shop.contract_CEOSign()
+
+    def contract_proprietorSign(self):
+        return self.__shop.contract_proprietorSign()
 
     def receipt_electric(self):
         """

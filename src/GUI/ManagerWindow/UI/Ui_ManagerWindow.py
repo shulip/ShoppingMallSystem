@@ -600,12 +600,12 @@ class Ui_ManagerWindow(object):
         self.oweWaterFee.setCheckable(False)
         self.oweWaterFee.setChecked(False)
         self.oweWaterFee.setObjectName("oweWaterFee")
-        self.checkBox_8 = QtWidgets.QCheckBox(self.shopInfomation)
-        self.checkBox_8.setGeometry(QtCore.QRect(180, 80, 50, 20))
-        self.checkBox_8.setStyleSheet("background:transparent;\n"
+        self.oweElectricFee = QtWidgets.QCheckBox(self.shopInfomation)
+        self.oweElectricFee.setGeometry(QtCore.QRect(180, 80, 50, 20))
+        self.oweElectricFee.setStyleSheet("background:transparent;\n"
 "font-size:14px")
-        self.checkBox_8.setCheckable(False)
-        self.checkBox_8.setObjectName("checkBox_8")
+        self.oweElectricFee.setCheckable(False)
+        self.oweElectricFee.setObjectName("oweElectricFee")
         self.owePropertyFee = QtWidgets.QCheckBox(self.shopInfomation)
         self.owePropertyFee.setGeometry(QtCore.QRect(180, 100, 50, 20))
         self.owePropertyFee.setStyleSheet("background:transparent;\n"
@@ -1033,7 +1033,7 @@ class Ui_ManagerWindow(object):
         self.label_21.setText(_translate("ManagerWindow", "已缴物业费："))
         self.label_22.setText(_translate("ManagerWindow", "已缴保证金："))
         self.oweWaterFee.setText(_translate("ManagerWindow", "欠费"))
-        self.checkBox_8.setText(_translate("ManagerWindow", "欠费"))
+        self.oweElectricFee.setText(_translate("ManagerWindow", "欠费"))
         self.owePropertyFee.setText(_translate("ManagerWindow", "欠费"))
         self.oweGuaranteePaid.setText(_translate("ManagerWindow", "欠费"))
         self.curFloor.setText(_translate("ManagerWindow", "1f"))
@@ -1065,3 +1065,4 @@ class Ui_ManagerWindow(object):
         self.myContract.setText(_translate("ManagerWindow", "我的合同"))
         self.label.setText(_translate("ManagerWindow", "JOJO"))
 
+from GUI.image.image import *

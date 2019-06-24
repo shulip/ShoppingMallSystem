@@ -8,6 +8,7 @@
 # 
 #######################################################
 from Models.Statement import Statement
+from Models.Contract import Contract
 from Controllers.User import User
 from Controllers.Login import Login
 
@@ -19,6 +20,14 @@ class CEOControl(User):
         self.__identity = 'ceo'
         self.__ID = ID
         self.m_Statement = Statement()
+        self.__contractCon = Contract()
+
+    def set_contract_ceoaffirm_by_id(self,user_id, ceoaffirm):
+        self.__contractCon.set_contract_ceoaffirm_by_id(user_id, ceoaffirm)
+
+    def set_contract_ceosign_by_id(self,user_id, ceosign):
+        self.__contractCon.set_contract_ceosign_by_id(user_id, ceosign)
+
 
     def check_all_information(self):
         pass

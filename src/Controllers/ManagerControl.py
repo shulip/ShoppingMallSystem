@@ -9,6 +9,7 @@
 #######################################################
 from Models.Statement import Statement
 from Models.Contract import Contract
+from Models.Application import Application
 from Controllers.User import User
 from Controllers.Login import Login
 
@@ -19,10 +20,23 @@ class ManagerControl(User):
         self.__ID = ID
         self.m_Statement = Statement()
         self.__contractCon = Contract()
+        self.__applitionCon = Application()
+
+    def get_all_contracts(self):
+        return self.m_Statement.contracts
+
+    def get_all_receipts(self):
+        return self.m_Statement.receipts
+
+    def get_all_receivable(self):
+        return self.m_Statement.receivable
 
 
-    def create_contract(self,shopNum,userName,userTelContract,contractInformation,rentTimeManager):
-        self.__contractCon.add_new_contract_info(shopNum,userName,userTelContract,contractInformation,rentTimeManager)
+    def create_contract(self,ID,shopNum,userName,userTelContract,contractInformation,rentTimeManager):
+        self.__contractCon.add_new_contract_info(ID,shopNum,userName,userTelContract,contractInformation,rentTimeManager)
+
+    def delete_application(self,ID):
+        self.__applitionCon.delete_application(ID)
 
 
     def get_applications(self):

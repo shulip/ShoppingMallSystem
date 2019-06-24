@@ -6,3 +6,4 @@ from .Receivable import *
 from .Receipt import *
 from .Shop import *
 from .Statement import *
+from .Application import *

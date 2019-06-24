@@ -1105,3 +1105,4 @@ class Ui_CEOWindow(object):
         self.label_40.setText(_translate("CEOWindow", "34"))
         self.label.setText(_translate("CEOWindow", "JOJO"))
 
+from GUI.image.image import *

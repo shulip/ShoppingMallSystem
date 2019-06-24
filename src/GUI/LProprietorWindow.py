@@ -11,6 +11,7 @@ import win32com.client
 import threading
 from GUI.ProprietorWindow import Design_ProprietorWindow
 from Controllers import ProprietorControl
+import time
 
 class ProprietorWindow(Design_ProprietorWindow):
     def __init__(self,ID, parent=None,):
@@ -26,6 +27,7 @@ class ProprietorWindow(Design_ProprietorWindow):
         self.btnAllShop.clicked.connect(lambda :threading.Thread(target=lambda :self.speaker.Speak("申请进场")).start())
         self.btnMyShop.clicked.connect(lambda :threading.Thread(target=lambda :self.speaker.Speak("我的店铺")).start())
         self.btnInf.clicked.connect(lambda :threading.Thread(target=lambda :self.speaker.Speak("我的信息·")).start())
+        self.btnInf.clicked.connect(lambda :threading.Thread(target=self.read_information).start())
         self.btnContract.clicked.connect(lambda :threading.Thread(target=lambda :self.speaker.Speak("我的合同")).start())
         self.btnSublease.clicked.connect(lambda :threading.Thread(target=lambda :self.speaker.Speak("申请转租")).start())
 
@@ -67,6 +69,16 @@ class ProprietorWindow(Design_ProprietorWindow):
 
         self.immediateApplication.clicked.connect(self.apply_info)
 
+    def read_information(self):
+        time.sleep(1)
+        self.speaker.Speak("您的信用为")
+        self.speaker.Speak(self.mFraction.text())
+        self.speaker.Speak("您的所在地")
+        self.speaker.Speak(self.label_19.text())
+        self.speaker.Speak("温度为")
+        self.speaker.Speak(self.label_22.text())
+
+
 
     def set_up_parameters(self):
         """
@@ -89,6 +101,7 @@ class ProprietorWindow(Design_ProprietorWindow):
         self.ceoSignature.setCheckState(self.__control.contract_CEOSign())
         self.signatureConfirmation.setCheckState(self.__control.contract_proprietorSign())
         self.fraction.setText(str(random.randint(500,700)))
+        self.mFraction.setText(str(random.randint(500,700)))
 
         return None
 
@@ -122,7 +135,7 @@ class ProprietorWindow(Design_ProprietorWindow):
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
 
-    MainWindow = ProprietorWindow(12)
+    MainWindow = ProprietorWindow(2)
 
     MainWindow.show()
 

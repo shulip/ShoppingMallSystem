@@ -13,3 +13,6 @@ class Application(object):
 
     def create_application(self,ID,shopIndex, userName, telenumber, rentTime, rentUsage):
         self.DB.add_new_application_info(ID,shopIndex, userName, telenumber, rentTime, rentUsage)
+
+    def delete_application(self,ID):
+        self.DB.delete_application_by_id(ID)
